@@ -1,19 +1,91 @@
+/*set background image, fit to browser window and make responsive */
 html {
-  background: url("./laptopBackgroundImage.jpg") no-repeat center center;
-  background-size: cover;
+  /* Photo by Arnold Francisca - Unsplash */
+  /*position: relative;*/
+  background: url(laptopBackgroundImage.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-size: cover;
+}
+
+.landing_page{
+  padding: 5rem;
+}
+
+p {
+  font-size: 22px;
+  text-align: center;
+  padding: 7rem;
+  background: aqua;
+  opacity: 20%;
+  margin: auto;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  width: 50%;
+}
+
+.intro_container {
+  padding: 2rem;
+}
+
+.skills_container {
+  padding: 2rem;
+}
+
+.social_container {
+  padding: 2rem;
+}
+
+.profile_picture_container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2rem;
+  justify-content: center;
+}
+
+.profile_picture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  height: 20%;
+  border-radius: 40%;
+}
+
+/* mobile styling */
+@media (max-device-width: 812px) {
+
+  .profile_picture {
+  }
+
+  .text_containers {
+    padding: 0;
+  }
+
+  .landing_page {
+    padding: 0;
+  }
+
+  p {
+    background: lightcoral;
+    opacity: 75%;
+    padding: 5rem;
+    /*width: 100%;*/
+  }
+}
+
+
+/*body {*/
   /*margin: 0;*/
   /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',*/
   /*  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',*/
   /*  sans-serif;*/
   /*-webkit-font-smoothing: antialiased;*/
   /*-moz-osx-font-smoothing: grayscale;*/
+/*}*/
 
-}
-
-code {
+/*code {*/
   /*font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',*/
   /*  monospace;*/
-}
+/*}*/
