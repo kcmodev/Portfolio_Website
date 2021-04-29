@@ -1,3 +1,159 @@
+html {
+    /* Photo by Arnold Francisca - Unsplash */
+    background: url(laptopBackgroundImage.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.section_title {
+    text-align: center;
+}
+
+.landing_page{
+    padding: 2rem;
+}
+
+p, h1 {
+    color: whitesmoke;
+    font-size: 26px;
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+    width: 75%;
+}
+
+.profile_picture_container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2rem;
+    justify-content: center;
+}
+
+.profile_picture {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    height: 20%;
+    border-radius: 40%;
+}
+
+.intro_container {
+    padding: 2rem;
+}
+
+.skills_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    position: relative;
+}
+
+.python_container {
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.caption {
+    color: red;
+}
+
+/*.python_container #python_icon_text {*/
+/*  position: absolute;*/
+/*  !*visibility: hidden;*!*/
+/*  z-index: 0;*/
+/*  bottom: 50%;*/
+/*  right: 50%;*/
+/*  transform: translate(50%, 50%);*/
+/*}*/
+
+.python_icon:hover{
+    opacity: 0.3;
+}
+
+.python_container:hover .expanded_menu{
+    visibility: visible;
+    height: 200px;
+    background: whitesmoke;
+}
+
+.javascript_icon:hover{
+    opacity: 0.3;
+}
+
+.java_icon:hover{
+    opacity: 0.3;
+}
+
+.react_icon:hover{
+    opacity: 0.3;
+}
+
+.social_container {
+    padding: 2rem;
+    /*background: aqua;*/
+    /*opacity: 20%;*/
+}
+
+/* mobile styling */
+@media screen and (max-width: 812px) {
+
+    html {
+        /*background-size: 100%;*/
+        /*width: 100%;*/
+
+    }
+
+    .profile_picture {
+    }
+
+    img {
+        width: 50px;
+        height: 50px
+    }
+
+    .text_containers {
+        padding: 0;
+    }
+
+    .landing_page {
+        padding: 0;
+    }
+
+    p {
+        /*background: lightcoral;*/
+        font-size: 16px;
+        opacity: 75%;
+        width: 50%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+/*code {*/
+/*font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',*/
+/*  monospace;*/
+/*}*/
+
 /*.App {*/
   /*text-align: center;*/
 /*}*/
