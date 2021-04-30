@@ -25,9 +25,9 @@ body {
     padding: 2rem;
 }
 
-p, h1 {
+p {
     color: whitesmoke;
-    font-size: 26px;
+    font-size: 24px;
     text-align: center;
     padding: 1rem;
     margin: auto;
@@ -62,38 +62,14 @@ p, h1 {
     position: relative;
 }
 
-.python_container {
-    position: relative;
-    overflow: hidden;
-}
-
-img {
+.programming_language_icon {
     height: 200px;
     width: 200px;
     border-radius: 50%;
 }
 
-.caption {
-    color: red;
-}
-
-/*.python_container #python_icon_text {*/
-/*  position: absolute;*/
-/*  !*visibility: hidden;*!*/
-/*  z-index: 0;*/
-/*  bottom: 50%;*/
-/*  right: 50%;*/
-/*  transform: translate(50%, 50%);*/
-/*}*/
-
 .python_icon:hover{
     opacity: 0.3;
-}
-
-.python_container:hover .expanded_menu{
-    visibility: visible;
-    height: 200px;
-    background: whitesmoke;
 }
 
 .javascript_icon:hover{
@@ -106,12 +82,6 @@ img {
 
 .react_icon:hover{
     opacity: 0.3;
-}
-
-.social_container {
-    padding: 2rem;
-    /*background: aqua;*/
-    /*opacity: 20%;*/
 }
 
 /* mobile styling */
