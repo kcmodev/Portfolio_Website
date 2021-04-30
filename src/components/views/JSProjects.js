@@ -6,6 +6,22 @@ import {
 } from './text_variables';
 import { programming_language_icon } from '../styles/styling_variables';
 import '../styles/projects.css';
+import { specialChars } from '@testing-library/user-event';
+
+const symbol_list = [
+  '@',
+  '$',
+  '%',
+  '^',
+  '&',
+  '*',
+  '(',
+  ')',
+  '!',
+  '-',
+  '_',
+  '\\'
+];
 
 const JSProjects = () => {
   return (
@@ -20,21 +36,16 @@ const JSProjects = () => {
       </div>
 
       <div className="user_selections">
+        <h1 id="section_title">Select your desired special characters:</h1>
         <div className="special_characters">
-          <h1 id="section_title">Select your desired special characters:</h1>
           <div className="checkboxes">
-            <GenerateSymbolCheckboxes />
+            <GenerateSymbolCheckboxes value={1} />
           </div>
           <div className="checkboxes">
-            <GenerateAlphanumericCheckboxes />
-            <div className="custom_select container">
-              <label>
-                Number of characters:
-                <select>
-                  <GenerateLengthSelection />
-                </select>
-              </label>
-            </div>
+            <GenerateSymbolCheckboxes value={2} />
+          </div>
+          <div className="checkboxes">
+            <GenerateSymbolCheckboxes value={3} />
           </div>
         </div>
       </div>
@@ -46,49 +57,34 @@ const JSProjects = () => {
   );
 };
 
-function GenerateSymbolCheckboxes() {
-  const symbols = [
-    '@',
-    '$',
-    '%',
-    '^',
-    '&',
-    '*',
-    '(',
-    ')',
-    '!',
-    '-',
-    '_',
-    'all'
-  ];
+function ShowGeneratedPassword() {}
+
+function get_selected_characters() {
+  let selections = document.querySelectorAll('.checkboxes label');
+
+  selections.forEach((selection) => {
+    if (symbol_list.includes(selection.textContent)) {
+    }
+  });
+}
+
+function GenerateSymbolCheckboxes(prop) {
+  let symbols = [];
+
+  if (prop.value === 1) {
+    symbols = symbol_list.slice(0, 4);
+  } else if (prop.value === 2) {
+    symbols = symbol_list.slice(4, 8);
+  } else if (prop.value === 3) {
+    symbols = symbol_list.slice(8, 12);
+  }
+
   return symbols.map((symbol) => (
     <label className="container">
       {symbol}
       <input type="checkbox" />
       <span className="checkmark" />
     </label>
-  ));
-}
-
-function GenerateAlphanumericCheckboxes() {
-  const choices = ['Upper case letters (A-Z)', 'Lower case letters (a-z)'];
-  return choices.map((choice) => (
-    <label className="container">
-      {choice}
-      <input type="checkbox" />
-      <span className="checkmark" />
-    </label>
-  ));
-}
-
-function GenerateLengthSelection() {
-  let max_password_length = [];
-  for (let i = 12; i <= 25; i++) {
-    max_password_length.push(i);
-  }
-
-  return max_password_length.map((number) => (
-    <option value={number}>{number}</option>
   ));
 }
 

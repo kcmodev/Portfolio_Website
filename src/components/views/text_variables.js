@@ -9,7 +9,9 @@ export const javascript_projects_title_text =
   'The following application is a secure password generator. I have a passion for Cybersecurity and am always on ' +
   'the lookout for useful tools. Other password generation tools do exist. However, I was not satisfied with their ' +
   'implementation so I made my own. As you can see this provides a lot of granularity for selecting elements such ' +
-  'as which special characters you specifically want to include as well as the length of the password returned.';
+  'as which special characters you specifically want to include as well as the length of the password returned. These ' +
+  'options allow you to avoid the pitfalls of generating passwords with characters not accepted by the program it was ' +
+  'created to be used with.';
 
 export const python_logo_alt_text = 'python programming language logo';
 export const java_logo_alt_text = 'java programming language logo';

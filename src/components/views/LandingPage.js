@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import profile_picture from '../../profile_picture.jpg';
+import profile_picture from '../../images/profile_picture.jpg';
 import python_icon from '../../icons/python_logo.png';
 import javascript_icon from '../../icons/javascript_logo.png';
 import java_icon from '../../icons/java_logo.png';
@@ -27,13 +27,7 @@ import { programming_language_icon } from '../styles/styling_variables';
 const LandingPage = () => {
   return (
     <div className="landing_page">
-      <div className="profile_picture_container">
-        <img
-          className="profile_picture"
-          src={profile_picture}
-          alt={profile_picture_alt_text}
-        />
-      </div>
+      <ProfilePicture />
       <div className="section_containers">
         <div className="intro_container">
           <p id="introduction">{intro_paragraph_text}</p>
@@ -81,5 +75,17 @@ const LandingPage = () => {
     </div>
   );
 };
+
+export function ProfilePicture() {
+  return (
+    <div className="profile_picture_container">
+      <img
+        className="profile_picture"
+        src={profile_picture}
+        alt={profile_picture_alt_text}
+      />
+    </div>
+  );
+}
 
 export default LandingPage;
