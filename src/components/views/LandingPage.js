@@ -30,7 +30,7 @@ const LandingPage = () => {
       <ProfilePicture />
       <div className="section_containers">
         <div className="intro_container">
-          <p id="introduction">{intro_paragraph_text}</p>
+          <p id="section_text">{intro_paragraph_text}</p>
         </div>
 
         <div className="skills_container">
