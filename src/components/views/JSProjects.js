@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import javascript_icon from '../../icons/javascript_logo.png';
 import {
   javascript_projects_title_text,
@@ -7,20 +7,20 @@ import {
 import { programming_language_icon } from '../styles/styling_variables';
 import '../styles/projects.css';
 
-const symbol_list = [
-  '@',
-  '$',
-  '%',
-  '^',
-  '&',
-  '*',
-  '(',
-  ')',
-  '!',
-  '-',
-  '_',
-  '\\'
-];
+// const symbol_list = [
+//   '@',
+//   '$',
+//   '%',
+//   '^',
+//   '&',
+//   '*',
+//   '(',
+//   ')',
+//   '!',
+//   '-',
+//   '_',
+//   '#'
+// ];
 
 const JSProjects = () => {
   return (
@@ -36,80 +36,138 @@ const JSProjects = () => {
 
       <div className="user_selections">
         <h1 id="section_title">Select your desired special characters:</h1>
-        <div className="special_characters">
-          <div className="checkboxes">
-            <GenerateSymbolCheckboxes value={1} />
-          </div>
-          <div className="checkboxes">
-            <GenerateSymbolCheckboxes value={2} />
-          </div>
-          <div className="checkboxes">
-            <GenerateSymbolCheckboxes value={3} />
-          </div>
-        </div>
       </div>
-
-      <div className="password_output">
-        <p id="label_text">Generated Password:</p>
-        <p id="password_display_box">
-          <ShowGeneratedPassword />
-        </p>
-      </div>
+      <PasswordGenerator />
     </Fragment>
   );
 };
 
-function ShowGeneratedPassword() {
-  console.log(`generating password...`);
-  let selected_characters = get_selected_characters();
-  let password_length = 12;
-  let generated_password = 'password incoming';
-  console.log(`selected chars: ${selected_characters}`);
+const PasswordGenerator = () => {
+  const [password, set_new_password] = useState('sT2$-dv!m-d%$^');
 
-  if (selected_characters) {
+  function generate_password(e) {
+    console.log(`e: ${e.target}`);
+    generate_character_array();
+    const password_length = 14;
+    let temp_password = '';
+
+    console.log(`generating new password...`);
+
     for (let i = 0; i < password_length; i++) {
-      let newchar = (Math.floor(Math.random() * 137) + 100).toString();
-      // console.log(`newchar: ${typeof newchar}`);
-      generated_password.concat(newchar);
+      let new_char = Math.floor(Math.random() * 31) + 100;
+      // console.log(`char: ${String.fromCharCode(new_char)} code: ${new_char}`);
+
+      temp_password += String.fromCharCode(new_char);
     }
-  } else {
-    return 'Still need a password';
+
+    set_new_password((x) => (x = temp_password));
   }
 
-  console.log(`generated password = ${generated_password}`);
-  return generated_password;
-}
+  return (
+    <>
+      <div className="special_characters">
+        {/* first row */}
+        <div className="checkboxes">
+          <label className="container">
+            @
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+          <label className="container">
+            $
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+          <label className="container">
+            %
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+          <label className="container">
+            ^
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+        </div>
 
-function get_selected_characters() {
-  return document.querySelectorAll('.checkboxes label');
-}
+        {/* second row */}
+        <div className="checkboxes">
+          <label className="container">
+            &
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+          <label className="container">
+            *
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+          <label className="container">
+            (
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+          <label className="container">
+            )
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+        </div>
 
-function GenerateSymbolCheckboxes(prop) {
-  let symbols = [];
+        {/* third row */}
+        <div className="checkboxes">
+          <label className="container">
+            !
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+          <label className="container">
+            -
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+          <label className="container">
+            _
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+          <label className="container">
+            #
+            <input type="checkbox" />
+            <span className="checkmark" onClick={generate_password} />
+          </label>
+        </div>
+      </div>
+      <div className="password_output">
+        <p id="label_text">Generated Password:</p>
+        <p id="password_display_box">{password}</p>
+      </div>
+    </>
+  );
+};
 
-  if (prop.value === 1) {
-    symbols = symbol_list.slice(0, 4);
-  } else if (prop.value === 2) {
-    symbols = symbol_list.slice(4, 8);
-  } else if (prop.value === 3) {
-    symbols = symbol_list.slice(8, 12);
-  }
+function generate_character_array() {
+  let characters = [];
+  let special_characters = [];
+  let checkbox_selector = document.querySelectorAll('.container');
 
-  return symbols.map((symbol) => (
-    <label className="container" key={symbols.indexOf(symbol)}>
-      {symbol}
-      <input type="checkbox" />
-      <span className="checkmark" />
-    </label>
-  ));
-}
+  checkbox_selector.forEach((e) => {
+    let input = e.querySelector('input');
+    let character = e.textContent;
 
-let checkboxes = document.querySelectorAll('.checkbox');
-
-for (let i = 0; i < checkboxes.length; i++) {
-  checkboxes[i].addEventListener('click', () => {
-    ShowGeneratedPassword();
+    // console.log(`character: ${character} || checked?: ${input.checked}`);
+    if (input.checked) {
+      special_characters.push(character);
+    }
   });
+
+  // document
+  //   .querySelectorAll('label')
+  //   .forEach((x) => x.querySelector('.checkbox'));
+
+  console.log(
+    `chars selected: ${special_characters}, standard chars: ${characters}`
+  );
 }
 
 export default JSProjects;
