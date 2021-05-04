@@ -1,4 +1,4 @@
-import react_icon from '../../icons/react_logo.svg';
+import react_icon from '../icons/react_logo.svg';
 import { react_logo_alt_text } from './text_variables';
 import { Fragment } from 'react';
 import { programming_language_icon } from '../styles/styling_variables';

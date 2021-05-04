@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-import profile_picture from '../../images/profile_picture.jpg';
-import python_icon from '../../icons/python_logo.png';
-import javascript_icon from '../../icons/javascript_logo.png';
-import java_icon from '../../icons/java_logo.png';
-import react_icon from '../../icons/react_logo.svg';
+import profile_picture from '../images/profile_picture.jpg';
+import python_icon from '../icons/python_logo.png';
+import javascript_icon from '../icons/javascript_logo.png';
+import java_icon from '../icons/java_logo.png';
+import react_icon from '../icons/react_logo.svg';
 
 import {
   java_projects_route,

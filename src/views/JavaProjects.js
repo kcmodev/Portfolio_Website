@@ -1,4 +1,4 @@
-import java_icon from '../../icons/java_logo.png';
+import java_icon from '../icons/java_logo.png';
 import { java_logo_alt_text } from './text_variables';
 import { Fragment } from 'react';
 import { programming_language_icon } from '../styles/styling_variables';

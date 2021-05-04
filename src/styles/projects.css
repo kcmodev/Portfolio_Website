@@ -111,8 +111,9 @@ label.container {
 #password_display_box {
     color: whitesmoke;
     height: 50px;
-    width: 500px;
-    margin-right: 5px;
+    width: auto;
+    margin-left: 15px;
+    /*margin-right: 5px;*/
     border-radius: 10px;
     text-align: center;
     font-weight: bolder;

@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LandingPage from './components/views/LandingPage';
-import Routes from './components/routes/Routes';
+import LandingPage from './views/LandingPage';
+import Routes from './routes/Routes';
 import { Fragment } from 'react';
 
 function App() {
