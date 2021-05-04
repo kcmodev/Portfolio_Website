@@ -99,9 +99,30 @@ label.container {
     transform: rotate(45deg);
 }
 
+.slide_container {
+    display: flex;
+    justify-content: center;
+}
+
+.slider {
+    width: 30%;
+    margin-right: 10px;
+}
+
 .password_output {
     display: flex;
     justify-content: center;
+    /*align-content: center;*/
+}
+
+.clipboard_icon {
+    color: white;
+    margin-left: 45px;
+    margin-right: 25px;
+    transform: scale(1.5);
+    align-self: center;
+    padding-bottom: 15px;
+    cursor: pointer;
 }
 
 #label_text {
@@ -117,6 +138,27 @@ label.container {
     border-radius: 10px;
     text-align: center;
     font-weight: bolder;
+}
+
+@media screen and (max-width: 812px) {
+    .project_title_section {
+        flex-wrap: wrap;
+    }
+
+    .checkboxes .container {
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    label.container {
+        height: 30px;
+        width: 30px;
+        justify-content: center;
+    }
+
+    .password_output {
+        flex-wrap: wrap;
+    }
 }
 
 

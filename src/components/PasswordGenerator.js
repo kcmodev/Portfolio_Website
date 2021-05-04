@@ -1,39 +1,51 @@
 import React, { useState } from 'react';
 import { symbol_list } from '../styles/styling_variables';
+// import { FiClipboard } from 'react-icons/all';
 
 let selected_symbol_list = [];
 
 const PasswordGenerator = () => {
-  const [password, set_new_password] = useState('sT2$-dv!m-d%$^');
+  const [password, set_password] = useState('sT2$-dv!m-d%$^');
+  const [pass_length, set_pass_length] = useState(16);
 
-  function generate_password(passed_char) {
-    console.log(`passed char: ${passed_char}`);
+  // dynamically generate password based on length selected refreshing on change
+  const pass_length_updater = (length) => {
+    set_pass_length((e) => (e = length));
+    generate_password();
+  };
 
-    if (!selected_symbol_list.includes(passed_char)) {
-      selected_symbol_list.push(passed_char);
-      console.log(`char not present, new list: ${selected_symbol_list}`);
-    } else {
-      let char_index = selected_symbol_list.indexOf(passed_char);
-      selected_symbol_list.splice(char_index, 1);
-      console.log(
-        `char present and removed, new list: ${selected_symbol_list}`
-      );
+  function generate_password(passed_char = null) {
+    let temp_password = '';
+    let length_selected = parseInt(document.querySelector('.slider').value);
+
+    // set password length
+    set_pass_length(length_selected);
+
+    // if symbol not present add, else remove
+    if (passed_char != null) {
+      if (!selected_symbol_list.includes(passed_char)) {
+        selected_symbol_list.push(passed_char);
+      } else {
+        let char_index = selected_symbol_list.indexOf(passed_char);
+        selected_symbol_list.splice(char_index, 1);
+      }
     }
 
     let new_char_list = generate_character_array(selected_symbol_list);
-    const password_length = 14;
-    let temp_password = '';
-
-    console.log(`generating new password...`);
 
     // Pick chars from a random index of available choices in the array less than the specified length
-    for (let i = 0; i < password_length; i++) {
+    for (let i = 0; i < pass_length; i++) {
       // Select char form a random index in char list
       let random_char_index = Math.floor(Math.random() * new_char_list.length);
-      temp_password += new_char_list[random_char_index];
+      let char_to_add = new_char_list[random_char_index];
+
+      temp_password += char_to_add;
+
+      // remove used character from list to avoid duplicates
+      new_char_list.splice(new_char_list.indexOf(char_to_add), 1);
     }
 
-    set_new_password((x) => (x = temp_password));
+    set_password((e) => (e = temp_password));
   }
 
   return (
@@ -170,10 +182,36 @@ const PasswordGenerator = () => {
             />
           </label>
         </div>
+        <div className="slide_container">
+          <input
+            type="range"
+            min="10"
+            max="30"
+            defaultValue="16"
+            className="slider"
+            name="password_length"
+            onChange={() =>
+              pass_length_updater(
+                parseInt(document.querySelector('.slider').value)
+              )
+            }
+          />
+          <h2 id="label_text">{pass_length}</h2>
+        </div>
       </div>
       <div className="password_output">
         <h2 id="label_text">Generated Password:</h2>
         <h2 id="password_display_box">{password}</h2>
+        {/*{document.queryCommandSupported('copy') && (*/}
+        {/*  <FiClipboard*/}
+        {/*    className="clipboard_icon"*/}
+        {/*    onClick={() => {*/}
+        {/*      navigator.clipboard*/}
+        {/*        .writeText(password)*/}
+        {/*        .then(() => console.log(`password copied to clipboard`));*/}
+        {/*    }}*/}
+        {/*  />*/}
+        {/*)}*/}
       </div>
     </>
   );

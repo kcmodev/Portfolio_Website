@@ -5,12 +5,13 @@ import {
   js_logo_alt_text
 } from './text_variables';
 import PasswordGenerator from '../components/PasswordGenerator';
+import SkillDisplay from '../components/SkillDisplay';
 import { programming_language_icon } from '../styles/styling_variables';
 import '../styles/projects.css';
 
 const JSProjects = () => {
   return (
-    <Fragment>
+    <>
       <div className="project_title_section">
         <img
           className={programming_language_icon}
@@ -24,7 +25,10 @@ const JSProjects = () => {
         <h1 id="section_title">Select acceptable special characters:</h1>
       </div>
       <PasswordGenerator />
-    </Fragment>
+
+      <p id="section_text">This app uses the following technologies:</p>
+      <SkillDisplay props={{ javascript: true, react: true }} />
+    </>
   );
 };
 

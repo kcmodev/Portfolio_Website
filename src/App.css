@@ -55,10 +55,12 @@ body {
 
 .skills_container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
+    justify-content: center;
     position: relative;
+}
+
+.skills_container > * {
+    padding: 10px;
 }
 
 .programming_language_icon {
@@ -90,6 +92,10 @@ body {
     html {
         /*background-size: 100%;*/
         /*width: 100%;*/
+    }
+
+    .skills_container {
+        flex-wrap: wrap;
     }
 
     .profile_picture {
