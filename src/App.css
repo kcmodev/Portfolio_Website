@@ -7,7 +7,8 @@
 
 html {
     /* Photo by Arnold Francisca - Unsplash */
-    background: url(images/laptopBackgroundImage.jpg) no-repeat center center fixed;
+    /*background: url(images/laptopBackgroundImage.jpg) no-repeat center center fixed;*/
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(images/laptopBackgroundImage.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -23,6 +24,11 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+    max-width: 960px;
+    line-height: 1.5;
 }
 
 .content_container {
