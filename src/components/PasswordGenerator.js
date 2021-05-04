@@ -3,6 +3,9 @@ import { symbol_list } from '../styles/styling_variables';
 // import { FiClipboard } from 'react-icons/all';
 
 let selected_symbol_list = [];
+const max_pass_length = 24;
+const min_pass_length = 10;
+const slider_start_value = 16;
 
 const PasswordGenerator = () => {
   const [password, set_password] = useState('sT2$-dv!m-d%$^');
@@ -183,11 +186,12 @@ const PasswordGenerator = () => {
           </label>
         </div>
         <div className="slide_container">
+          <h2 id="label_text">Password length: </h2>
           <input
             type="range"
-            min="10"
-            max="30"
-            defaultValue="16"
+            min={min_pass_length}
+            max={max_pass_length}
+            defaultValue={slider_start_value}
             className="slider"
             name="password_length"
             onChange={() =>

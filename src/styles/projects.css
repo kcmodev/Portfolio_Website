@@ -107,12 +107,12 @@ label.container {
 .slider {
     width: 30%;
     margin-right: 10px;
+    margin-left: 10px
 }
 
 .password_output {
     display: flex;
     justify-content: center;
-    /*align-content: center;*/
 }
 
 .clipboard_icon {
@@ -130,7 +130,7 @@ label.container {
 }
 
 #password_display_box {
-    color: whitesmoke;
+    color: var(--white-text);
     height: 50px;
     width: auto;
     margin-left: 15px;

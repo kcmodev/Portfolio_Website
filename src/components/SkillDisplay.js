@@ -19,11 +19,16 @@ import java_icon from '../icons/java_logo.png';
 import react_icon from '../icons/react_logo.svg';
 
 const SkillDisplay = (values = false) => {
-  let { python, javascript, java, react } = values.props;
+  let { python, javascript, java, react, description } = values.props;
 
   // conditionally display skills logos
   return (
     <>
+      {description && (
+        <p id="section_text">
+          This app uses the following frameworks/technologies:
+        </p>
+      )}
       <div className="skills_container">
         {python && (
           <div className="python_container">
