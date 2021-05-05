@@ -1,21 +1,30 @@
 import React from 'react';
-import { javascript_projects_title_text } from './text_variables';
 import PasswordGenerator from '../components/PasswordGenerator';
 import SkillDisplay from '../components/SkillDisplay';
-import '../styles/projects.css';
+import Navbar from '../components/Navbar';
+import Copyright from '../components/Copyright';
+
+const javascript_projects_description_text =
+  'The following application is a secure password generator. I have a passion for Cybersecurity and am always on ' +
+  'the lookout for useful tools. Other password generation tools do exist. However, I was not satisfied with their ' +
+  'implementation so I made my own. As you can see this implementation provides a lot of granularity for selecting elements such ' +
+  'as which special characters you specifically allow to include as well as the length of the password returned. These ' +
+  'options allow you to avoid the pitfalls of generating passwords with characters not accepted by the program it was ' +
+  'created to be used with.';
 
 const JSProjects = () => {
   document.title = 'JavaScript';
   return (
     <>
-      <div className="content_container">
+      <Navbar />
+      <div className="content_container mobile_flex_wrap">
         <h1 id="page_title_text">Secure Password Generator</h1>
       </div>
-      <div className="project_title_section">
-        <p id="section_text">{javascript_projects_title_text}</p>
+      <div className="content_container">
+        <p id="section_text">{javascript_projects_description_text}</p>
       </div>
 
-      <div className="user_selections">
+      <div className="content_container mobile_flex_wrap mt-50">
         <h1 id="section_title_text">Select acceptable special characters:</h1>
       </div>
       <PasswordGenerator />
@@ -28,6 +37,7 @@ const JSProjects = () => {
           description: true
         }}
       />
+      <Copyright />
     </>
   );
 };

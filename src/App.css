@@ -1,13 +1,14 @@
 :root {
     --white-text: #f5f5f5;
     --page_title_font_size: 40px;
+    --section-title-font-size: 35px;
+    --section-text-font-size: 25px;
     --icon-hover-opacity: 0.5;
     --icon-hover-transition: opacity 0.2s ease;
 }
 
 html {
     /* Photo by Arnold Francisca - Unsplash */
-    /*background: url(images/laptopBackgroundImage.jpg) no-repeat center center fixed;*/
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(images/laptopBackgroundImage.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -25,16 +26,42 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+a {
+    text-decoration: none;
+}
 
 p {
     max-width: 960px;
     line-height: 1.5;
+    color: var(--white-text);
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0.7;
+}
+
+.navbar #link_text,
+.navbar h1{
+    color: var(--white-text);
+    margin-top: 0;
+    margin-right: 15px;
+}
+
+.navbar_icon {
+    transform: scale(1.25);
 }
 
 .content_container {
     display: flex;
     justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
 
+.wrap-content {
+    flex-wrap: wrap;
 }
 
 #page_title_text {
@@ -44,46 +71,27 @@ p {
 
 #section_title_text {
     color: var(--white-text);
+    font-size: var(--section-title-font-size);
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 #section_text {
     color: var(--white-text);
-    font-size: 24px;
+    font-size: var(--section-text-font-size);
     text-align: center;
     padding: 1rem;
     margin: auto;
     width: 75%;
 }
 
-.profile_picture_container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 2rem;
-    justify-content: center;
-}
-
 .profile_picture {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    height: 20%;
-    border-radius: 40%;
+    width: 220px;
+    height: 250px;
+    border-radius: 100%;
 }
 
-.intro_container {
-    padding: 2rem;
-}
-
-.skills_container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.skills_container > * {
+.padding_10 {
     padding: 10px;
 }
 
@@ -98,23 +106,171 @@ p {
     transition: var(--icon-hover-transition);
 }
 
+.project_title_section {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+label.container {
+    height: 56px;
+    width: 56px;
+}
+
+.checkboxes_col {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+.mt-50 {
+    margin-top: 50px;
+}
+
+/* Customize the label (the container) */
+.container {
+    display: flex;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    color: whitesmoke;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* Hide the browser's default select box */
+.container select {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.slide_container {
+    display: flex;
+    justify-content: center;
+}
+
+.slider {
+    width: 30%;
+    margin-right: 10px;
+    margin-left: 10px
+}
+
+.password_output {
+    display: flex;
+    justify-content: center;
+}
+
+.clipboard_icon {
+    color: var(--white-text);
+    margin-left: 45px;
+    margin-right: 25px;
+    transform: scale(1.5);
+    align-self: center;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+#label_text {
+    color: whitesmoke;
+}
+
+#password_display_box {
+    color: var(--white-text);
+    height: 50px;
+    width: auto;
+    margin-left: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bolder;
+}
+
 /* mobile styling */
 @media screen and (max-width: 812px) {
-
-    html {
-        /*background-size: 100%;*/
-        /*width: 100%;*/
+    p {
+        font-size: 16px;
+        opacity: 75%;
+        width: 90%;
+        margin-top: 15px;
     }
 
-    .page_title{
-        flex-wrap: wrap;
+    .navbar_icon {
+        transform: scale(2);
     }
 
-    .skills_container {
-        flex-wrap: wrap;
+    nav p {
+        font-size: 20px;
     }
 
     .profile_picture {
+        transform: scale(0.75);
+    }
+
+    #skill_icon_group {
+        flex-wrap: wrap;
     }
 
     img {
@@ -126,17 +282,38 @@ p {
         padding: 0;
     }
 
-    .landing_page {
+    #section_text,
+    #section_title_text,
+    #page_title_text{
+        margin: 0;
         padding: 0;
+        width: 95%;
+        text-align: center;
     }
 
-    p {
-        /*background: lightcoral;*/
-        font-size: 16px;
-        opacity: 75%;
-        width: 50%;
-        margin-left: 1rem;
-        margin-right: 1rem;
+    #special_characters {
+        margin-top: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mobile_flex_wrap {
+        flex-wrap: wrap;
+    }
+
+    .slide_container {
+        flex-wrap: wrap;
+        max-width: 90%;
+    }
+
+    label.container {
+        height: 30px;
+        width: 30px;
+        justify-content: center;
+    }
+
+    .password_output {
+        flex-wrap: wrap;
     }
 }
 

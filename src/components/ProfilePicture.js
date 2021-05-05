@@ -1,10 +1,11 @@
 import React from 'react';
 import profile_picture from '../images/profile_picture.jpg';
-import { profile_picture_alt_text } from '../views/text_variables';
+
+const profile_picture_alt_text = 'website author profile picture';
 
 const ProfilePicture = () => {
   return (
-    <div className="profile_picture_container">
+    <div className="content_container">
       <img
         className="profile_picture"
         src={profile_picture}

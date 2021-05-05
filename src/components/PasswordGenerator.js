@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-// import { FiClipboard } from 'react-icons/all';
 
 let selected_symbol_list = [];
 const max_pass_length = 24;
 const min_pass_length = 10;
-const slider_start_value = 16;
+const slider_start_value = 21;
 
 export const symbol_list = [
   '@', // 0
@@ -23,7 +22,7 @@ export const symbol_list = [
 
 const PasswordGenerator = () => {
   const [password, set_password] = useState('sT2$-dv!m-d%$^');
-  const [pass_length, set_pass_length] = useState(16);
+  const [pass_length, set_pass_length] = useState(slider_start_value);
 
   // dynamically generate password based on length selected refreshing on change
   const pass_length_updater = (length) => {
@@ -67,9 +66,9 @@ const PasswordGenerator = () => {
 
   return (
     <>
-      <div className="special_characters">
+      <div className="content_container" id="special_characters">
         {/* first row */}
-        <div className="checkboxes">
+        <div className="checkboxes_col">
           <label className="container">
             {symbol_list[0]} {/* @ */}
             <input type="checkbox" />
@@ -81,7 +80,7 @@ const PasswordGenerator = () => {
             />
           </label>
           <label className="container">
-            {symbol_list[1]} {/*$*/}
+            {symbol_list[1]} {/* $ */}
             <input type="checkbox" />
             <span
               className="checkmark"
@@ -91,7 +90,7 @@ const PasswordGenerator = () => {
             />
           </label>
           <label className="container">
-            {symbol_list[2]} {/*%*/}
+            {symbol_list[2]} {/* % */}
             <input type="checkbox" />
             <span
               className="checkmark"
@@ -101,7 +100,7 @@ const PasswordGenerator = () => {
             />
           </label>
           <label className="container">
-            {symbol_list[3]} {/*^*/}
+            {symbol_list[3]} {/* ^ */}
             <input type="checkbox" />
             <span
               className="checkmark"
@@ -113,7 +112,7 @@ const PasswordGenerator = () => {
         </div>
 
         {/* second row */}
-        <div className="checkboxes">
+        <div className="checkboxes_col">
           <label className="container">
             {symbol_list[4]} {/*&*/}
             <input type="checkbox" />
@@ -157,7 +156,7 @@ const PasswordGenerator = () => {
         </div>
 
         {/* third row */}
-        <div className="checkboxes">
+        <div className="checkboxes_col">
           <label className="container">
             {symbol_list[8]} {/* ! */}
             <input type="checkbox" />
@@ -199,37 +198,28 @@ const PasswordGenerator = () => {
             />
           </label>
         </div>
-        <div className="slide_container">
-          <h2 id="label_text">Password length: </h2>
-          <input
-            type="range"
-            min={min_pass_length}
-            max={max_pass_length}
-            defaultValue={slider_start_value}
-            className="slider"
-            name="password_length"
-            onChange={() =>
-              pass_length_updater(
-                parseInt(document.querySelector('.slider').value)
-              )
-            }
-          />
-          <h2 id="label_text">{pass_length}</h2>
-        </div>
       </div>
-      <div className="password_output">
+      {/* password length slider*/}
+      <div className="content_container">
+        <h2 id="label_text">Password length: </h2>
+        <input
+          type="range"
+          min={min_pass_length}
+          max={max_pass_length}
+          defaultValue={slider_start_value}
+          className="slider"
+          name="password_length"
+          onChange={() =>
+            pass_length_updater(
+              parseInt(document.querySelector('.slider').value)
+            )
+          }
+        />
+        <h2 id="label_text">{pass_length}</h2>
+      </div>
+      <div className="content_container mobile_flex_wrap">
         <h2 id="label_text">Generated Password:</h2>
         <h2 id="password_display_box">{password}</h2>
-        {/*{document.queryCommandSupported('copy') && (*/}
-        {/*  <FiClipboard*/}
-        {/*    className="clipboard_icon"*/}
-        {/*    onClick={() => {*/}
-        {/*      navigator.clipboard*/}
-        {/*        .writeText(password)*/}
-        {/*        .then(() => console.log(`password copied to clipboard`));*/}
-        {/*    }}*/}
-        {/*  />*/}
-        {/*)}*/}
       </div>
     </>
   );
