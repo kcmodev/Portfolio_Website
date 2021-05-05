@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import ProfilePicture from '../components/ProfilePicture';
 import Copyright from '../components/Copyright';
+import SkillDisplay from '../components/SkillDisplay';
 
 const about_me_text_1 =
   'I have been obsessed with computers, and technology in general, for ' +
@@ -30,6 +31,14 @@ const AboutPage = () => {
       </div>
       <div className="content_container">
         <p id="section_text">{about_me_text_2}</p>
+      </div>
+      <div className="content_container">
+        <SkillDisplay
+          props={{ python: true, java: true, javascript: true, node: true }}
+        />
+      </div>
+      <div className="content_container">
+        <SkillDisplay props={{ react: true, html: true, css: true }} />
       </div>
       <Copyright />
     </>

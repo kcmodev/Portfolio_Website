@@ -14,6 +14,7 @@ import java_icon from '../icons/java_logo.png';
 import react_icon from '../icons/react_logo.svg';
 import html_icon from '../icons/html_logo.png';
 import css_icon from '../icons/css_logo.svg';
+import node_js_icon from '../icons/node_js_logo.png';
 
 const programming_language_image_container_class =
   'programming_language_img_container padding_10';
@@ -25,8 +26,10 @@ const js_logo_alt_text = 'javascript programming language logo';
 const react_logo_alt_text = 'react framework logo';
 const html_logo_alt_text = 'html 5 logo';
 const css_logo_alt_text = 'css 3 logo';
+const node_js_logo_alt_text = 'node js logo';
 
 const SkillDisplay = (values = false) => {
+  // destructure values
   let {
     python,
     javascript,
@@ -34,7 +37,8 @@ const SkillDisplay = (values = false) => {
     react,
     description,
     css,
-    html
+    html,
+    node
   } = values.props;
 
   // conditionally display skills logos
@@ -105,6 +109,15 @@ const SkillDisplay = (values = false) => {
               className={programming_language_icon_class}
               src={css_icon}
               alt={css_logo_alt_text}
+            />
+          </div>
+        )}
+        {node && (
+          <div className={programming_language_image_container_class}>
+            <img
+              className={programming_language_icon_class}
+              src={node_js_icon}
+              alt={node_js_logo_alt_text}
             />
           </div>
         )}
