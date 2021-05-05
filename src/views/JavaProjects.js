@@ -1,18 +1,13 @@
-import java_icon from '../icons/java_logo.png';
-import { java_logo_alt_text } from './text_variables';
-import { Fragment } from 'react';
-import { programming_language_icon } from '../styles/styling_variables';
+import SkillDisplay from '../components/SkillDisplay';
 
 const JavaProjects = () => {
   return (
-    <Fragment>
-      <p>Java Projects Page</p>
-      <img
-        className={programming_language_icon}
-        src={java_icon}
-        alt={java_logo_alt_text}
-      />
-    </Fragment>
+    <>
+      <div className="content_container">
+        <h1 id="page_title_text">Machine Learning Application</h1>
+      </div>
+      <SkillDisplay props={{ java: true, description: true }} />
+    </>
   );
 };
 

@@ -93,11 +93,7 @@ p {
     border-radius: 50%;
 }
 
-.python_container:hover,
-.javascript_container:hover,
-.java_container:hover,
-.react_container:hover
-{
+.programming_language_img_container:hover {
     opacity: var(--icon-hover-opacity);
     transition: var(--icon-hover-transition);
 }

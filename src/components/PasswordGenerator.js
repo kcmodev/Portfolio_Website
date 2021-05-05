@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
-import { symbol_list } from '../styles/styling_variables';
 // import { FiClipboard } from 'react-icons/all';
 
 let selected_symbol_list = [];
 const max_pass_length = 24;
 const min_pass_length = 10;
 const slider_start_value = 16;
+
+export const symbol_list = [
+  '@', // 0
+  '$', // 1
+  '%', // 2
+  '^', // 3
+  '&', // 4
+  '*', // 5
+  '(', // 6
+  ')', // 7
+  '!', // 8
+  '-', // 9
+  '_', // 10
+  '#' // 11
+];
 
 const PasswordGenerator = () => {
   const [password, set_password] = useState('sT2$-dv!m-d%$^');

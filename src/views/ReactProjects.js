@@ -1,18 +1,21 @@
-import react_icon from '../icons/react_logo.svg';
-import { react_logo_alt_text } from './text_variables';
-import { Fragment } from 'react';
-import { programming_language_icon } from '../styles/styling_variables';
+import SkillDisplay from '../components/SkillDisplay';
 
 const ReactProjects = () => {
   return (
-    <Fragment>
-      <p>React Projects Page</p>
-      <img
-        className={programming_language_icon}
-        src={react_icon}
-        alt={react_logo_alt_text}
+    <>
+      <div className="content_container">
+        <h1 id="page_title_text">React Projects</h1>
+      </div>
+      <SkillDisplay
+        props={{
+          javascript: true,
+          react: true,
+          html: true,
+          css: true,
+          description: true
+        }}
       />
-    </Fragment>
+    </>
   );
 };
 

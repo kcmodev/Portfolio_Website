@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { javascript_projects_title_text } from './text_variables';
 import PasswordGenerator from '../components/PasswordGenerator';
 import SkillDisplay from '../components/SkillDisplay';
 import '../styles/projects.css';
 
 const JSProjects = () => {
+  document.title = 'JavaScript';
   return (
     <>
       <div className="content_container">
@@ -19,7 +20,13 @@ const JSProjects = () => {
       </div>
       <PasswordGenerator />
       <SkillDisplay
-        props={{ javascript: true, react: true, description: true }}
+        props={{
+          javascript: true,
+          react: true,
+          html: true,
+          css: true,
+          description: true
+        }}
       />
     </>
   );

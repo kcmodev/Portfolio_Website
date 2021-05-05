@@ -17,4 +17,7 @@ export const python_logo_alt_text = 'python programming language logo';
 export const java_logo_alt_text = 'java programming language logo';
 export const js_logo_alt_text = 'javascript programming language logo';
 export const react_logo_alt_text = 'react framework logo';
+export const html_logo_alt_text = 'html 5 logo';
+export const css_logo_alt_text = 'css 3 logo';
+
 export const profile_picture_alt_text = 'website author profile picture';
