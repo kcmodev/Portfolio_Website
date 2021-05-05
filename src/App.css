@@ -3,6 +3,7 @@
     --page_title_font_size: 40px;
     --section-title-font-size: 35px;
     --section-text-font-size: 25px;
+    --label-font-size: 20px;
     --icon-hover-opacity: 0.5;
     --icon-hover-transition: opacity 0.2s ease;
 }
@@ -60,10 +61,6 @@ p {
     margin-top: 20px;
 }
 
-.wrap-content {
-    flex-wrap: wrap;
-}
-
 #page_title_text {
     color: var(--white-text);
     font-size: var(--page_title_font_size);
@@ -83,6 +80,13 @@ p {
     padding: 1rem;
     margin: auto;
     width: 75%;
+}
+
+#label_text {
+    font-size: var(--label-font-size);
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .profile_picture {
@@ -119,8 +123,8 @@ label.container {
 }
 
 .checkboxes_col {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .text-center {
@@ -234,9 +238,9 @@ label.container {
     cursor: pointer;
 }
 
-#label_text {
-    color: whitesmoke;
-}
+/*#label_text {*/
+/*    color: var(--white-text);*/
+/*}*/
 
 #password_display_box {
     color: var(--white-text);

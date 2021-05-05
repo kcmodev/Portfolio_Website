@@ -13,10 +13,11 @@ const about_me_text_1 =
 
 const about_me_text_2 =
   'I enjoy full stack development but if I had to choose between front or back end ' +
-  "it's an easy choice for me; back end. I am also passionate about Cybersecurity spend a " +
+  "it's an easy choice for me; back end. I have always enjoyed working on the stuff under the hood (network routing, automation etc) " +
+  'so I really enjoy working with things like Node.js and MongoDB as well. I am also passionate about Cybersecurity spend a ' +
   'considerable amount of time ensuring my applications are secure. I am an open book, if ' +
-  "you have any questions or inquiries for a bid on development work please don't hesitate " +
-  'to reach out.';
+  "you have any questions or inquiries for a bid on development work or a potential job opportunity please don't hesitate " +
+  'to reach out. Thanks for coming by.';
 
 const AboutPage = () => {
   document.title = 'AboutPage';

@@ -200,8 +200,8 @@ const PasswordGenerator = () => {
         </div>
       </div>
       {/* password length slider*/}
-      <div className="content_container">
-        <h2 id="label_text">Password length: </h2>
+      <div className="content_container mobile_flex_wrap">
+        <p id="label_text">Password length: </p>
         <input
           type="range"
           min={min_pass_length}
@@ -215,11 +215,11 @@ const PasswordGenerator = () => {
             )
           }
         />
-        <h2 id="label_text">{pass_length}</h2>
+        <p id="label_text">{pass_length}</p>
       </div>
       <div className="content_container mobile_flex_wrap">
-        <h2 id="label_text">Generated Password:</h2>
-        <h2 id="password_display_box">{password}</h2>
+        <p id="label_text">Generated Password:</p>
+        <p id="label_text">{password}</p>
       </div>
     </>
   );
