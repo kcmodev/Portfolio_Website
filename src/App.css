@@ -64,6 +64,7 @@ p {
 #page_title_text {
     color: var(--white-text);
     font-size: var(--page_title_font_size);
+    font-weight: bold;
 }
 
 #section_title_text {
