@@ -57,21 +57,21 @@ const GithubRequest = (values) => {
             <>
                 {repos.map((item) => {
                     let repo_name = item.name;
-                    // let repo_owner_username = item.owner.login;
-                    // let repo_url = item.html_url;
-                    // let repo_languages = item.languages_url;
+                    let repo_owner_username = item.owner.login;
+                    let repo_url = item.html_url;
+                    let repo_languages = item.languages_url;
 
                     if (repo_list.includes(repo_name)) {
                         return (
                             <>
-                                {/*<p id="section_text">title: {repo_name}</p>*/}
-                                {/*<p id="section_text">url: {repo_url}</p>*/}
-                                {/*<p id="section_text">*/}
-                                {/*    user: {repo_owner_username}*/}
-                                {/*</p>*/}
-                                {/*<p id="section_text">*/}
-                                {/*    languages: {repo_languages}*/}
-                                {/*</p>*/}
+                                <p id="section_text">title: {repo_name}</p>
+                                <p id="section_text">url: {repo_url}</p>
+                                <p id="section_text">
+                                    user: {repo_owner_username}
+                                </p>
+                                <p id="section_text">
+                                    languages: {repo_languages}
+                                </p>
                             </>
                         );
                     }

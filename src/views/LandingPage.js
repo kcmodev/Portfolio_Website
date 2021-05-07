@@ -2,7 +2,7 @@ import SkillDisplay from '../components/SkillDisplay';
 import ProfilePicture from '../components/ProfilePicture';
 import Navbar from '../components/Navbar';
 import Copyright from '../components/Copyright';
-import GithubRepos from '../components/GithubRepos';
+// import GithubRepos from '../components/GithubRepos';
 
 export const intro_paragraph_text =
     'Hello! My name is Steve and I am a Full Stack Software Developer. ' +
@@ -23,11 +23,10 @@ const LandingPage = () => {
                 props={{
                     python: true,
                     javascript: true,
-                    java: true,
                     react: true
                 }}
             />
-            <GithubRepos />
+            {/*<GithubRepos />*/}
             <Copyright />
         </>
     );

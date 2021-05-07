@@ -29,11 +29,18 @@ body {
 }
 a {
     text-decoration: none;
+    color: cornflowerblue;
 }
+
+/*a:visited, a:active {*/
+/*    text-decoration:  none;*/
+/*    color: cornflowerblue;*/
+/*}*/
 
 p {
     max-width: 960px;
     line-height: 1.5;
+    text-align: center;
     color: var(--white-text);
 }
 
@@ -135,6 +142,15 @@ label.container {
     margin-top: 50px;
 }
 
+#ml_vitals_img {
+    /*height: 200px*/
+    transform: scale(0.75);
+}
+
+#ml_login_img {
+    transform: scale(0.75);
+}
+
 /* Customize the label (the container) */
 .container {
     display: flex;
@@ -170,13 +186,13 @@ label.container {
 }
 
 /* Hide the browser's default select box */
-.container select {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
+/*.container select {*/
+/*    position: absolute;*/
+/*    opacity: 0;*/
+/*    cursor: pointer;*/
+/*    height: 0;*/
+/*    width: 0;*/
+/*}*/
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
@@ -213,53 +229,66 @@ label.container {
     transform: rotate(45deg);
 }
 
-.slide_container {
-    display: flex;
-    justify-content: center;
-}
-
 .slider {
     width: 30%;
     margin-right: 10px;
     margin-left: 10px
 }
 
-.password_output {
-    display: flex;
-    justify-content: center;
+iframe {
+    width: 95%;
+    height: 700px;
 }
 
-.clipboard_icon {
-    color: var(--white-text);
-    margin-left: 45px;
-    margin-right: 25px;
-    transform: scale(1.5);
-    align-self: center;
-    padding-bottom: 15px;
-    cursor: pointer;
-}
-
-/*#label_text {*/
-/*    color: var(--white-text);*/
+/*input[type="range"] {*/
+/*    -webkit-appearance: none;*/
 /*}*/
 
-#password_display_box {
-    color: var(--white-text);
-    height: 50px;
-    width: auto;
-    margin-left: 15px;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bolder;
-}
+/*input[type="range"]:focus {*/
+/*    outline: none;*/
+/*}*/
+
+/*input[type="range"]::-webkit-slider-runnable-track {*/
+/*    background: tomato;*/
+/*    height: 5px;*/
+/*}*/
+
+/*input[type="range"]::-moz-range-track {*/
+/*    background: tomato;*/
+/*    height: 5px;*/
+/*}*/
+
+/*input[type="range"]::-webkit-slider-thumb {*/
+/*    -webkit-appearance: none;*/
+/*    height: 15px;*/
+/*    width: 15px;*/
+/*    background: pink;*/
+/*    margin-top: -5px;*/
+/*    border-radius: 50%;*/
+/*}*/
+
+/*input[type="range"]::-moz-range-thumb {*/
+/*    height: 15px;*/
+/*    width: 15px;*/
+/*    background: pink;*/
+/*    margin-top: -5px;*/
+/*    border-radius: 50%;*/
+/*}*/
 
 /* mobile styling */
 @media screen and (max-width: 812px) {
+    :root {
+        --page_title_font_size: 40px;
+        --section-title-font-size: 35px;
+        --section-text-font-size: 16px;
+        --label-font-size: 20px;
+    }
+
     p {
-        font-size: 16px;
-        opacity: 75%;
+        /*font-size: 16px;*/
+        /*opacity: 75%;*/
         width: 90%;
-        margin-top: 15px;
+        /*margin-top: 15px;*/
     }
 
     .navbar_icon {
