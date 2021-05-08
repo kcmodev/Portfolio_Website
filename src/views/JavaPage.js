@@ -6,7 +6,7 @@ const java_project_description_1 =
   'time of upcoming appointments. The primary language used in development is Java with Scenebuilder used for ' +
   'designing the front end. It is a standalone desktop application that also uses MySQL in the backend for data persistence.';
 
-const JavaProjects = () => {
+const JavaPage = () => {
   document.title = 'Java';
   return (
     <>
@@ -24,4 +24,4 @@ const JavaProjects = () => {
   );
 };
 
-export default JavaProjects;
+export default JavaPage;

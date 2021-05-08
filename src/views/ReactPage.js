@@ -1,7 +1,8 @@
 import SkillDisplay from '../components/SkillDisplay';
 import Navbar from '../components/Navbar';
 
-const ReactProjects = () => {
+const ReactPage = () => {
+  document.title = 'React';
   return (
     <>
       <Navbar />
@@ -21,4 +22,4 @@ const ReactProjects = () => {
   );
 };
 
-export default ReactProjects;
+export default ReactPage;

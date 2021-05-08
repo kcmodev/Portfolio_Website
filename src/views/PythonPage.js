@@ -34,7 +34,8 @@ const description_text_5 =
   'Upon completion of those steps the user is redirected to a results screen where they ' +
   'can view their risk approximation determined the the machine learning algorithm.';
 
-const PythonProjects = () => {
+const PythonPage = () => {
+  document.title = 'Python';
   return (
     <>
       <Navbar />
@@ -110,4 +111,4 @@ const PythonProjects = () => {
   );
 };
 
-export default PythonProjects;
+export default PythonPage;

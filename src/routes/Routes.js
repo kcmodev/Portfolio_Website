@@ -6,10 +6,10 @@ import {
   react_projects_route,
   about_me_route
 } from './route_names';
-import Password_Generator_Page from '../views/PasswordGeneratorPage';
-import Java_Projects_Page from '../views/JavaProjects';
-import Python_Projects_Page from '../views/PythonProjects';
-import React_Projects_Page from '../views/ReactProjects';
+import Password_Generator_Page from '../views/JavascriptPage';
+import Java_Projects_Page from '../views/JavaPage';
+import Python_Projects_Page from '../views/PythonPage';
+import React_Projects_Page from '../views/ReactPage';
 import AboutPage from '../views/AboutPage';
 
 const Routes = () => {
