@@ -11,13 +11,13 @@ const JavaPage = () => {
   return (
     <>
       <Navbar />
-      <div className="content_container mobile_flex_wrap">
+      <section className={'container text-center'}>
         <p id="page_title_text">Appointment Management Application</p>
-      </div>
+      </section>
 
-      <div className="content_container">
-        <p id="section_text">{java_project_description_1}</p>
-      </div>
+      {/*<div className="content_container">*/}
+      {/*  <p id="section_text">{java_project_description_1}</p>*/}
+      {/*</div>*/}
 
       <SkillDisplay props={{ java: true, description: true }} />
     </>

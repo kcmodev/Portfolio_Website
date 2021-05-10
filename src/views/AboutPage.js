@@ -25,21 +25,26 @@ const AboutPage = () => {
   return (
     <>
       <Navbar />
-      <ProfilePicture />
-      <div className="content_container">
-        <p id="section_text">{about_me_text_1}</p>
-      </div>
-      <div className="content_container">
-        <p id="section_text">{about_me_text_2}</p>
-      </div>
-      <div className="content_container">
+
+      <section className={'container flex center-flex'}>
+        <ProfilePicture />
+      </section>
+
+      <section className={'container text-center'}>
+        <p>{about_me_text_1}</p>
+      </section>
+
+      <section className={'container text-center'}>
+        <p>{about_me_text_2}</p>
+      </section>
+
+      <section>
         <SkillDisplay
           props={{ python: true, java: true, javascript: true, node: true }}
         />
-      </div>
-      <div className="content_container">
         <SkillDisplay props={{ react: true, html: true, css: true }} />
-      </div>
+      </section>
+
       <Copyright />
     </>
   );

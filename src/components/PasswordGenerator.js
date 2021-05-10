@@ -21,7 +21,7 @@ export const symbol_list = [
 ];
 
 const PasswordGenerator = () => {
-  const [password, set_password] = useState('sT2$-dv!m-d%$^');
+  const [password, set_password] = useState('yfqHQJXFGkoiZRhBUTtr');
   const [pass_length, set_pass_length] = useState(slider_start_value);
 
   // dynamically generate password based on length selected refreshing on change
@@ -66,10 +66,10 @@ const PasswordGenerator = () => {
 
   return (
     <>
-      <div className="content_container" id="special_characters">
+      <div className={'container flex center-flex'}>
         {/* first row */}
-        <div className="checkboxes_col">
-          <label className="container">
+        <div className={'checkbox-col'}>
+          <label className={'checkbox-container'}>
             {symbol_list[0]} {/* @ */}
             <input type="checkbox" />
             <span
@@ -79,7 +79,7 @@ const PasswordGenerator = () => {
               }}
             />
           </label>
-          <label className="container">
+          <label className={'checkbox-container'}>
             {symbol_list[1]} {/* $ */}
             <input type="checkbox" />
             <span
@@ -89,7 +89,7 @@ const PasswordGenerator = () => {
               }}
             />
           </label>
-          <label className="container">
+          <label className={'checkbox-container'}>
             {symbol_list[2]} {/* % */}
             <input type="checkbox" />
             <span
@@ -99,7 +99,7 @@ const PasswordGenerator = () => {
               }}
             />
           </label>
-          <label className="container">
+          <label className={'checkbox-container'}>
             {symbol_list[3]} {/* ^ */}
             <input type="checkbox" />
             <span
@@ -112,8 +112,8 @@ const PasswordGenerator = () => {
         </div>
 
         {/* second row */}
-        <div className="checkboxes_col">
-          <label className="container">
+        <div className={'checkbox-col'}>
+          <label className={'checkbox-container'}>
             {symbol_list[4]} {/*&*/}
             <input type="checkbox" />
             <span
@@ -123,7 +123,7 @@ const PasswordGenerator = () => {
               }}
             />
           </label>
-          <label className="container">
+          <label className={'checkbox-container'}>
             {symbol_list[5]} {/* * */}
             <input type="checkbox" />
             <span
@@ -133,7 +133,7 @@ const PasswordGenerator = () => {
               }}
             />
           </label>
-          <label className="container">
+          <label className={'checkbox-container'}>
             {symbol_list[6]} {/* ( */}
             <input type="checkbox" />
             <span
@@ -143,7 +143,7 @@ const PasswordGenerator = () => {
               }}
             />
           </label>
-          <label className="container">
+          <label className={'checkbox-container'}>
             {symbol_list[7]} {/* ) */}
             <input type="checkbox" />
             <span
@@ -156,8 +156,8 @@ const PasswordGenerator = () => {
         </div>
 
         {/* third row */}
-        <div className="checkboxes_col">
-          <label className="container">
+        <div className={'checkbox-col'}>
+          <label className={'checkbox-container'}>
             {symbol_list[8]} {/* ! */}
             <input type="checkbox" />
             <span
@@ -167,7 +167,7 @@ const PasswordGenerator = () => {
               }}
             />
           </label>
-          <label className="container">
+          <label className={'checkbox-container'}>
             {symbol_list[9]} {/* - */}
             <input type="checkbox" />
             <span
@@ -177,7 +177,7 @@ const PasswordGenerator = () => {
               }}
             />
           </label>
-          <label className="container">
+          <label className={'checkbox-container'}>
             {symbol_list[10]} {/* _ */}
             <input type="checkbox" />
             <span
@@ -187,7 +187,7 @@ const PasswordGenerator = () => {
               }}
             />
           </label>
-          <label className="container">
+          <label className={'checkbox-container'}>
             {symbol_list[11]} {/* # */}
             <input type="checkbox" />
             <span
@@ -199,9 +199,10 @@ const PasswordGenerator = () => {
           </label>
         </div>
       </div>
+
       {/* password length slider*/}
-      <div className="content_container mobile_flex_wrap">
-        <p id="label_text">Password length: </p>
+      <div className={'container flex center-flex'}>
+        <p>Password length: </p>
         <input
           type="range"
           min={min_pass_length}
@@ -215,11 +216,13 @@ const PasswordGenerator = () => {
             )
           }
         />
-        <p id="label_text">{pass_length}</p>
+        <p>{pass_length}</p>
       </div>
-      <div className="content_container mobile_flex_wrap">
-        <p id="label_text">Generated Password:</p>
-        <p id="label_text">{password}</p>
+
+      {/* Generated password display */}
+      <div className={'container flex center-flex'}>
+        <p>Generated Password:</p>
+        <p>{password}</p>
       </div>
     </>
   );

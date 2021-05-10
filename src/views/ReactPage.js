@@ -6,9 +6,11 @@ const ReactPage = () => {
   return (
     <>
       <Navbar />
-      <div className="content_container">
-        <h1 id="page_title_text">React Projects</h1>
-      </div>
+
+      <section className="container text-center">
+        <h1>React Projects</h1>
+      </section>
+
       <SkillDisplay
         props={{
           javascript: true,

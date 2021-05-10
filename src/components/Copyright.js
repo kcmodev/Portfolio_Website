@@ -5,7 +5,7 @@ const Copyright = () => {
 
   return (
     <>
-      <div className="content_container">
+      <div className={'container text-center'}>
         <p id="copyright_text">{copy} Steven Christensen 2021</p>
       </div>
     </>

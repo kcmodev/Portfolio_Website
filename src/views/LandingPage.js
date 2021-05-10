@@ -9,9 +9,10 @@ const intro_paragraph_text =
   'I graduated from Western Governors University with a Bachelor of Science in Computer Science. ' +
   'I am open to part-time, full-time, or contract work. ' +
   'Please check below for links to a few of my personal projects and github repositories. Thank you for visiting ' +
-  'and please feel free to contact me with any inquiries.';
+  'and please feel free to contact me with any inquiries on ';
 
 const ml_app_url = 'https://cvd-detection-wgu.herokuapp.com/';
+const linkedin_url = 'https://www.linkedin.com/in/stevenc21/';
 
 const LandingPage = () => {
   const request = new Request(ml_app_url, {
@@ -28,17 +29,31 @@ const LandingPage = () => {
   return (
     <>
       <Navbar props={{ on_landing_page: true }} />
-      <ProfilePicture />
-      <div className="content_container">
-        <p id="section_text">{intro_paragraph_text}</p>
-      </div>
-      <SkillDisplay
-        props={{
-          python: true,
-          javascript: true,
-          react: true
-        }}
-      />
+
+      <section className={'container flex center-flex'}>
+        <ProfilePicture />
+      </section>
+
+      <section className={'container text-center'}>
+        <p>
+          {intro_paragraph_text}
+          <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>
+            LinkedIn
+          </a>
+          {'.'}
+        </p>
+      </section>
+
+      <section>
+        <SkillDisplay
+          props={{
+            python: true,
+            javascript: true,
+            react: true
+          }}
+        />
+      </section>
+
       <Copyright />
     </>
   );

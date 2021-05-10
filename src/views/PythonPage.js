@@ -39,18 +39,11 @@ const PythonPage = () => {
   return (
     <>
       <Navbar />
-      <div className={'content_container mobile_flex_wrap'}>
-        <p id={'page_title_text'}>Machine Learning Application</p>
-      </div>
-      <div className={'content_container mobile_flex_wrap'}>
-        <p id={'section_text'}>{description_text_1}</p>
-      </div>
-      <div className={'content_container mobile_flex_wrap'}>
-        <p id={'section_text'}>{description_text_2}</p>
-      </div>
-
-      <div className={'content_container mobile_flex_wrap'}>
-        <p id={'section_text'}>
+      <section className={'container text-center'}>
+        <h1>Machine Learning Application</h1>
+        <p>{description_text_1}</p>
+        <p>{description_text_2}</p>
+        <p>
           The repository containing the source code for this project can be
           found{' '}
           <a href={ml_app_source_location} target={'_blank'} rel={'noreferrer'}>
@@ -59,53 +52,47 @@ const PythonPage = () => {
           </a>
           .
         </p>
-      </div>
+      </section>
 
-      <div className={'content_container mobile_flex_wrap'}>
-        <p id={'section_text'}>{description_text_3}</p>
-        <img src={login_screen} id={'ml_login_img'} alt={'login screen'} />
-      </div>
+      <section className={'container text-center flex center-flex'}>
+        <div className={'container flex center-flex'}>
+          <p>{description_text_3}</p>
+          <img src={login_screen} id={'ml_login_img'} alt={'login screen'} />
+          <p>{description_text_4}</p>
+          <img
+            src={vitals_screen}
+            id={'ml_vitals_img'}
+            alt={'vital sign entry screen'}
+          />
+          <p>{description_text_5}</p>
+          <img
+            src={results_screen}
+            id={'results_screen_img'}
+            alt={'results display screen'}
+          />
+        </div>
 
-      <div className={'content_container mobile_flex_wrap'}>
-        <p id={'section_text'}>{description_text_4}</p>
-        <img
-          src={vitals_screen}
-          id={'ml_vitals_img'}
-          alt={'vital sign entry screen'}
-        />
-      </div>
+        <div>
+          <p>
+            You can interact with the live production app on
+            <a href={ml_app_location} target={'_blank'} rel={'noreferrer'}>
+              {' '}
+              Heroku
+            </a>
+            . You will need the default credentials of username "admin" and
+            password "admin" to log in and access all areas of the application.
+          </p>
+        </div>
+      </section>
 
-      <div className={'content_container mobile_flex_wrap'}>
-        <p id={'section_text'}>{description_text_5}</p>
-        <img
-          src={results_screen}
-          id={'results_screen_img'}
-          alt={'results display screen'}
-        />
-      </div>
-
-      <div className={'content_container mobile_flex_wrap'}>
-        <p id={'section_text'}>
-          You can interact with the live production app on
-          <a href={ml_app_location} target={'_blank'} rel={'noreferrer'}>
-            {' '}
-            Heroku
-          </a>
-          . You will need the default credentials of username "admin" and
-          password "admin" to log in and access all areas of the application.
-        </p>
-      </div>
-
-      <div className={'content_container mobile_flex_wrap'}>
-        <SkillDisplay
-          props={{
-            python: true,
-            html: true,
-            css: true,
-            description: true
-          }}
-        />
-      </div>
+      <SkillDisplay
+        props={{
+          python: true,
+          html: true,
+          css: true,
+          description: true
+        }}
+      />
       <Copyright />
     </>
   );

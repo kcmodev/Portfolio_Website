@@ -16,10 +16,6 @@ import html_icon from '../icons/html_logo.png';
 import css_icon from '../icons/css_logo.svg';
 import node_js_icon from '../icons/node_js_logo.png';
 
-const programming_language_image_container_class =
-  'programming_language_img_container padding_10';
-const programming_language_icon_class = 'programming_language_icon';
-
 const python_logo_alt_text = 'python programming language logo';
 const java_logo_alt_text = 'java programming language logo';
 const js_logo_alt_text = 'javascript programming language logo';
@@ -45,16 +41,16 @@ const SkillDisplay = (values = false) => {
   return (
     <>
       {description && (
-        <p id="section_text">
-          This app uses the following frameworks/technologies:
-        </p>
+        <div className={'container text-center'}>
+          <p>This app uses the following frameworks/technologies:</p>
+        </div>
       )}
-      <div className="content_container" id="skill_icon_group">
+      <div className={'container flex center-flex'}>
         {python && (
-          <div className={programming_language_image_container_class}>
+          <div>
             <Link to={python_projects_route}>
               <img
-                className={programming_language_icon_class}
+                className={'small-margin opaque'}
                 src={python_icon}
                 alt={python_logo_alt_text}
               />
@@ -62,10 +58,10 @@ const SkillDisplay = (values = false) => {
           </div>
         )}
         {javascript && (
-          <div className={programming_language_image_container_class}>
+          <div>
             <Link to={password_generator_route}>
               <img
-                className={programming_language_icon_class}
+                className={'small-margin opaque'}
                 src={javascript_icon}
                 alt={js_logo_alt_text}
               />
@@ -73,49 +69,49 @@ const SkillDisplay = (values = false) => {
           </div>
         )}
         {java && (
-          <div className={programming_language_image_container_class}>
-            {/*<Link to={java_projects_route}>*/}
-            <img
-              className={programming_language_icon_class}
-              src={java_icon}
-              alt={java_logo_alt_text}
-            />
-            {/*</Link>*/}
+          <div>
+            <Link to={java_projects_route}>
+              <img
+                className={'small-margin opaque'}
+                src={java_icon}
+                alt={java_logo_alt_text}
+              />
+            </Link>
           </div>
         )}
         {react && (
-          <div className={programming_language_image_container_class}>
-            {/*<Link to={react_projects_route}>*/}
-            <img
-              className={programming_language_icon_class}
-              src={react_icon}
-              alt={react_logo_alt_text}
-            />
-            {/*</Link>*/}
+          <div>
+            <Link to={react_projects_route}>
+              <img
+                className={'small-margin opaque'}
+                src={react_icon}
+                alt={react_logo_alt_text}
+              />
+            </Link>
           </div>
         )}
         {html && (
-          <div className={programming_language_image_container_class}>
+          <div>
             <img
-              className={programming_language_icon_class}
+              className={'small-margin'}
               src={html_icon}
               alt={html_logo_alt_text}
             />
           </div>
         )}
         {css && (
-          <div className={programming_language_image_container_class}>
+          <div>
             <img
-              className={programming_language_icon_class}
+              className={'small-margin'}
               src={css_icon}
               alt={css_logo_alt_text}
             />
           </div>
         )}
         {node && (
-          <div className={programming_language_image_container_class}>
+          <div>
             <img
-              className={programming_language_icon_class}
+              className={'small-margin'}
               src={node_js_icon}
               alt={node_js_logo_alt_text}
             />

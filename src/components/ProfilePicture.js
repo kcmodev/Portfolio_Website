@@ -5,13 +5,13 @@ const profile_picture_alt_text = 'website author profile picture';
 
 const ProfilePicture = () => {
   return (
-    <div className="content_container">
+    <>
       <img
-        className="profile_picture"
+        className={'profile-img'}
         src={profile_picture}
         alt={profile_picture_alt_text}
       />
-    </div>
+    </>
   );
 };
 

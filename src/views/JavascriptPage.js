@@ -17,17 +17,20 @@ const JavascriptPage = () => {
   return (
     <>
       <Navbar />
-      <div className="content_container mobile_flex_wrap">
-        <h1 id="page_title_text">Secure Password Generator</h1>
-      </div>
-      <div className="content_container">
-        <p id="section_text">{javascript_projects_description_text}</p>
-      </div>
 
-      <div className="content_container mobile_flex_wrap mt-50">
-        <h1 id="section_title_text">Select acceptable special characters:</h1>
-      </div>
+      <section className={'container text-center'}>
+        <div className={'container container--narrow'}>
+          <h2>Secure Password Generator</h2>
+        </div>
+        <p>{javascript_projects_description_text}</p>
+      </section>
+
+      <section className={'container text-center'}>
+        <h2>Select acceptable special characters:</h2>
+      </section>
+
       <PasswordGenerator />
+
       <SkillDisplay
         props={{
           javascript: true,
@@ -37,6 +40,7 @@ const JavascriptPage = () => {
           description: true
         }}
       />
+
       <Copyright />
     </>
   );
