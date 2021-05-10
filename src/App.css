@@ -75,6 +75,19 @@ section{
     }
 }
 
+.navbar_home_icon {
+    transform: scale(1.5);
+}
+
+a {
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
+a:hover {
+  text-decoration-line: underline;
+}
+
 .container {
     margin-inline: auto;
     width: min(90%, 70.5rem);
@@ -265,35 +278,5 @@ section > div > img {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
 }
-
-
-/*.navbar {*/
-/*    display: flex;*/
-/*    justify-content: flex-end;*/
-/*    opacity: 0.7;*/
-/*}*/
-
-/*.navbar #link_text,*/
-/*.navbar h1{*/
-/*    color: var(--white-text);*/
-/*    margin-top: 0;*/
-/*    margin-right: 15px;*/
-/*}*/
-
-/*.navbar_icon {*/
-/*    transform: scale(1.25);*/
-/*}*/
-
-/*.programming_language_img_container:hover {*/
-/*    opacity: var(--icon-hover-opacity);*/
-/*    transition: var(--icon-hover-transition);*/
-/*}*/
-
-/*.project_title_section {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    margin-top: 25px;*/
-/*    margin-left: 15px;*/
-/*}*/
 
 
