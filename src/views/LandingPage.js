@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import SkillDisplay from '../components/SkillDisplay';
 import ProfilePicture from '../components/ProfilePicture';
 import Navbar from '../components/Navbar';
@@ -30,9 +31,9 @@ const LandingPage = () => {
     <>
       <Navbar props={{ on_landing_page: true }} />
 
-      <section className={'container flex center-flex'}>
-        <ProfilePicture />
-      </section>
+      {/*<section className={'container flex center-flex'}>*/}
+      <ProfilePicture />
+      {/*</section>*/}
 
       <section className={'container text-center'}>
         <p>
