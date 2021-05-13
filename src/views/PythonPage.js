@@ -1,10 +1,14 @@
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
 import SkillAvatars from '../components/SkillAvatars';
 import Navbar from '../components/Navbar';
+import CopyrightFooter from '../components/CopyrightFooter';
 
 import login_screen from '../images/ml_app_login_screen.png';
 import vitals_screen from '../images/ml_app_vitals_screen.png';
 import results_screen from '../images/ml_app_results_screen.png';
-import CopyrightFooter from '../components/CopyrightFooter';
 
 const ml_app_location = 'https://cvd-detection-wgu.herokuapp.com';
 const ml_app_source_location =
@@ -34,16 +38,31 @@ const description_text_5 =
   'Upon completion of those steps the user is redirected to a results screen where they ' +
   'can view their risk approximation determined the the machine learning algorithm.';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    color: 'whitesmoke',
+    paddingBottom: theme.spacing(2)
+  }
+}));
+
 const PythonPage = () => {
   document.title = 'Python';
+  const classes = useStyles();
+
   return (
     <>
       <Navbar />
-      <section className={'container text-center'}>
-        <h1>Machine Learning Application</h1>
-        <p>{description_text_1}</p>
-        <p>{description_text_2}</p>
-        <p>
+      <Container maxWidth={'sm'}>
+        <Typography variant={'h3'} align={'center'} className={classes.root}>
+          Machine Learning Application
+        </Typography>
+        <Typography align={'center'} className={classes.root}>
+          {description_text_1}
+        </Typography>
+        <Typography align={'center'} className={classes.root}>
+          {description_text_2}
+        </Typography>
+        <Typography align={'center'} className={classes.root}>
           The repository containing the source code for this project can be
           found{' '}
           <a href={ml_app_source_location} target={'_blank'} rel={'noreferrer'}>
@@ -51,39 +70,45 @@ const PythonPage = () => {
             here
           </a>
           .
-        </p>
-      </section>
+        </Typography>
+      </Container>
 
-      <section className={'container text-center flex center-flex'}>
-        <div className={'container flex center-flex'}>
-          <p>{description_text_3}</p>
-          <img src={login_screen} id={'ml_login_img'} alt={'login screen'} />
-          <p>{description_text_4}</p>
-          <img
-            src={vitals_screen}
-            id={'ml_vitals_img'}
-            alt={'vital sign entry screen'}
-          />
-          <p>{description_text_5}</p>
-          <img
-            src={results_screen}
-            id={'results_screen_img'}
-            alt={'results display screen'}
-          />
-        </div>
+      <Typography align={'center'} className={classes.root}>
+        {description_text_3}
+      </Typography>
+      <img src={login_screen} id={'ml_login_img'} alt={'login screen'} />
 
-        <div>
-          <p>
-            You can interact with the live production app on
-            <a href={ml_app_location} target={'_blank'} rel={'noreferrer'}>
-              {' '}
-              Heroku
-            </a>
-            . You will need the default credentials of username "admin" and
-            password "admin" to log in and access all areas of the application.
-          </p>
-        </div>
-      </section>
+      <Container maxWidth={'sm'}>
+        <Typography align={'center'} className={classes.root}>
+          {description_text_4}
+        </Typography>
+        <img
+          src={vitals_screen}
+          id={'ml_vitals_img'}
+          alt={'vital sign entry screen'}
+        />
+      </Container>
+
+      <Container maxWidth={'sm'}>
+        <Typography align={'center'} className={classes.root}>
+          {description_text_5}
+        </Typography>
+        <img
+          src={results_screen}
+          id={'results_screen_img'}
+          alt={'results display screen'}
+        />
+      </Container>
+
+      <Typography align={'center'} className={classes.root}>
+        You can interact with the live production app on
+        <a href={ml_app_location} target={'_blank'} rel={'noreferrer'}>
+          {' '}
+          Heroku
+        </a>
+        . You will need the default credentials of username "admin" and password
+        "admin" to log in and access all areas of the application.
+      </Typography>
 
       <SkillAvatars
         props={{
