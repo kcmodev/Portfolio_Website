@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { withStyles } from '@material-ui/core/styles';
+import Slider from '@material-ui/core/Slider';
 
 let selected_symbol_list = [];
 const max_pass_length = 24;
 const min_pass_length = 10;
 const slider_start_value = 21;
 
-export const symbol_list = [
+const symbol_list = [
   '@', // 0
   '$', // 1
   '%', // 2
@@ -20,37 +28,72 @@ export const symbol_list = [
   '#' // 11
 ];
 
+const WhiteCheckbox = withStyles({
+  root: {
+    color: 'whitesmoke',
+    '&$checked': {
+      color: 'whitesmoke'
+    }
+  },
+  checked: {}
+})((props) => <Checkbox color="default" {...props} />);
+
+const useStyle = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    color: 'whitesmoke',
+    justifyContent: 'center'
+  },
+  checkbox: {
+    paddingLeft: theme.spacing(4)
+  }
+}));
+
 const PasswordGenerator = () => {
+  const classes = useStyle();
+
   const [password, set_password] = useState('yfqHQJXFGkoiZRhBUTtr');
   const [pass_length, set_pass_length] = useState(slider_start_value);
+  const [checked_state, setChecked] = useState({});
 
-  // dynamically generate password based on length selected refreshing on change
-  const pass_length_updater = (length) => {
-    set_pass_length((e) => (e = length));
-    generate_password();
-  };
+  const handleChange = (e) => {
+    setChecked({ ...checked_state, [e.target.name]: e.target.checked });
+    let slider_value = parseInt(
+      document.querySelector('.MuiSlider-thumb').innerText
+    );
+    set_pass_length(slider_value);
 
-  function generate_password(passed_char = null) {
-    let temp_password = '';
-    let length_selected = parseInt(document.querySelector('.slider').value);
-
-    // set password length
-    set_pass_length(length_selected);
-
-    // if symbol not present add, else remove
-    if (passed_char != null) {
-      if (!selected_symbol_list.includes(passed_char)) {
-        selected_symbol_list.push(passed_char);
-      } else {
-        let char_index = selected_symbol_list.indexOf(passed_char);
-        selected_symbol_list.splice(char_index, 1);
-      }
+    if (e.target.checked) {
+      selected_symbol_list.push(e.target.value);
+    } else {
+      let char_index = selected_symbol_list.indexOf(e.target.value);
+      selected_symbol_list.splice(char_index, 1);
     }
 
+    generate_password(slider_value);
+  };
+
+  // dynamically generate password based on length selected refreshing on change
+  const pass_length_updater = () => {
+    let slider_value = parseInt(
+      document.querySelector('.MuiSlider-thumb').innerText
+    );
+    set_pass_length(slider_value);
+
+    console.log(`curr pass len (slider value): ${slider_value}`);
+
+    generate_password(slider_value);
+    return `${pass_length}`;
+  };
+
+  function generate_password(selected_length) {
+    let temp_password = '';
     let new_char_list = generate_character_array(selected_symbol_list);
 
+    // console.log(`new char list: ${new_char_list}`);
+
     // Pick chars from a random index of available choices in the array less than the specified length
-    for (let i = 0; i < pass_length; i++) {
+    for (let i = 0; i < selected_length; i++) {
       // Select char form a random index in char list
       let random_char_index = Math.floor(Math.random() * new_char_list.length);
       let char_to_add = new_char_list[random_char_index];
@@ -66,164 +109,88 @@ const PasswordGenerator = () => {
 
   return (
     <>
-      <div className={'container flex center-flex'}>
-        {/* first row */}
-        <div className={'checkbox-col'}>
-          <label className={'checkbox-container'}>
-            {symbol_list[0]} {/* @ */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[0]);
-              }}
-            />
-          </label>
-          <label className={'checkbox-container'}>
-            {symbol_list[1]} {/* $ */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[1]);
-              }}
-            />
-          </label>
-          <label className={'checkbox-container'}>
-            {symbol_list[2]} {/* % */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[2]);
-              }}
-            />
-          </label>
-          <label className={'checkbox-container'}>
-            {symbol_list[3]} {/* ^ */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[3]);
-              }}
-            />
-          </label>
-        </div>
+      <Container maxWidth={'sm'} className={classes.root}>
+        <FormGroup className={classes.root}>
+          {/* first column */}
+          {symbol_list.map((x, i) =>
+            i < 4 ? (
+              <FormControlLabel
+                control={
+                  <WhiteCheckbox
+                    className={classes.checkbox}
+                    onChange={handleChange}
+                    name={`checked${i}`}
+                    value={x}
+                  />
+                }
+                label={x}
+              />
+            ) : null
+          )}
+        </FormGroup>
 
-        {/* second row */}
-        <div className={'checkbox-col'}>
-          <label className={'checkbox-container'}>
-            {symbol_list[4]} {/*&*/}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[4]);
-              }}
-            />
-          </label>
-          <label className={'checkbox-container'}>
-            {symbol_list[5]} {/* * */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[5]);
-              }}
-            />
-          </label>
-          <label className={'checkbox-container'}>
-            {symbol_list[6]} {/* ( */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[6]);
-              }}
-            />
-          </label>
-          <label className={'checkbox-container'}>
-            {symbol_list[7]} {/* ) */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[7]);
-              }}
-            />
-          </label>
-        </div>
+        <FormGroup className={classes.root}>
+          {/* second column */}
+          {symbol_list.map((x, i) =>
+            i < 8 && i > 3 ? (
+              <FormControlLabel
+                control={
+                  <WhiteCheckbox
+                    className={classes.checkbox}
+                    onChange={handleChange}
+                    name={`checked${i}`}
+                    value={x}
+                  />
+                }
+                label={x}
+              />
+            ) : null
+          )}
+        </FormGroup>
 
-        {/* third row */}
-        <div className={'checkbox-col'}>
-          <label className={'checkbox-container'}>
-            {symbol_list[8]} {/* ! */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[8]);
-              }}
-            />
-          </label>
-          <label className={'checkbox-container'}>
-            {symbol_list[9]} {/* - */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[9]);
-              }}
-            />
-          </label>
-          <label className={'checkbox-container'}>
-            {symbol_list[10]} {/* _ */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[10]);
-              }}
-            />
-          </label>
-          <label className={'checkbox-container'}>
-            {symbol_list[11]} {/* # */}
-            <input type="checkbox" />
-            <span
-              className="checkmark"
-              onClick={() => {
-                generate_password(symbol_list[11]);
-              }}
-            />
-          </label>
-        </div>
-      </div>
+        <FormGroup className={classes.root}>
+          {/* third column */}
+          {symbol_list.map((x, i) =>
+            i < 12 && i > 7 ? (
+              <FormControlLabel
+                control={
+                  <WhiteCheckbox
+                    className={classes.checkbox}
+                    onChange={handleChange}
+                    name={`checked${i}`}
+                    value={x}
+                  />
+                }
+                label={x}
+              />
+            ) : null
+          )}
+        </FormGroup>
+      </Container>
 
       {/* password length slider*/}
-      <div className={'container flex center-flex'}>
-        <p>Password length: </p>
-        <input
-          type="range"
+      <Container maxWidth={'sm'}>
+        <Typography className={classes.root}>Password length: </Typography>
+        <Slider
+          defaultValue={slider_start_value}
+          marks
+          // getAriaValueText={pass_length_updater}
+          aria-labelledby={'discrete-slider'}
+          valueLabelDisplay={'auto'}
+          step={1}
           min={min_pass_length}
           max={max_pass_length}
-          defaultValue={slider_start_value}
-          className="slider"
-          name="password_length"
-          onChange={() =>
-            pass_length_updater(
-              parseInt(document.querySelector('.slider').value)
-            )
-          }
+          onChangeCommitted={(e, v) => {
+            pass_length_updater(v);
+          }}
         />
-        <p>{pass_length}</p>
-      </div>
 
-      {/* Generated password display */}
-      <div className={'container flex center-flex'}>
-        <p>Generated Password:</p>
-        <p>{password}</p>
-      </div>
+        {/* Generated password display */}
+        <Typography className={classes.root}>Generated Password:</Typography>
+        <Typography className={classes.root} gutterBottom={true}>
+          {password}
+        </Typography>
+      </Container>
     </>
   );
 };

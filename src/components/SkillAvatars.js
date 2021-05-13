@@ -32,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1)
     },
     justifyContent: 'center',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    color: 'whitesmoke'
   },
   small: {
     width: theme.spacing(3),
@@ -68,7 +69,7 @@ const SkillAvatars = (values = false) => {
     <>
       {description && (
         <Container maxWidth={'sm'}>
-          <Typography variant={'body2'}>
+          <Typography className={classes.root}>
             This app uses the following frameworks/technologies:
           </Typography>
         </Container>

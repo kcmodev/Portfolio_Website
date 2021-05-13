@@ -1,4 +1,7 @@
 import React from 'react';
+import { Container } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 import PasswordGenerator from '../components/PasswordGenerator';
 import SkillAvatars from '../components/SkillAvatars';
@@ -13,22 +16,49 @@ const javascript_projects_description_text =
   'options allow you to avoid the pitfalls of generating passwords with characters not accepted by the program it was ' +
   'created to be used with.';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    color: 'whitesmoke',
+    paddingBottom: theme.spacing(2)
+  }
+}));
+
 const JavascriptPage = () => {
   document.title = 'JavaScript';
+  const classes = useStyles();
+
   return (
     <>
       <Navbar />
 
-      <section className={'container text-center'}>
-        <div className={'container container--narrow'}>
-          <h2>Secure Password Generator</h2>
-        </div>
-        <p>{javascript_projects_description_text}</p>
-      </section>
+      <Container maxWidth={'sm'}>
+        <Typography
+          variant={'h3'}
+          align={'center'}
+          gutterBottom={true}
+          className={classes.root}
+        >
+          Secure Password Generator
+        </Typography>
+        <Typography
+          align={'center'}
+          gutterBottom={true}
+          className={classes.root}
+        >
+          {javascript_projects_description_text}
+        </Typography>
+      </Container>
 
-      <section className={'container text-center'}>
-        <h2>Select acceptable special characters:</h2>
-      </section>
+      <Container maxWidth={'sm'}>
+        <Typography
+          variant={'h4'}
+          align={'center'}
+          className={classes.root}
+          gutterBottom={true}
+        >
+          {'Select acceptable special characters:'}
+        </Typography>
+      </Container>
 
       <PasswordGenerator />
 

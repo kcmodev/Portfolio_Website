@@ -1,5 +1,5 @@
 :root {
-    --white-text: #f5f5f5;
+    /*--white-text: #f5f5f5;*/
     /*--page_title_font_size: 40px;*/
     /*--section-title-font-size: 35px;*/
     /*--section-text-font-size: 25px;*/
@@ -51,12 +51,12 @@ html {
 /*    margin-bottom: 1em;*/
 /*}*/
 
-h1,
-h2,
-h3,
-p {
-    color: var(--white-text);
-}
+/*h1,*/
+/*h2,*/
+/*h3,*/
+/*p {*/
+/*    color: var(--white-text);*/
+/*}*/
 
 /*p + p {*/
 /*    margin-left: 1em;*/
@@ -205,14 +205,14 @@ a:hover {
     padding: 1em;
 }
 
-@media (min-width: 40em) {
-    .checkbox-col {
-        padding-left: 4em;
-        padding-right: 4em;
-    }
+/*@media (min-width: 40em) {*/
+/*    .checkbox-col {*/
+/*        padding-left: 4em;*/
+/*        padding-right: 4em;*/
+/*    }*/
 
 
-}
+/*}*/
 
 /* On mouse-over, add a grey background color */
 .checkbox-container:hover input ~ .checkmark {
@@ -287,9 +287,9 @@ label.checkbox-container {
 /*    width: 15rem;*/
 /*}*/
 
-section > div > img {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-}
+/*section > div > img {*/
+/*    margin-top: 1.5em;*/
+/*    margin-bottom: 1.5em;*/
+/*}*/
 
 

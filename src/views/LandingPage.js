@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
-import { Container } from '@material-ui/core';
+import { Typography, Container } from '@material-ui/core';
 import '@fontsource/roboto';
 
 import SkillAvatars from '../components/SkillAvatars';
