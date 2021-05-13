@@ -1,9 +1,16 @@
 import { useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
+import { Container } from '@material-ui/core';
+import '@fontsource/roboto';
 
-import SkillDisplay from '../components/SkillDisplay';
-import ProfilePicture from '../components/ProfilePicture';
+import SkillAvatars from '../components/SkillAvatars';
+import ProfileAvatar from '../components/ProfileAvatar';
 import Navbar from '../components/Navbar';
 import Copyright from '../components/Copyright';
+
+import profile_picture from '../images/profile_picture.jpg';
+const profile_picture_alt_text = 'website author profile picture';
 
 const intro_paragraph_text =
   'Hello! My name is Steve and I am a Full Stack Software Developer. ' +
@@ -15,7 +22,21 @@ const intro_paragraph_text =
 const ml_app_url = 'https://cvd-detection-wgu.herokuapp.com/';
 const linkedin_url = 'https://www.linkedin.com/in/stevenc21/';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexBasis: 'auto'
+    // flexGrow: 1
+  },
+  section_text: {
+    // width: '100%',
+    // maxWidth: 500,
+    textAlign: 'center'
+  }
+}));
+
 const LandingPage = () => {
+  const classes = useStyles();
+
   const request = new Request(ml_app_url, {
     method: 'GET',
     mode: 'no-cors',
@@ -31,29 +52,25 @@ const LandingPage = () => {
     <>
       <Navbar props={{ on_landing_page: true }} />
 
-      {/*<section className={'container flex center-flex'}>*/}
-      <ProfilePicture />
-      {/*</section>*/}
+      <ProfileAvatar />
 
-      <section className={'container text-center'}>
-        <p>
+      <Container maxWidth={'sm'}>
+        <Typography gutterBottom={true} className={classes.section_text}>
           {intro_paragraph_text}
           <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>
             LinkedIn
           </a>
           {'.'}
-        </p>
-      </section>
+        </Typography>
+      </Container>
 
-      <section>
-        <SkillDisplay
-          props={{
-            python: true,
-            javascript: true,
-            react: true
-          }}
-        />
-      </section>
+      <SkillAvatars
+        props={{
+          python: true,
+          javascript: true,
+          react: true
+        }}
+      />
 
       <Copyright />
     </>

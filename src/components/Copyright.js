@@ -1,13 +1,14 @@
 import React from 'react';
+import { Container, Typography } from '@material-ui/core';
 
 const Copyright = () => {
   let copy = String.fromCharCode(169); // copyright char
 
   return (
     <>
-      <div className={'container text-center'}>
-        <p id="copyright_text">{copy} Steven Christensen 2021</p>
-      </div>
+      <Container maxWidth={'sm'}>
+        <Typography align={'center'}>{copy} Steven Christensen 2021</Typography>
+      </Container>
     </>
   );
 };

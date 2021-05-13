@@ -1,4 +1,4 @@
-import SkillDisplay from '../components/SkillDisplay';
+import SkillAvatars from '../components/SkillAvatars';
 import Navbar from '../components/Navbar';
 
 const java_project_description_1 =
@@ -19,7 +19,7 @@ const JavaPage = () => {
       {/*  <p id="section_text">{java_project_description_1}</p>*/}
       {/*</div>*/}
 
-      <SkillDisplay props={{ java: true, description: true }} />
+      <SkillAvatars props={{ java: true, description: true }} />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PasswordGenerator from '../components/PasswordGenerator';
-import SkillDisplay from '../components/SkillDisplay';
+import SkillAvatars from '../components/SkillAvatars';
 import Navbar from '../components/Navbar';
 import Copyright from '../components/Copyright';
 
@@ -32,7 +32,7 @@ const JavascriptPage = () => {
 
       <PasswordGenerator />
 
-      <SkillDisplay
+      <SkillAvatars
         props={{
           javascript: true,
           react: true,

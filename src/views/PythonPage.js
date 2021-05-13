@@ -1,4 +1,4 @@
-import SkillDisplay from '../components/SkillDisplay';
+import SkillAvatars from '../components/SkillAvatars';
 import Navbar from '../components/Navbar';
 
 import login_screen from '../images/ml_app_login_screen.png';
@@ -85,7 +85,7 @@ const PythonPage = () => {
         </div>
       </section>
 
-      <SkillDisplay
+      <SkillAvatars
         props={{
           python: true,
           html: true,

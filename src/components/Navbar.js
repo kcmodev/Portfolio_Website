@@ -1,34 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, IconButton, withStyles } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, makeStyles } from '@material-ui/core';
 import InfoIcon from '@material-ui/icons/Info';
 
 import { AiOutlineHome } from 'react-icons/all';
 import { landing_page_route, about_me_route } from '../routes/route_names';
 
-const StyledNavbar = withStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    background: 'transparent',
-    position: 'static',
-    color: 'white',
-    height: 48,
-    paddingBottom: '2rem'
+    display: 'flex',
+    alignItems: 'flex-end',
+    flexGrow: 1,
+    background: 'transparent'
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
   }
-})(AppBar);
+}));
 
 const Navbar = (values = false) => {
   let on_landing_page = values.props;
+  const classes = useStyles();
 
   return (
     <>
-      <StyledNavbar>
-        <Toolbar className={'flex right-flex'}>
-          <IconButton edge={'end'}>
+      <AppBar position={'static'} className={classes.root}>
+        <Toolbar disableGutters>
+          <IconButton className={classes.menuButton}>
             {!on_landing_page && (
               <Link to={landing_page_route}>
-                <p>
-                  <AiOutlineHome />
-                </p>
+                <AiOutlineHome />
               </Link>
             )}
             {on_landing_page && (
@@ -38,22 +42,7 @@ const Navbar = (values = false) => {
             )}
           </IconButton>
         </Toolbar>
-      </StyledNavbar>
-
-      {/*<nav className={'text-right'}>*/}
-      {/*  {!on_landing_page && (*/}
-      {/*    <Link to={landing_page_route}>*/}
-      {/*      <p>*/}
-      {/*        <AiOutlineHome className={'navbar_home_icon'} />*/}
-      {/*      </p>*/}
-      {/*    </Link>*/}
-      {/*  )}*/}
-      {/*  {on_landing_page && (*/}
-      {/*    <Link to={about_me_route}>*/}
-      {/*      <p>About</p>*/}
-      {/*    </Link>*/}
-      {/*  )}*/}
-      {/*</nav>*/}
+      </AppBar>
     </>
   );
 };

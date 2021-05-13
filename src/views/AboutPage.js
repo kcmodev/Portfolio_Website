@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import ProfilePicture from '../components/ProfilePicture';
+import ProfileAvatar from '../components/ProfileAvatar';
 import Copyright from '../components/Copyright';
-import SkillDisplay from '../components/SkillDisplay';
+import SkillAvatars from '../components/SkillAvatars';
 
 const about_me_text_1 =
   'I have been obsessed with computers, and technology in general, for ' +
@@ -27,7 +27,7 @@ const AboutPage = () => {
       <Navbar />
 
       <section className={'container flex center-flex'}>
-        <ProfilePicture />
+        <ProfileAvatar />
       </section>
 
       <section className={'container text-center'}>
@@ -39,10 +39,10 @@ const AboutPage = () => {
       </section>
 
       <section>
-        <SkillDisplay
+        <SkillAvatars
           props={{ python: true, java: true, javascript: true, node: true }}
         />
-        <SkillDisplay props={{ react: true, html: true, css: true }} />
+        <SkillAvatars props={{ react: true, html: true, css: true }} />
       </section>
 
       <Copyright />
