@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, IconButton, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import Container from '@material-ui/core/Container';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 
 import { AiOutlineHome } from 'react-icons/all';
@@ -26,24 +30,24 @@ const Navbar = (values = false) => {
   const classes = useStyles();
 
   return (
-    <>
+    <Container maxWidth={'sm'}>
       <AppBar position={'static'} className={classes.root}>
         <Toolbar disableGutters>
           <IconButton className={classes.menuButton}>
             {!on_landing_page && (
               <Link to={landing_page_route}>
-                <AiOutlineHome />
+                <AiOutlineHome style={{ color: 'whitesmoke' }} />
               </Link>
             )}
             {on_landing_page && (
               <Link to={about_me_route}>
-                <InfoIcon className={'color-primary-white'} />
+                <InfoIcon style={{ color: 'whitesmoke' }} />
               </Link>
             )}
           </IconButton>
         </Toolbar>
       </AppBar>
-    </>
+    </Container>
   );
 };
 

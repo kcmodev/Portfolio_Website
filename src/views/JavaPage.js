@@ -1,3 +1,7 @@
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+
 import SkillAvatars from '../components/SkillAvatars';
 import Navbar from '../components/Navbar';
 
@@ -6,18 +10,25 @@ const java_project_description_1 =
   'time of upcoming appointments. The primary language used in development is Java with Scenebuilder used for ' +
   'designing the front end. It is a standalone desktop application that also uses MySQL in the backend for data persistence.';
 
+const useStyle = makeStyles((theme) => ({
+  root: {
+    color: 'whitesmoke'
+  }
+}));
+
 const JavaPage = () => {
   document.title = 'Java';
+  const classes = useStyle();
+
   return (
     <>
-      <Navbar />
-      <section className={'container text-center'}>
-        <p id="page_title_text">Appointment Management Application</p>
-      </section>
+      <Container maxWidth={'sm'}>
+        <Navbar />
 
-      {/*<div className="content_container">*/}
-      {/*  <p id="section_text">{java_project_description_1}</p>*/}
-      {/*</div>*/}
+        <Typography variant={'h3'} align={'center'} className={classes.root}>
+          Appointment Management Application
+        </Typography>
+      </Container>
 
       <SkillAvatars props={{ java: true, description: true }} />
     </>

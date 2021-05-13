@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import login_screen from '../images/ml_app_login_screen.png';
 import vitals_screen from '../images/ml_app_vitals_screen.png';
 import results_screen from '../images/ml_app_results_screen.png';
-import Copyright from '../components/Copyright';
+import CopyrightFooter from '../components/CopyrightFooter';
 
 const ml_app_location = 'https://cvd-detection-wgu.herokuapp.com';
 const ml_app_source_location =
@@ -93,7 +93,7 @@ const PythonPage = () => {
           description: true
         }}
       />
-      <Copyright />
+      <CopyrightFooter />
     </>
   );
 };

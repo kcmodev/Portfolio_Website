@@ -1,15 +1,12 @@
 import { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Container } from '@material-ui/core';
-import '@fontsource/roboto';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 import SkillAvatars from '../components/SkillAvatars';
 import ProfileAvatar from '../components/ProfileAvatar';
 import Navbar from '../components/Navbar';
-import Copyright from '../components/Copyright';
-
-import profile_picture from '../images/profile_picture.jpg';
-const profile_picture_alt_text = 'website author profile picture';
+import CopyrightFooter from '../components/CopyrightFooter';
 
 const intro_paragraph_text =
   'Hello! My name is Steve and I am a Full Stack Software Developer. ' +
@@ -29,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
   section_text: {
     // width: '100%',
     // maxWidth: 500,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: 'whitesmoke'
   }
 }));
 
@@ -71,7 +69,7 @@ const LandingPage = () => {
         }}
       />
 
-      <Copyright />
+      <CopyrightFooter />
     </>
   );
 };

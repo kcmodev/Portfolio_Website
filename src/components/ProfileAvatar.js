@@ -1,5 +1,6 @@
 import React from 'react';
-import { Avatar, makeStyles } from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core';
 
 import profile_picture from '../images/profile_picture.jpg';
 const profile_picture_alt_text = 'profile image of site author';
@@ -10,7 +11,8 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(1)
     },
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingBottom: theme.spacing(2)
   },
   small: {
     width: theme.spacing(3),

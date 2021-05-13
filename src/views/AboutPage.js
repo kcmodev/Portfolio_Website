@@ -1,7 +1,11 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+
 import Navbar from '../components/Navbar';
 import ProfileAvatar from '../components/ProfileAvatar';
-import Copyright from '../components/Copyright';
+import CopyrightFooter from '../components/CopyrightFooter';
 import SkillAvatars from '../components/SkillAvatars';
 
 const about_me_text_1 =
@@ -20,33 +24,37 @@ const about_me_text_2 =
   "you have any questions or inquiries for a bid on development work or a potential job opportunity please don't hesitate " +
   'to reach out. Thanks for coming by.';
 
+const useStyle = makeStyles((theme) => ({
+  root: {
+    color: 'whitesmoke'
+  }
+}));
+
 const AboutPage = () => {
   document.title = 'AboutPage';
+  const classes = useStyle();
+
   return (
-    <>
+    <Container maxWidth={'sm'}>
       <Navbar />
 
-      <section className={'container flex center-flex'}>
-        <ProfileAvatar />
-      </section>
+      <ProfileAvatar />
 
-      <section className={'container text-center'}>
-        <p>{about_me_text_1}</p>
-      </section>
+      <Typography align={'center'} className={classes.root}>
+        {about_me_text_1}
+      </Typography>
 
-      <section className={'container text-center'}>
+      <Typography align={'center'} className={classes.root}>
         <p>{about_me_text_2}</p>
-      </section>
+      </Typography>
 
-      <section>
-        <SkillAvatars
-          props={{ python: true, java: true, javascript: true, node: true }}
-        />
-        <SkillAvatars props={{ react: true, html: true, css: true }} />
-      </section>
+      <SkillAvatars
+        props={{ python: true, java: true, javascript: true, node: true }}
+      />
+      <SkillAvatars props={{ react: true, html: true, css: true }} />
 
-      <Copyright />
-    </>
+      <CopyrightFooter />
+    </Container>
   );
 };
 

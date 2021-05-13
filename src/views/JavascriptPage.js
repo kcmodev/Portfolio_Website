@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
-import { Typography } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 import PasswordGenerator from '../components/PasswordGenerator';
 import SkillAvatars from '../components/SkillAvatars';
 import Navbar from '../components/Navbar';
-import Copyright from '../components/Copyright';
+import CopyrightFooter from '../components/CopyrightFooter';
 
 const javascript_projects_description_text =
   'The following application is a secure password generator. I have a passion for Cybersecurity and am always on ' +
@@ -72,7 +72,7 @@ const JavascriptPage = () => {
         }}
       />
 
-      <Copyright />
+      <CopyrightFooter />
     </>
   );
 };

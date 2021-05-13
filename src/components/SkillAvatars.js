@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Avatar, makeStyles, Container, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import Avatar from '@material-ui/core/Avatar';
 
 import {
   java_projects_route,
@@ -33,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
     },
     justifyContent: 'center',
     flexWrap: 'wrap',
-    color: 'whitesmoke'
+    color: 'whitesmoke',
+    paddingTop: theme.spacing(4)
   },
   small: {
     width: theme.spacing(3),
