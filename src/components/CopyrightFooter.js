@@ -7,14 +7,13 @@ import CopyrightIcon from '@material-ui/icons/Copyright';
 const useStyle = makeStyles((theme) => ({
   root: {
     color: 'whitesmoke',
-    paddingTop: theme.spacing(4),
-    alignItems: 'center'
+    paddingTop: theme.spacing(4)
   }
 }));
 
 const CopyrightFooter = () => {
   const classes = useStyle();
-  let copy = String.fromCharCode(169); // copyright char
+  // let copy = String.fromCharCode(169); // copyright char
 
   return (
     <Container maxWidth={'sm'}>

@@ -73,7 +73,7 @@ const SkillAvatars = (values = false) => {
     <>
       {description && (
         <Container maxWidth={'sm'}>
-          <Typography className={classes.root}>
+          <Typography align={'center'} className={classes.root}>
             This app uses the following frameworks/technologies:
           </Typography>
         </Container>
