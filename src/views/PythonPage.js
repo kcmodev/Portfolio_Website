@@ -44,16 +44,19 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(2)
   },
   login_image: {
-    height: '20rem',
-    width: '20rem'
+    // height: '15rem',
+    // width: '20rem'
+    transform: 'scale(0.8)'
   },
   vitals_image: {
-    height: '50rem',
-    width: '20rem'
+    // height: '50rem',
+    // width: '20rem'
+    transform: 'scale(0.8)'
   },
   results_image: {
-    height: '35rem',
-    width: '20rem'
+    // height: '35rem',
+    // width: '20rem'
+    transform: 'scale(0.8)'
   },
   flex_center: {
     display: 'flex',
