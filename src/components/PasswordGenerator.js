@@ -52,7 +52,7 @@ const useStyle = makeStyles((theme) => ({
 const PasswordGenerator = () => {
   const classes = useStyle();
 
-  const [password, set_password] = useState('yfqHQJXFGkoiZRhBUTtr');
+  const [password, set_password] = useState('----------');
   const [pass_length, set_pass_length] = useState(slider_start_value);
   const [checked_state, setChecked] = useState({});
 
