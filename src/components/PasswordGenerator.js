@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import { withStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Slider from '@material-ui/core/Slider';
+import { useState } from 'react';
+import {
+  makeStyles,
+  withStyles,
+  Container,
+  Typography,
+  Checkbox,
+  FormGroup,
+  FormControlLabel,
+  Slider
+} from '@material-ui/core';
 
 let selected_symbol_list = [];
 const max_pass_length = 24;
@@ -104,7 +106,7 @@ const PasswordGenerator = () => {
       new_char_list.splice(new_char_list.indexOf(char_to_add), 1);
     }
 
-    set_password((e) => (e = temp_password));
+    set_password(temp_password);
   }
 
   return (

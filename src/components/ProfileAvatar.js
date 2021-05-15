@@ -1,6 +1,4 @@
-import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Avatar } from '@material-ui/core';
 
 import profile_picture from '../images/profile_picture.jpg';
 const profile_picture_alt_text = 'profile image of site author';

@@ -1,12 +1,10 @@
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import SkillAvatars from '../components/SkillAvatars';
 import Navbar from '../components/Navbar';
 import CopyrightFooter from '../components/CopyrightFooter';
 
-const useStyle = makeStyles((theme) => ({
+const useStyle = makeStyles(() => ({
   root: {
     color: 'whitesmoke'
   }

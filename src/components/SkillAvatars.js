@@ -1,9 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Avatar from '@material-ui/core/Avatar';
+import { makeStyles, Container, Typography, Avatar } from '@material-ui/core';
 
 import {
   java_projects_route,

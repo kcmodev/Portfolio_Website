@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
+import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import SkillAvatars from '../components/SkillAvatars';
 import ProfileAvatar from '../components/ProfileAvatar';
@@ -21,11 +19,8 @@ const linkedin_url = 'https://www.linkedin.com/in/stevenc21/';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexBasis: 'auto'
-    // flexGrow: 1
   },
   section_text: {
-    // width: '100%',
-    // maxWidth: 500,
     textAlign: 'center',
     color: 'whitesmoke'
   }

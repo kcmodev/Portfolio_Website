@@ -1,7 +1,4 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
+import { makeStyles, Typography, Container } from '@material-ui/core';
 import CopyrightIcon from '@material-ui/icons/Copyright';
 
 const useStyle = makeStyles((theme) => ({

@@ -1,12 +1,13 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core';
-import AppBar from '@material-ui/core/AppBar';
-import Container from '@material-ui/core/Container';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
+import {
+  makeStyles,
+  AppBar,
+  Container,
+  Toolbar,
+  IconButton
+} from '@material-ui/core';
 
+import InfoIcon from '@material-ui/icons/Info';
 import { AiOutlineHome } from 'react-icons/all';
 import { landing_page_route, about_me_route } from '../routes/route_names';
 

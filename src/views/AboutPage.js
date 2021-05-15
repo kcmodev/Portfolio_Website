@@ -1,9 +1,7 @@
-import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import Navbar from '../components/Navbar';
+import ContactForm from '../components/ContactForm';
 import ProfileAvatar from '../components/ProfileAvatar';
 import CopyrightFooter from '../components/CopyrightFooter';
 import SkillAvatars from '../components/SkillAvatars';
@@ -24,7 +22,7 @@ const about_me_text_2 =
   "you have any questions or inquiries for a bid on development work or a potential job opportunity please don't hesitate " +
   'to reach out. Thanks for coming by.';
 
-const useStyle = makeStyles((theme) => ({
+const useStyle = makeStyles(() => ({
   root: {
     color: 'whitesmoke'
   }
@@ -35,7 +33,7 @@ const AboutPage = () => {
   const classes = useStyle();
 
   return (
-    <Container maxWidth={'sm'}>
+    <Container maxWidth={'md'}>
       <Navbar />
 
       <ProfileAvatar />
@@ -47,6 +45,8 @@ const AboutPage = () => {
       <Typography align={'center'} className={classes.root}>
         <p>{about_me_text_2}</p>
       </Typography>
+
+      <ContactForm />
 
       <SkillAvatars
         props={{ python: true, java: true, javascript: true, node: true }}

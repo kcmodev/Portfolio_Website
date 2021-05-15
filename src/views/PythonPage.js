@@ -1,6 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import SkillAvatars from '../components/SkillAvatars';
 import Navbar from '../components/Navbar';
@@ -44,18 +42,12 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(2)
   },
   login_image: {
-    // height: '15rem',
-    // width: '20rem'
     transform: 'scale(0.8)'
   },
   vitals_image: {
-    // height: '50rem',
-    // width: '20rem'
     transform: 'scale(0.8)'
   },
   results_image: {
-    // height: '35rem',
-    // width: '20rem'
     transform: 'scale(0.8)'
   },
   flex_center: {
