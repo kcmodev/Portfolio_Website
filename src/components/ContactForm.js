@@ -70,7 +70,8 @@ const ContactForm = () => {
 
   const verifyCaptcha = () => {
     let captchaResponse = window.grecaptcha.getResponse();
-    return captchaResponse !== null;
+    console.log(`captcha response: ${captchaResponse}`);
+    return captchaResponse.length !== 0;
   };
 
   const sendEmail = (e) => {
