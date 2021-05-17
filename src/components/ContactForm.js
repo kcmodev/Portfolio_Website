@@ -70,7 +70,6 @@ const ContactForm = () => {
 
   const verifyCaptcha = () => {
     let captchaResponse = window.grecaptcha.getResponse();
-    console.log(`captcha response: ${captchaResponse}`);
     return captchaResponse.length !== 0;
   };
 
