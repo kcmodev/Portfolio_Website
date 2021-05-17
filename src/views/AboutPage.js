@@ -46,7 +46,7 @@ const AboutPage = () => {
         <p>{about_me_text_2}</p>
       </Typography>
 
-      <ContactForm />
+      {/*<ContactForm />*/}
 
       <SkillAvatars
         props={{ python: true, java: true, javascript: true, node: true }}
