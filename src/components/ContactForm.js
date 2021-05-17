@@ -7,6 +7,7 @@ import {
   Button
 } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
+import { captcha_secret_key, captcha_site_key } from '../config/config';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: '50ch'
     }
+  },
+  'g-recaptcha': {
+    paddingTop: theme.spacing(2)
   }
 }));
 
@@ -64,9 +68,18 @@ const ContactForm = () => {
     }
   };
 
+  const verifyCaptcha = () => {
+    let captchaResponse = window.grecaptcha.getResponse();
+    return captchaResponse !== null;
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log(`name: ${name} || email: ${email} || message: ${message}`);
+
+    if (verifyCaptcha()) {
+      console.log('captcha successful');
+      clearFormValues();
+    }
   };
 
   return (
@@ -74,32 +87,35 @@ const ContactForm = () => {
       <Container maxWidth={'sm'}>
         <FormGroup className={classes.root}>
           <CustomTextField
-            label="Name"
+            label={'Name'}
             placeholder={name}
-            variant="filled"
-            required={true}
+            variant={'filled'}
+            // required={true}
+            disabled={true}
             onChange={(e) => setName(e.target.value)}
           />
           <CustomTextField
-            label="Email"
+            label={'Email'}
             placeholder={email}
-            variant="filled"
-            required={true}
+            variant={'filled'}
+            // required={true}
+            disabled={true}
             onChange={(e) => setEmail(e.target.value)}
           />
           <CustomTextField
-            label="Message"
+            label={'Message'}
             placeholder={message}
-            variant="filled"
-            required={true}
+            variant={'filled'}
+            // required={true}
+            disabled={true}
             multiline={true}
-            rowsMax="5"
+            rowsMax={'5'}
             onChange={(e) => setMessage(e.target.value)}
           />
           <Container maxWidth={'sm'} className={classes.root}>
             <Button
-              variant="contained"
-              color="primary"
+              variant={'contained'}
+              color={'secondary'}
               size={'large'}
               endIcon={<SendIcon />}
               onClick={sendEmail}
@@ -107,6 +123,19 @@ const ContactForm = () => {
               Send
             </Button>
           </Container>
+          <form method={'post'}>
+            <input
+              type="hidden"
+              id="g-recaptcha-response"
+              name="g-recaptcha-response"
+            />
+            <input type="hidden" name="action" value="validate_captcha" />
+            <div
+              className={'g-recaptcha'}
+              data-sitekey={captcha_site_key}
+              style={{ justifySelf: 'center', paddingTop: '2rem' }}
+            />
+          </form>
         </FormGroup>
       </Container>
     </>
