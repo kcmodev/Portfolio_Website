@@ -58,61 +58,64 @@ export default function SkillCards() {
   return (
     <Container maxWidth={'sm'} className={classes.container}>
       <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.medium}
-            component="img"
-            alt="secure password generator application"
-            height="140"
-            image={javascript_logo}
-            title="JavaScript Program"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              Secure Password Generator
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Locally generates a secure password with ample customization
-              options to ensure password manager compatibility
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+        {/*<CardActionArea>*/}
+        <CardMedia
+          className={classes.medium}
+          component="img"
+          alt="secure password generator application"
+          height="140"
+          image={javascript_logo}
+          title="JavaScript Program"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Secure Password Generator
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Locally generates a secure password with ample customization options
+            to ensure password manager compatibility
+          </Typography>
+        </CardContent>
+        {/*</CardActionArea>*/}
         <CardActions>
           <Link to={password_generator_route}>
             <Button size="small" color="primary">
               Application
             </Button>
           </Link>
-          <Link to={pass_gen_source_location}>
-            <Button size="small" color="primary">
+          <Button size="small" color="primary">
+            <a
+              href={pass_gen_source_location}
+              target={'_blank'}
+              rel={'noreferrer'}
+            >
               Source
-            </Button>
-          </Link>
+            </a>
+          </Button>
         </CardActions>
       </Card>
 
       <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.medium}
-            component="img"
-            alt="secure password generator application"
-            height="140"
-            image={python_logo}
-            title="Python Program"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              Machine Learning Application
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Calculates a user's risk of heart disease based on their latest
-              lab results and lifestyle choices. The program uses a Random
-              Forest Machine Learning Classifier to achieve a 75% accuracy
-              rating.
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+        {/*<CardActionArea>*/}
+        <CardMedia
+          className={classes.medium}
+          component="img"
+          alt="secure password generator application"
+          height="140"
+          image={python_logo}
+          title="Python Program"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Machine Learning Application
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Calculates a user's risk of heart disease based on their latest lab
+            results and lifestyle choices. The program uses a Random Forest
+            Machine Learning Classifier to achieve a 75% accuracy rating.
+          </Typography>
+        </CardContent>
+        {/*</CardActionArea>*/}
         <CardActions>
           <Link to={python_projects_route}>
             <Button size="small" color="primary">
