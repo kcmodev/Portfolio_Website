@@ -1,7 +1,6 @@
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import Navbar from '../components/Navbar';
-import ContactForm from '../components/ContactForm';
 import ProfileAvatar from '../components/ProfileAvatar';
 import CopyrightFooter from '../components/CopyrightFooter';
 import SkillAvatars from '../components/SkillAvatars';
@@ -45,8 +44,6 @@ const AboutPage = () => {
       <Typography align={'center'} className={classes.root}>
         <p>{about_me_text_2}</p>
       </Typography>
-
-      {/*<ContactForm />*/}
 
       <SkillAvatars
         props={{ python: true, java: true, javascript: true, node: true }}
