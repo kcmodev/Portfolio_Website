@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
-import SkillAvatars from '../components/SkillAvatars';
 import ProfileAvatar from '../components/ProfileAvatar';
 import Navbar from '../components/Navbar';
 import CopyrightFooter from '../components/CopyrightFooter';
+import SkillCards from '../components/SkillCards';
 
 const intro_paragraph_text =
   'Hello! My name is Steve and I am a Full Stack Software Developer. ' +
   'I graduated from Western Governors University with a Bachelor of Science in Computer Science. ' +
   'I am open to part-time, full-time, or contract work. ' +
-  'Please check below for links to a few of my personal projects and github repositories. Thank you for visiting ' +
+  'Please check below for links to my personal projects and github repositories. Thank you for visiting ' +
   'and please feel free to contact me with any inquiries on ';
 
 const ml_app_url = 'https://cvd-detection-wgu.herokuapp.com/';
@@ -46,7 +46,7 @@ const LandingPage = () => {
 
       <ProfileAvatar />
 
-      <Container maxWidth={'md'}>
+      <Container maxWidth={'sm'}>
         <Typography gutterBottom={true} className={classes.section_text}>
           {intro_paragraph_text}
           <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>
@@ -56,13 +56,15 @@ const LandingPage = () => {
         </Typography>
       </Container>
 
-      <SkillAvatars
+      {/* <SkillAvatars
         props={{
           python: true,
           javascript: true,
           react: true
         }}
-      />
+      /> */}
+
+      <SkillCards />
 
       <CopyrightFooter />
     </>

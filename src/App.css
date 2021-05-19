@@ -10,6 +10,9 @@ html {
 
 a {
     text-decoration: none;
+}
+
+a:visited {
     color: cornflowerblue;
 }
 

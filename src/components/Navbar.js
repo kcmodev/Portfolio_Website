@@ -32,7 +32,7 @@ const Navbar = (values = false) => {
   const classes = useStyles();
 
   return (
-    <Container maxWidth={'md'}>
+    <Container maxWidth={'sm'}>
       <AppBar position={'static'} className={classes.root}>
         <Toolbar disableGutters>
           <IconButton className={classes.menuButton}>

@@ -1,12 +1,4 @@
-import { Link } from 'react-router-dom';
 import { makeStyles, Container, Typography, Avatar } from '@material-ui/core';
-
-import {
-  java_projects_route,
-  password_generator_route,
-  python_projects_route,
-  react_projects_route
-} from '../routes/route_names';
 
 import python_icon from '../icons/python_logo.png';
 import javascript_icon from '../icons/javascript_logo.png';
@@ -51,84 +43,65 @@ const useStyles = makeStyles((theme) => ({
 
 const SkillAvatars = (values = false) => {
   // destructure values
-  let {
-    python,
-    javascript,
-    java,
-    react,
-    description,
-    css,
-    html,
-    node
-  } = values.props;
+  let { python, javascript, java, react, css, html, node } = values.props;
 
   const classes = useStyles();
 
   // conditionally display skills logos
   return (
     <Container maxWidth={'sm'} className={classes.root}>
-      {description && (
-        <Typography align={'center'} className={classes.root}>
-          This app uses the following frameworks/technologies:
-        </Typography>
-      )}
+      <Typography align={'center'} className={classes.root}>
+        This app uses the following frameworks/technologies:
+      </Typography>
       {python && (
-        <Link to={python_projects_route}>
-          <Avatar
-            className={classes.large}
-            src={python_icon}
-            alt={python_logo_alt_text}
-          />
-        </Link>
+        <Avatar
+          className={classes.large}
+          src={python_icon}
+          alt={python_logo_alt_text}
+        />
       )}
       {javascript && (
-        <Link to={password_generator_route}>
-          <Avatar
-            className={classes.large}
-            src={javascript_icon}
-            alt={js_logo_alt_text}
-          />
-        </Link>
+        <Avatar
+          className={classes.large}
+          src={javascript_icon}
+          alt={js_logo_alt_text}
+        />
       )}
-      {/*{java && (*/}
-      {/*  <Link to={java_projects_route}>*/}
-      {/*    <Avatar*/}
-      {/*      className={classes.large}*/}
-      {/*      src={java_icon}*/}
-      {/*      alt={java_logo_alt_text}*/}
-      {/*    />*/}
-      {/*  </Link>*/}
-      {/*)}*/}
-      {/*{react && (*/}
-      {/*  <Link to={react_projects_route}>*/}
-      {/*    <Avatar*/}
-      {/*      className={classes.large}*/}
-      {/*      src={react_icon}*/}
-      {/*      alt={react_logo_alt_text}*/}
-      {/*    />*/}
-      {/*  </Link>*/}
-      {/*)}*/}
-      {/*{html && (*/}
-      {/*  <Avatar*/}
-      {/*    className={classes.large}*/}
-      {/*    src={html_icon}*/}
-      {/*    alt={html_logo_alt_text}*/}
-      {/*  />*/}
-      {/*)}*/}
-      {/*{css && (*/}
-      {/*  <Avatar*/}
-      {/*    className={classes.large}*/}
-      {/*    src={css_icon}*/}
-      {/*    alt={css_logo_alt_text}*/}
-      {/*  />*/}
-      {/*)}*/}
-      {/*{node && (*/}
-      {/*  <Avatar*/}
-      {/*    className={classes.large}*/}
-      {/*    src={node_js_icon}*/}
-      {/*    alt={node_js_logo_alt_text}*/}
-      {/*  />*/}
-      {/*)}*/}
+      {java && (
+        <Avatar
+          className={classes.large}
+          src={java_icon}
+          alt={java_logo_alt_text}
+        />
+      )}
+      {react && (
+        <Avatar
+          className={classes.large}
+          src={react_icon}
+          alt={react_logo_alt_text}
+        />
+      )}
+      {html && (
+        <Avatar
+          className={classes.large}
+          src={html_icon}
+          alt={html_logo_alt_text}
+        />
+      )}
+      {css && (
+        <Avatar
+          className={classes.large}
+          src={css_icon}
+          alt={css_logo_alt_text}
+        />
+      )}
+      {node && (
+        <Avatar
+          className={classes.large}
+          src={node_js_icon}
+          alt={node_js_logo_alt_text}
+        />
+      )}
     </Container>
   );
 };
