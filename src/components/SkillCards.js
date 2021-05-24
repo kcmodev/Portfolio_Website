@@ -17,10 +17,10 @@ import {
   python_projects_route
 } from '../routes/route_names';
 
-const pass_gen_source_location =
+export const pass_gen_source_location =
   'https://github.com/kcmodev/Portfolio_Website/blob/main/src/components/PasswordGenerator.js';
-const ml_app_location = 'https://cvd-detection-wgu.herokuapp.com';
-const ml_app_source_location =
+export const ml_app_location = 'https://cvd-detection-wgu.herokuapp.com';
+export const ml_app_source_location =
   'https://github.com/kcmodev/cvd_detection_ml_app_206';
 
 const useStyles = makeStyles((theme) => ({

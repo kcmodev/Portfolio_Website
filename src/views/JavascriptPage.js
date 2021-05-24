@@ -1,9 +1,12 @@
+import React from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import PasswordGenerator from '../components/PasswordGenerator';
 import SkillAvatars from '../components/SkillAvatars';
 import Navbar from '../components/Navbar';
 import CopyrightFooter from '../components/CopyrightFooter';
+
+import { pass_gen_source_location } from '../components/SkillCards';
 
 const javascript_projects_description_text =
   'The following application is a secure password generator. I have a passion for Cybersecurity and am always on ' +
@@ -43,6 +46,24 @@ const JavascriptPage = () => {
           className={classes.root}
         >
           {javascript_projects_description_text}
+        </Typography>
+
+        <Typography
+          align={'center'}
+          gutterBottom={true}
+          className={classes.root}
+        >
+          The repository containing the source code for this project can be
+          found
+          <a
+            href={pass_gen_source_location}
+            target={'_blank'}
+            rel={'noreferrer'}
+          >
+            {' '}
+            here
+          </a>
+          {'.'}
         </Typography>
       </Container>
 

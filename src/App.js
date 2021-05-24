@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 
 import LandingPage from './views/LandingPage';
 import Routes from './routes/Routes';

@@ -1,3 +1,4 @@
+import React from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import SkillAvatars from '../components/SkillAvatars';
@@ -11,7 +12,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import login_screen from '../images/ml_app_login_screen.png';
 import vitals_screen from '../images/ml_app_vitals_screen.png';
 import results_screen from '../images/ml_app_results_screen.png';
-import React from 'react';
 
 const ml_app_location = 'https://cvd-detection-wgu.herokuapp.com';
 const ml_app_source_location =

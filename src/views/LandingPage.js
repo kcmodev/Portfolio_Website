@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import ProfileAvatar from '../components/ProfileAvatar';
@@ -55,14 +55,6 @@ const LandingPage = () => {
           {'.'}
         </Typography>
       </Container>
-
-      {/* <SkillAvatars
-        props={{
-          python: true,
-          javascript: true,
-          react: true
-        }}
-      /> */}
 
       <SkillCards />
 

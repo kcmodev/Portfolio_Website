@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   makeStyles,
   withStyles,
@@ -48,6 +48,9 @@ const useStyle = makeStyles((theme) => ({
   },
   checkbox: {
     paddingLeft: theme.spacing(4)
+  },
+  padTop: {
+    paddingTop: theme.spacing(4)
   }
 }));
 
@@ -171,7 +174,7 @@ const PasswordGenerator = () => {
       </Container>
 
       {/* password length slider*/}
-      <Container maxWidth={'sm'}>
+      <Container maxWidth={'sm'} className={classes.padTop}>
         <Typography className={classes.root}>Password length: </Typography>
         <Slider
           defaultValue={slider_start_value}
@@ -186,7 +189,9 @@ const PasswordGenerator = () => {
             pass_length_updater(v);
           }}
         />
+      </Container>
 
+      <Container maxWidth={'sm'} className={classes.padTop}>
         {/* Generated password display */}
         <Typography className={classes.root}>Generated Password:</Typography>
         <Typography className={classes.root} gutterBottom={true}>
