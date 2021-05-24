@@ -57,7 +57,6 @@ export default function SkillCards() {
   return (
     <Container maxWidth={'sm'} className={classes.container}>
       <Card className={classes.root}>
-        {/*<CardActionArea>*/}
         <CardMedia
           className={classes.medium}
           component="img"
@@ -75,7 +74,6 @@ export default function SkillCards() {
             to ensure password manager compatibility
           </Typography>
         </CardContent>
-        {/*</CardActionArea>*/}
         <CardActions>
           <Link to={password_generator_route}>
             <Button size="small" color="primary">
@@ -95,7 +93,6 @@ export default function SkillCards() {
       </Card>
 
       <Card className={classes.root}>
-        {/*<CardActionArea>*/}
         <CardMedia
           className={classes.medium}
           component="img"
@@ -114,7 +111,6 @@ export default function SkillCards() {
             Machine Learning Classifier to achieve a 75% accuracy rating.
           </Typography>
         </CardContent>
-        {/*</CardActionArea>*/}
         <CardActions>
           <Link to={python_projects_route}>
             <Button size="small" color="primary">

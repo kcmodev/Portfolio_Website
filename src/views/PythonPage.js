@@ -4,9 +4,14 @@ import SkillAvatars from '../components/SkillAvatars';
 import Navbar from '../components/Navbar';
 import CopyrightFooter from '../components/CopyrightFooter';
 
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+
 import login_screen from '../images/ml_app_login_screen.png';
 import vitals_screen from '../images/ml_app_vitals_screen.png';
 import results_screen from '../images/ml_app_results_screen.png';
+import React from 'react';
 
 const ml_app_location = 'https://cvd-detection-wgu.herokuapp.com';
 const ml_app_source_location =
@@ -42,13 +47,17 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(2)
   },
   login_image: {
-    transform: 'scale(0.8)'
+    // transform: 'scale(1)'
+    // height: 200,
+    // width: 275
   },
   vitals_image: {
-    transform: 'scale(0.8)'
+    // transform: 'scale(0.8)'
+    // height: 620,
+    // width: 300
   },
   results_image: {
-    transform: 'scale(0.8)'
+    // transform: 'scale(0.8)'
   },
   flex_center: {
     display: 'flex',
@@ -56,6 +65,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     paddingBottom: theme.spacing(4),
     paddingTop: theme.spacing(2)
+  },
+  cardRoot: {
+    maxWidth: 375,
+    backgroundColor: 'whitesmoke',
+    background:
+      'linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) )',
+    margin: theme.spacing(2)
   }
 }));
 
@@ -88,37 +104,66 @@ const PythonPage = () => {
       </Container>
 
       <Container maxWidth={'sm'} className={classes.flex_center}>
-        <Typography align={'center'} className={classes.root}>
-          {login_screen_paragraph}
-        </Typography>
-        <img
-          src={login_screen}
-          className={classes.login_image}
-          alt={'login screen'}
-        />
+        <Card className={classes.cardRoot}>
+          <Container>
+            <CardMedia
+              component="img"
+              alt="login screen image"
+              image={login_screen}
+              title="Python Program"
+            />
+          </Container>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Login Screen
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {login_screen_paragraph}
+            </Typography>
+          </CardContent>
+        </Card>
       </Container>
 
       <Container maxWidth={'sm'} className={classes.flex_center}>
-        <Typography align={'center'} className={classes.root}>
-          {vitals_screen_paragraph}
-        </Typography>
-        <img
-          src={vitals_screen}
-          className={classes.vitals_image}
-          alt={'vital sign entry screen'}
-        />
+        <Card className={classes.cardRoot}>
+          <Container>
+            <CardMedia
+              component="img"
+              alt="vitals screen image"
+              image={vitals_screen}
+              title="Python Program"
+            />
+          </Container>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Vitals Screen
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {vitals_screen_paragraph}
+            </Typography>
+          </CardContent>
+        </Card>
       </Container>
 
       <Container maxWidth={'sm'} className={classes.flex_center}>
-        <Typography align={'center'} className={classes.root}>
-          {results_screen_paragraph}
-        </Typography>
-        <img
-          src={results_screen}
-          className={classes.results_image}
-          id={'results_screen_img'}
-          alt={'results display screen'}
-        />
+        <Card className={classes.cardRoot}>
+          <Container>
+            <CardMedia
+              component="img"
+              alt="results screen image"
+              image={results_screen}
+              title="Python Program"
+            />
+          </Container>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Results Screen
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {results_screen_paragraph}
+            </Typography>
+          </CardContent>
+        </Card>
       </Container>
 
       <Container maxWidth={'sm'}>
