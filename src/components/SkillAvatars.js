@@ -44,16 +44,28 @@ const useStyles = makeStyles((theme) => ({
 
 const SkillAvatars = (values = false) => {
   // destructure values
-  let { python, javascript, java, react, css, html, node } = values.props;
+  let {
+    python,
+    javascript,
+    java,
+    react,
+    css,
+    html,
+    node,
+    description
+  } = values.props;
 
   const classes = useStyles();
 
   // conditionally display skills logos
   return (
     <Container maxWidth={'sm'} className={classes.root}>
-      <Typography align={'center'} className={classes.root}>
-        This app uses the following frameworks/technologies:
-      </Typography>
+      {description && (
+        <Typography align={'center'} className={classes.root}>
+          This app uses the following frameworks/technologies:
+        </Typography>
+      )}
+
       {python && (
         <Avatar
           className={classes.large}
@@ -61,6 +73,7 @@ const SkillAvatars = (values = false) => {
           alt={python_logo_alt_text}
         />
       )}
+
       {javascript && (
         <Avatar
           className={classes.large}
@@ -68,6 +81,7 @@ const SkillAvatars = (values = false) => {
           alt={js_logo_alt_text}
         />
       )}
+
       {java && (
         <Avatar
           className={classes.large}
@@ -75,6 +89,7 @@ const SkillAvatars = (values = false) => {
           alt={java_logo_alt_text}
         />
       )}
+
       {react && (
         <Avatar
           className={classes.large}
@@ -82,6 +97,7 @@ const SkillAvatars = (values = false) => {
           alt={react_logo_alt_text}
         />
       )}
+
       {html && (
         <Avatar
           className={classes.large}
@@ -89,6 +105,7 @@ const SkillAvatars = (values = false) => {
           alt={html_logo_alt_text}
         />
       )}
+
       {css && (
         <Avatar
           className={classes.large}
@@ -96,6 +113,7 @@ const SkillAvatars = (values = false) => {
           alt={css_logo_alt_text}
         />
       )}
+
       {node && (
         <Avatar
           className={classes.large}

@@ -1,3 +1,4 @@
+import React from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import Navbar from '../components/Navbar';
@@ -32,7 +33,7 @@ const AboutPage = () => {
   const classes = useStyle();
 
   return (
-    <Container maxWidth={'md'}>
+    <Container maxWidth={'sm'}>
       <Navbar />
 
       <ProfileAvatar />
