@@ -46,19 +46,6 @@ const useStyles = makeStyles((theme) => ({
     color: 'whitesmoke',
     paddingBottom: theme.spacing(2)
   },
-  login_image: {
-    // transform: 'scale(1)'
-    // height: 200,
-    // width: 275
-  },
-  vitals_image: {
-    // transform: 'scale(0.8)'
-    // height: 620,
-    // width: 300
-  },
-  results_image: {
-    // transform: 'scale(0.8)'
-  },
   flex_center: {
     display: 'flex',
     flexWrap: 'wrap',
