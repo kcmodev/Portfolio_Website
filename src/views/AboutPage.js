@@ -15,16 +15,19 @@ const about_me_text_1 =
   'better than how I found it.';
 
 const about_me_text_2 =
-  'I enjoy full stack development but if I had to choose between front or back end ' +
-  "it's an easy choice for me; back end. I have always enjoyed working on the stuff under the hood (network routing, automation etc) " +
-  'so I really enjoy working with things like Node.js and MongoDB as well. I am also passionate about Cybersecurity spend a ' +
+  'I enjoy full stack development and cybersecurity. I am especially interested in opportunities where the two intersect. ' +
+  'I have always enjoyed working on the stuff under the hood (network routing, automation etc) ' +
+  'so I really enjoy working with things like Node.js and MongoDB as well. I am also passionate about cybersecurity spend a ' +
   'considerable amount of time ensuring my applications are secure. I am an open book, if ' +
-  "you have any questions or inquiries for a bid on development work or a potential job opportunity please don't hesitate " +
-  'to reach out. Thanks for coming by.';
+  "you have any questions or inquiries for a bid on development work or a potential job opportunity so please don't hesitate " +
+  'to reach out. Thank you for taking the time to have a look.';
 
-const useStyle = makeStyles(() => ({
+const useStyle = makeStyles((theme) => ({
   root: {
     color: 'whitesmoke'
+  },
+  padTop: {
+    paddingTop: theme.spacing(2)
   }
 }));
 
@@ -38,13 +41,22 @@ const AboutPage = () => {
 
       <ProfileAvatar />
 
-      <Typography align={'center'} className={classes.root}>
-        {about_me_text_1}
-      </Typography>
+      <Container>
+        <Typography
+          align={'center'}
+          className={classes.root}
+          gutterBottom={true}
+          paragraph={true}
+        >
+          {about_me_text_1}
+        </Typography>
+      </Container>
 
-      <Typography align={'center'} className={classes.root}>
-        <p>{about_me_text_2}</p>
-      </Typography>
+      <Container className={classes.padTop}>
+        <Typography align={'center'} className={classes.root}>
+          {about_me_text_2}
+        </Typography>
+      </Container>
 
       <SkillAvatars
         props={{ python: true, java: true, javascript: true, node: true }}
