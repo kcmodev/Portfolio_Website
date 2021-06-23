@@ -1,10 +1,10 @@
-#Portfolio Website
+# Portfolio Website
 
 Hosts projects from various programming languages to showcase projects.
 
 <ul>
 
-###<li>JavaScript Password Generator</li>
+### <li>JavaScript Password Generator</li>
 
 <p>Generates secure passwords with granular controls for the user.</p>
 
@@ -13,7 +13,7 @@ multiple selections for the user to select the special characters they would lik
 This is all handled locally in the users browser and nothing is stored in any way.</p>
 
 
-###<li>Python Machine Learning Program</li>
+### <li>Python Machine Learning Program</li>
 
 <p>Uses a random forest classifier to determine a user's risk of developing cardiovascular disease based on lab values 
 and lifestyle metrics.</p>
