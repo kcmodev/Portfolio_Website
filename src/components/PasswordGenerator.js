@@ -215,6 +215,10 @@ function generate_character_array(selected_special_chars) {
     final_character_list.push(String.fromCharCode(lower_case)); // add lower case
   }
 
+  for (let i = 0; i < 9; i++){
+    final_character_list.push(String(i))
+  }
+
   // add all special characters to the list
   for (let i = 0; i < selected_special_chars.length; i++) {
     final_character_list.push(selected_special_chars[i]);
