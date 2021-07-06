@@ -5,7 +5,13 @@ import CopyrightIcon from '@material-ui/icons/Copyright';
 const useStyle = makeStyles((theme) => ({
   root: {
     color: 'whitesmoke',
+    display: 'flex',
+    alignContent: 'center',
+    justifyContent: 'center',
     paddingTop: theme.spacing(4)
+  },
+  copySymbol: {
+    paddingRight: theme.spacing(1)
   }
 }));
 
@@ -16,7 +22,7 @@ const CopyrightFooter = () => {
   return (
     <Container maxWidth={'sm'}>
       <Typography align={'center'} className={classes.root}>
-        <CopyrightIcon fontSize={'medium'} /> Steven Christensen 2021
+        <CopyrightIcon fontSize={'small'} className={classes.copySymbol}/> Steven Christensen 2021
       </Typography>
     </Container>
   );

@@ -14,7 +14,7 @@ const intro_paragraph_text =
   'and please feel free to contact me with any inquiries on ';
 
 const ml_app_url = 'https://cvd-detection-wgu.herokuapp.com/';
-const linkedin_url = 'https://www.linkedin.com/in/stevenc21/';
+export const linkedin_url = 'https://www.linkedin.com/in/stevenc21/';
 
 const useStyles = makeStyles((theme) => ({
   root: {
