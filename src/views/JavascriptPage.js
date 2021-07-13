@@ -84,8 +84,6 @@ const JavascriptPage = () => {
         props={{
           javascript: true,
           react: true,
-          html: true,
-          css: true,
           description: true
         }}
       />

@@ -19,9 +19,8 @@ import {
 
 export const pass_gen_source_location =
   'https://github.com/kcmodev/Portfolio_Website/blob/main/src/components/PasswordGenerator.js';
-export const ml_app_location = 'https://cvd-detection-wgu.herokuapp.com';
-export const ml_app_source_location =
-  'https://github.com/kcmodev/cvd_detection_ml_app_206';
+export const hvac_app_source_location =
+  'https://github.com/kcmodev/pi_hvac_controller';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,19 +95,19 @@ export default function SkillCards() {
         <CardMedia
           className={classes.medium}
           component="img"
-          alt="secure password generator application"
+          alt="hvac air freshener application"
           height="140"
           image={python_logo}
           title="Python Program"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Machine Learning Application
+            Smart Thermostat API Integration
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Calculates a user's risk of heart disease based on their latest lab
-            results and lifestyle choices. The program uses a Random Forest
-            Machine Learning Classifier to achieve a 75% accuracy rating.
+            Uses a Raspberry Pi to control a DC motor that sprays air freshener into my home HVAC system. It uses
+            Google's Nest API to determine if the HVAC system is currently operating and uses that information to determine
+            when to actuate the motor to disperse air freshener throughout my entire house.
           </Typography>
         </CardContent>
         <CardActions>
@@ -118,13 +117,8 @@ export default function SkillCards() {
             </Button>
           </Link>
           <Button size="small" color="primary">
-            <a href={ml_app_location} target={'_blank'} rel={'noreferrer'}>
-              Application
-            </a>
-          </Button>
-          <Button size="small" color="primary">
             <a
-              href={ml_app_source_location}
+              href={hvac_app_source_location}
               target={'_blank'}
               rel={'noreferrer'}
             >

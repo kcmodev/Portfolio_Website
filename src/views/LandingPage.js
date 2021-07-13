@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import ProfileAvatar from '../components/ProfileAvatar';
@@ -13,10 +13,9 @@ const intro_paragraph_text =
   'Please check below for links to my personal projects and github repositories. Thank you for visiting ' +
   'and please feel free to contact me with any inquiries on ';
 
-const ml_app_url = 'https://cvd-detection-wgu.herokuapp.com/';
 export const linkedin_url = 'https://www.linkedin.com/in/stevenc21/';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexBasis: 'auto'
   },
@@ -28,17 +27,6 @@ const useStyles = makeStyles((theme) => ({
 
 const LandingPage = () => {
   const classes = useStyles();
-
-  const request = new Request(ml_app_url, {
-    method: 'GET',
-    mode: 'no-cors',
-    cache: 'default'
-  });
-
-  // Send GET request to Heroku to wake app
-  useEffect(() => {
-    fetch(request).then(() => console.log('Request sent'));
-  });
 
   return (
     <>

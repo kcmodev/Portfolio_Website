@@ -8,6 +8,7 @@ import react_icon from '../icons/react_logo.svg';
 import html_icon from '../icons/html_logo.png';
 import css_icon from '../icons/css_logo.svg';
 import node_js_icon from '../icons/node_js_logo.png';
+import flask_icon from '../icons/flask_logo.svg'
 
 const python_logo_alt_text = 'python programming language logo';
 const java_logo_alt_text = 'java programming language logo';
@@ -16,6 +17,7 @@ const react_logo_alt_text = 'react framework logo';
 const html_logo_alt_text = 'html 5 logo';
 const css_logo_alt_text = 'css 3 logo';
 const node_js_logo_alt_text = 'node js logo';
+const flask_icon_text = 'python flask library logo';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexWrap: 'wrap',
     color: 'whitesmoke',
-    paddingTop: theme.spacing(4)
+    paddingTop: theme.spacing(4),
   },
   small: {
     width: theme.spacing(3),
@@ -38,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
   },
   large: {
     width: theme.spacing(21),
-    height: theme.spacing(21)
+    height: theme.spacing(21),
+    backgroundColor: 'whitesmoke'
   }
 }));
 
@@ -52,6 +55,7 @@ const SkillAvatars = (values = false) => {
     css,
     html,
     node,
+    flask,
     description
   } = values.props;
 
@@ -120,6 +124,10 @@ const SkillAvatars = (values = false) => {
           src={node_js_icon}
           alt={node_js_logo_alt_text}
         />
+      )}
+
+      {flask && (
+        <Avatar className={classes.large} src={flask_icon} alt={flask_icon_text}/>
       )}
     </Container>
   );

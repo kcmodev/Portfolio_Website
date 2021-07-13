@@ -63,10 +63,10 @@ const AboutPage = () => {
         </Typography>
       </Container>
 
-      <SkillAvatars
-        props={{ python: true, java: true, javascript: true, node: true }}
-      />
-      <SkillAvatars props={{ react: true, html: true, css: true }} />
+      {/*<SkillAvatars*/}
+      {/*  props={{ python: true, java: true, javascript: true, node: true }}*/}
+      {/*/>*/}
+      {/*<SkillAvatars props={{ react: true, html: true, css: true }} />*/}
 
       <CopyrightFooter />
     </Container>
