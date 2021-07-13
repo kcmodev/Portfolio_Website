@@ -114,7 +114,7 @@ const PasswordGenerator = () => {
 
   return (
     <>
-      <Container maxWidth={'sm'} className={classes.root}>
+      <Container maxWidth={'md'} className={classes.root}>
         <FormGroup className={classes.root}>
           {/* first column */}
           {symbol_list.map((x, i) =>
@@ -191,7 +191,7 @@ const PasswordGenerator = () => {
         />
       </Container>
 
-      <Container maxWidth={'sm'} className={classes.padTop}>
+      <Container maxWidth={'md'} className={classes.padTop}>
         {/* Generated password display */}
         <Typography className={classes.root}>Generated Password:</Typography>
         <Typography className={classes.root} gutterBottom={true}>

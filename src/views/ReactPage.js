@@ -17,7 +17,7 @@ const ReactPage = () => {
 
   return (
     <>
-      <Container maxWidth={'sm'}>
+      <Container maxWidth={'md'}>
         <Navbar />
 
         <Typography variant={'h3'} align={'center'} className={classes.root}>

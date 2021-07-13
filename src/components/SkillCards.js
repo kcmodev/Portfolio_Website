@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'whitesmoke',
     background:
       'linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) )',
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
   },
   small: {
     width: theme.spacing(3),
@@ -47,6 +47,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexWrap: 'wrap',
     paddingTop: theme.spacing(4)
+  },
+  bottom: {
+    alignSelf: 'end'
   }
 }));
 
@@ -54,13 +57,12 @@ export default function SkillCards() {
   const classes = useStyles();
 
   return (
-    <Container maxWidth={'sm'} className={classes.container}>
+    <Container maxWidth={'md'} className={classes.container}>
       <Card className={classes.root}>
         <CardMedia
           className={classes.medium}
           component="img"
           alt="secure password generator application"
-          height="140"
           image={javascript_logo}
           title="JavaScript Program"
         />
@@ -70,7 +72,8 @@ export default function SkillCards() {
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Locally generates a secure password with ample customization options
-            to ensure password manager compatibility
+            such as selecting specific special characters and specifying password length
+            to ensure password manager compatibility.
           </Typography>
         </CardContent>
         <CardActions>

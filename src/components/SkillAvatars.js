@@ -63,73 +63,78 @@ const SkillAvatars = (values = false) => {
 
   // conditionally display skills logos
   return (
-    <Container maxWidth={'sm'} className={classes.root}>
+    <>
       {description && (
+      <Container maxWidth={'md'} className={classes.root}>
+
         <Typography align={'center'} className={classes.root}>
           This app uses the following frameworks/technologies:
         </Typography>
+      </Container>
       )}
 
-      {python && (
-        <Avatar
-          className={classes.large}
-          src={python_icon}
-          alt={python_logo_alt_text}
-        />
-      )}
+      <Container maxWidth={'md'} className={classes.root}>
+        {python && (
+          <Avatar
+            className={classes.large}
+            src={python_icon}
+            alt={python_logo_alt_text}
+          />
+        )}
 
-      {javascript && (
-        <Avatar
-          className={classes.large}
-          src={javascript_icon}
-          alt={js_logo_alt_text}
-        />
-      )}
+        {javascript && (
+          <Avatar
+            className={classes.large}
+            src={javascript_icon}
+            alt={js_logo_alt_text}
+          />
+        )}
 
-      {java && (
-        <Avatar
-          className={classes.large}
-          src={java_icon}
-          alt={java_logo_alt_text}
-        />
-      )}
+        {java && (
+          <Avatar
+            className={classes.large}
+            src={java_icon}
+            alt={java_logo_alt_text}
+          />
+        )}
 
-      {react && (
-        <Avatar
-          className={classes.large}
-          src={react_icon}
-          alt={react_logo_alt_text}
-        />
-      )}
+        {react && (
+          <Avatar
+            className={classes.large}
+            src={react_icon}
+            alt={react_logo_alt_text}
+          />
+        )}
 
-      {html && (
-        <Avatar
-          className={classes.large}
-          src={html_icon}
-          alt={html_logo_alt_text}
-        />
-      )}
+        {html && (
+          <Avatar
+            className={classes.large}
+            src={html_icon}
+            alt={html_logo_alt_text}
+          />
+        )}
 
-      {css && (
-        <Avatar
-          className={classes.large}
-          src={css_icon}
-          alt={css_logo_alt_text}
-        />
-      )}
+        {css && (
+          <Avatar
+            className={classes.large}
+            src={css_icon}
+            alt={css_logo_alt_text}
+          />
+        )}
 
-      {node && (
-        <Avatar
-          className={classes.large}
-          src={node_js_icon}
-          alt={node_js_logo_alt_text}
-        />
-      )}
+        {node && (
+          <Avatar
+            className={classes.large}
+            src={node_js_icon}
+            alt={node_js_logo_alt_text}
+          />
+        )}
 
-      {flask && (
-        <Avatar className={classes.large} src={flask_icon} alt={flask_icon_text}/>
-      )}
-    </Container>
+        {flask && (
+          <Avatar className={classes.large} src={flask_icon} alt={flask_icon_text} />
+        )}
+      </Container>
+    </>
   );
 };
 

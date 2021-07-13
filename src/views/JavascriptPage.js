@@ -31,7 +31,7 @@ const JavascriptPage = () => {
     <>
       <Navbar />
 
-      <Container maxWidth={'sm'}>
+      <Container maxWidth={'md'}>
         <Typography
           variant={'h3'}
           align={'center'}
@@ -67,7 +67,7 @@ const JavascriptPage = () => {
         </Typography>
       </Container>
 
-      <Container maxWidth={'sm'}>
+      <Container maxWidth={'md'}>
         <Typography
           variant={'h4'}
           align={'center'}

@@ -34,7 +34,7 @@ const LandingPage = () => {
 
       <ProfileAvatar />
 
-      <Container maxWidth={'sm'}>
+      <Container maxWidth={'md'}>
         <Typography gutterBottom={true} className={classes.section_text}>
           {intro_paragraph_text}
           <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>

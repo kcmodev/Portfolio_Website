@@ -20,7 +20,7 @@ const CopyrightFooter = () => {
   // let copy = String.fromCharCode(169); // copyright char
 
   return (
-    <Container maxWidth={'sm'}>
+    <Container maxWidth={'md'}>
       <Typography align={'center'} className={classes.root}>
         <CopyrightIcon fontSize={'small'} className={classes.copySymbol}/> Steven Christensen 2021
       </Typography>

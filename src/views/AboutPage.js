@@ -37,7 +37,7 @@ const AboutPage = () => {
   const classes = useStyle();
 
   return (
-    <Container maxWidth={'sm'}>
+    <Container maxWidth={'md'}>
       <Navbar />
 
       <ProfileAvatar />
