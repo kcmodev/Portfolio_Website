@@ -7,6 +7,13 @@ import CopyrightFooter from '../components/CopyrightFooter';
 import ProfileAvatar from '../components/ProfileAvatar';
 
 import { hvac_app_source_location } from '../components/SkillCards';
+import controller_w_jumper from '../images/controller_with_jumper.jpg'
+import controller_wo_jumper from '../images/controller_without_jumper.jpg'
+import project_box_guts from '../images/project_box_inside.jpg'
+
+const cont_w_jumper_alt = 'L298N motor controller board'
+const cont_wo_jumper_alt = 'L298N motor controller board with jumper connection removed'
+const box_guts_alt = 'Project box containing microcontroller and various wires'
 
 // import Card from '@material-ui/core/Card';
 // import CardContent from '@material-ui/core/CardContent';
@@ -48,6 +55,12 @@ const paragraph_6 = 'The last stage of the project was to implement a method to 
   'command to the pi instructing it to cycle the motor and run the hvac system fan for 15 minutes effectively dispersing it throughout ' +
   'the home.';
 
+const paragraph_x = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus mauris sit amet lorem pretium, ' +
+  'et pulvinar lorem volutpat. Fusce accumsan massa lectus, in lobortis turpis sagittis sed. Aliquam eget augue sit amet risus ' +
+  'consequat aliquet ut in ligula. Suspendisse odio dolor, eleifend a purus quis, finibus vestibulum nibh. Vestibulum consectetur ' +
+  'sit amet odio non fringilla. Aenean quis orci in massa vehicula pretium. Interdum et malesuada fames ac ante ipsum primis in ' +
+  'faucibus. Maecenas varius cursus suscipit. Maecenas eu turpis velit. Phasellus nec tortor sapien. Nunc hendrerit eu enim at feugiat.'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     color: 'whitesmoke',
@@ -55,17 +68,23 @@ const useStyles = makeStyles((theme) => ({
   },
   flex_center: {
     display: 'flex',
-    flexWrap: 'wrap',
+    // flexWrap: 'wrap',
+    '@media (max-width: 40em)': {
+      flexWrap: 'wrap'
+    },
     justifyContent: 'center',
     paddingBottom: theme.spacing(4),
-    paddingTop: theme.spacing(2)
+    paddingTop: theme.spacing(2),
+    // margin: theme.spacing(1)
   },
-  cardRoot: {
-    maxWidth: 375,
-    backgroundColor: 'whitesmoke',
-    background:
-      'linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) )',
-    margin: theme.spacing(2)
+  centerImg: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    paddingBottom: theme.spacing(2)
+  },
+  padImage: {
+    paddingLeft: theme.spacing(2)
   }
 }));
 
@@ -81,10 +100,6 @@ const PythonPage = () => {
 
         <Typography variant={'h3'} align={'center'} className={classes.root}>
           Smart Thermostat API Integration
-        </Typography>
-
-        <Typography variant={'h4'} align={'center'} className={classes.root}>
-          (Pictures coming soon!)
         </Typography>
 
         <Typography align={'center'} className={classes.root}>
@@ -121,7 +136,24 @@ const PythonPage = () => {
           {'. '}
           {paragraph_4_1}
         </Typography>
+      </Container>
 
+      <Container maxWidth={'md'} className={classes.flex_center}>
+        <Typography className={classes.root}>{paragraph_x}</Typography>
+        <img className={classes.padImage} src={controller_w_jumper} alt={cont_w_jumper_alt}/>
+      </Container>
+
+      <Container maxWidth={'md'} className={classes.flex_center}>
+        <Typography className={classes.root}>{paragraph_x}</Typography>
+        <img className={classes.padImage} src={controller_wo_jumper} alt={controller_wo_jumper}/>
+      </Container>
+
+      <Container maxWidth={'md'} className={classes.centerImg}>
+        <Typography className={classes.root}>{paragraph_x}</Typography>
+        <img src={project_box_guts} alt={box_guts_alt}/>
+      </Container>
+
+      <Container maxWidth={'md'}>
         <Typography align={'center'} className={classes.root}>
           {paragraph_5}
         </Typography>
