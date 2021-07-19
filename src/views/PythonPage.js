@@ -45,21 +45,34 @@ const paragraph_4 = 'From that point the project needed to be wired up to a moto
 const paragraph_4_1 = 'I then wired the controller to the pi and programmed the pi to cycle the motor. After completing that I ' +
   'signed up for a developer account with google and authorized my account for API access following their instructions.';
 
-const paragraph_5 = 'Then it was a matter of programming to algorithm to make the api calls and coordinate that with the ' +
-  'pi to actuate the motor. I settled on making a request every 5 minutes to check the status of the thermostat. Based on that ' +
-  'response it would either cycle the motor or check again in 5 minutes. Logic was also included to not spray the air conditioner ' +
-  'at night while we are sleeping to avoid unnecessary use.';
+const paragraph_5 = 'This simply shows the jumper that will need to be removed if you are not using a stepper motor. Since I am using a ' +
+  'DC motor, and only one at that, I removed this jumper to expose the pins below.'
 
-const paragraph_6 = 'The last stage of the project was to implement a method to manually spray the air freshener when desired. This ' +
+const paragraph_6 = 'Now then, for a breakdown of the L298N board. #1 and #2 are the DC motor + and - respectively. #3 is the power supply ' +
+  'for the board itself. This needs to be a minimum of 5v and separate from the pi to avoid overloading it\'s pinout and damaging the Pi. ' +
+  'I chose to use a 10v usb wall charger. #4 is the ground for the board. This needs to be connected to both the discrete power supply and ' +
+  'the Pi\'s ground. #5 is a 5v output powered by the power supply if needed. #6 is the pin to enable the board controller for the motor. ' +
+  'Simply sending this pin a high signal will allow the board to control the motor. If you want to use PWM to control your motor, connect #6 to ' +
+  'a PWM pinout on the Pi. #7 and #8 are IN1 and IN2 respectively. This is use to control the motors direction. IN1 set to high and IN2 set to low ' +
+  'will cause the motor to turn in one direction ane vice versa will cause it to turn in the other direction.'
+
+const paragraph_7 = 'Below is the complete project. #1 - There are several large holes for the fan here to pull air into th case with the idea being ' +
+  'to push air over the heat sinks on the pi and the controller to the exhaust holes on the side at #2. #3 are the wires used to control the motor. ' +
+  'Referencing the picture above; #6 is the enable pin which I connected to GPIO12, #7 is IN1 which I connected to GPIO23 used for making the motor ' +
+  'move forward, lastly #8 is IN2 which I connected to GPIO24 to make the motor move in reverse. All the wires leading out of the case were soldered to ' +
+  'quick release connectors for making repairs without needing to manage cumbersome cords.'
+
+const paragraph_8 = 'From there it was a matter of determining the method for making the api calls and coordinate that with the ' +
+  'Pi to actuate the motor. I have a Google Nest thermostat so this was accomplished with their REST API. ' +
+  'I settled on making a request every 5 minutes to check the status of the thermostat. Based on the ' +
+  'response received it would either cycle the motor or check again in 5 minutes. Logic was also included to not spray the air conditioner ' +
+  'at night while we are sleeping to avoid unnecessary use. This also used OAuth2 to ensure secure and authorized API calls.';
+
+const paragraph_9 = 'The last stage of the project was to implement a method to manually spray the air freshener when desired. This ' +
   'was achieved with the Python framework Flask. It serves a simple (for now) website with a button that, when clicked, sends a ' +
   'command to the pi instructing it to cycle the motor and run the hvac system fan for 15 minutes effectively dispersing it throughout ' +
-  'the home.';
-
-const paragraph_x = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus mauris sit amet lorem pretium, ' +
-  'et pulvinar lorem volutpat. Fusce accumsan massa lectus, in lobortis turpis sagittis sed. Aliquam eget augue sit amet risus ' +
-  'consequat aliquet ut in ligula. Suspendisse odio dolor, eleifend a purus quis, finibus vestibulum nibh. Vestibulum consectetur ' +
-  'sit amet odio non fringilla. Aenean quis orci in massa vehicula pretium. Interdum et malesuada fames ac ante ipsum primis in ' +
-  'faucibus. Maecenas varius cursus suscipit. Maecenas eu turpis velit. Phasellus nec tortor sapien. Nunc hendrerit eu enim at feugiat.'
+  'the home. For improved security this is only accessible locally but it will be upgraded to a full fledged progressive web app as time ' +
+  'goes on.';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,14 +81,12 @@ const useStyles = makeStyles((theme) => ({
   },
   flex_center: {
     display: 'flex',
-    // flexWrap: 'wrap',
     '@media (max-width: 40em)': {
       flexWrap: 'wrap'
     },
     justifyContent: 'center',
     paddingBottom: theme.spacing(4),
-    paddingTop: theme.spacing(2),
-    // margin: theme.spacing(1)
+    paddingTop: theme.spacing(2)
   },
   centerImg: {
     display: 'flex',
@@ -139,27 +150,27 @@ const PythonPage = () => {
       </Container>
 
       <Container maxWidth={'md'} className={classes.flex_center}>
-        <Typography className={classes.root}>{paragraph_x}</Typography>
+        <Typography align={'center'} className={classes.root}>{paragraph_5}</Typography>
         <img className={classes.padImage} src={controller_w_jumper} alt={cont_w_jumper_alt}/>
       </Container>
 
       <Container maxWidth={'md'} className={classes.flex_center}>
-        <Typography className={classes.root}>{paragraph_x}</Typography>
+        <Typography align={'center'} className={classes.root}>{paragraph_6}</Typography>
         <img className={classes.padImage} src={controller_wo_jumper} alt={controller_wo_jumper}/>
       </Container>
 
       <Container maxWidth={'md'} className={classes.centerImg}>
-        <Typography className={classes.root}>{paragraph_x}</Typography>
+        <Typography align={'center'} className={classes.root}>{paragraph_7}</Typography>
         <img src={project_box_guts} alt={box_guts_alt}/>
       </Container>
 
       <Container maxWidth={'md'}>
         <Typography align={'center'} className={classes.root}>
-          {paragraph_5}
+          {paragraph_8}
         </Typography>
 
         <Typography align={'center'} className={classes.root}>
-          {paragraph_6}
+          {paragraph_9}
         </Typography>
 
         <Typography align={'center'} className={classes.root}>
