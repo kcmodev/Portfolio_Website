@@ -203,26 +203,11 @@ const PasswordGenerator = () => {
 };
 
 function generate_character_array(selected_special_chars) {
-  let final_character_list = [];
-
-  // add a-z and A-Z
-  // 65 - 90 === A-Z in decimal unicode
-  // 97 - 122 === a-z in decimal unicode
-  for (let i = 65; i < 91; i++) {
-    final_character_list.push(String.fromCharCode(i)); // add upper case
-
-    let lower_case = i + 32; // difference in unicode values between upper and lower case is 32
-    final_character_list.push(String.fromCharCode(lower_case)); // add lower case
-  }
-
-  for (let i = 0; i < 9; i++){
-    final_character_list.push(String(i))
-  }
+  let final_character_list = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+  final_character_list = final_character_list.split('')
 
   // add all special characters to the list
-  for (let i = 0; i < selected_special_chars.length; i++) {
-    final_character_list.push(selected_special_chars[i]);
-  }
+  selected_special_chars.forEach(x => final_character_list.push(x))
 
   // return the finalized list
   return final_character_list;
