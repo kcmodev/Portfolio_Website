@@ -5,7 +5,7 @@ import {
   AppBar,
   Container,
   Toolbar,
-  IconButton
+  IconButton, Typography
 } from '@material-ui/core';
 
 import InfoIcon from '@material-ui/icons/Info';
@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1
+  },
+  text: {
+    color: 'whitesmoke'
   }
 }));
 
@@ -33,7 +36,7 @@ const Navbar = (values = false) => {
   const classes = useStyles();
 
   return (
-    <Container maxWidth={'sm'}>
+    <Container maxWidth={'md'}>
       <AppBar position={'static'} className={classes.root}>
         <Toolbar disableGutters>
           <IconButton className={classes.menuButton}>
@@ -44,7 +47,8 @@ const Navbar = (values = false) => {
             )}
             {on_landing_page && (
               <Link to={about_me_route}>
-                <InfoIcon style={{ color: 'whitesmoke' }} />
+                {/*<InfoIcon style={{ color: 'whitesmoke' }} />*/}
+                <Typography className={classes.text} variant={'h6'}>About</Typography>
               </Link>
             )}
           </IconButton>
