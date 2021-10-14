@@ -9,9 +9,9 @@ import SkillCards from '../components/SkillCards';
 const intro_paragraph_text =
   'Hello! My name is Steve and I am a Full Stack Software Developer. ' +
   'I graduated from Western Governors University with a Bachelor of Science in Computer Science. ' +
-  'I am open to part-time, full-time, or contract work. ' +
-  'Please check below for links to my personal projects and github repositories. Thank you for visiting ' +
-  'and please feel free to contact me with any inquiries on ';
+  'Please check below for links to my personal projects and github repositories. ';
+
+const intro_paragraph_text_2 = 'Thank you for visiting and please feel free to contact me with any inquiries on ';
 
 export const linkedin_url = 'https://www.linkedin.com/in/stevenc21/';
 
@@ -35,8 +35,12 @@ const LandingPage = () => {
       <ProfileAvatar />
 
       <Container maxWidth={'md'}>
-        <Typography gutterBottom={true} className={classes.section_text}>
+        <Typography gutterBottom={true} className={classes.section_text} variant={'h6'}>
           {intro_paragraph_text}
+        </Typography>
+
+        <Typography gutterBottom={true} className={classes.section_text} variant={'h6'}>
+          {intro_paragraph_text_2}
           <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>
             LinkedIn
           </a>
