@@ -17,6 +17,8 @@ import {
 
 import { github_url, linkedin_url } from '../views/LandingPage';
 
+const navbar_text_typography_size = 'subtitle1';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -41,7 +43,10 @@ const Navbar = (props) => {
           {!(current_page === 'Landing') && (
             <IconButton>
               <Link to={landing_page_route}>
-                <Typography className={classes.text} variant={'h6'}>
+                <Typography
+                  className={classes.text}
+                  variant={navbar_text_typography_size}
+                >
                   Home
                 </Typography>
               </Link>
@@ -51,7 +56,10 @@ const Navbar = (props) => {
           {!(current_page === 'About') && (
             <IconButton>
               <Link to={about_me_route}>
-                <Typography className={classes.text} variant={'h6'}>
+                <Typography
+                  className={classes.text}
+                  variant={navbar_text_typography_size}
+                >
                   About
                 </Typography>
               </Link>
@@ -61,7 +69,10 @@ const Navbar = (props) => {
           {!(current_page === 'Resume') && (
             <IconButton>
               <Link to={resume_route}>
-                <Typography className={classes.text} variant={'h6'}>
+                <Typography
+                  className={classes.text}
+                  variant={navbar_text_typography_size}
+                >
                   Resume
                 </Typography>
               </Link>
@@ -70,7 +81,10 @@ const Navbar = (props) => {
 
           <IconButton>
             <a href={github_url} target={'_blank'} rel={'noreferrer'}>
-              <Typography className={classes.text} variant={'h6'}>
+              <Typography
+                className={classes.text}
+                variant={navbar_text_typography_size}
+              >
                 Github
               </Typography>
             </a>
@@ -78,7 +92,10 @@ const Navbar = (props) => {
 
           <IconButton>
             <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>
-              <Typography className={classes.text} variant={'h6'}>
+              <Typography
+                className={classes.text}
+                variant={navbar_text_typography_size}
+              >
                 LinkedIn
               </Typography>
             </a>
