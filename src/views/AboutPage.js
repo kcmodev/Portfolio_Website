@@ -5,7 +5,6 @@ import { linkedin_url } from './LandingPage';
 import Navbar from '../components/Navbar';
 import ProfileAvatar from '../components/ProfileAvatar';
 import CopyrightFooter from '../components/CopyrightFooter';
-import SkillAvatars from '../components/SkillAvatars';
 
 const about_me_text_1 =
   'Hello! My name is Steve. I have been obsessed with computers, and technology in general, for ' +
