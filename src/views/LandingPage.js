@@ -32,7 +32,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <Navbar props={{ on_landing_page: true }} />
+      <Navbar current_page="Landing" />
 
       <ProfileAvatar />
 

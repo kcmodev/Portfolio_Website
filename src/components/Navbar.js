@@ -22,48 +22,54 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'flex-end',
     background: 'none',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    marginBottom: '2rem'
   },
   text: {
     color: 'whitesmoke'
   }
 }));
 
-const Navbar = (values = false) => {
-  let on_landing_page = values.props;
+const Navbar = (props) => {
   const classes = useStyles();
+  const current_page = props.current_page;
 
   return (
-    <Container maxWidth={'md'}>
+    <>
       <AppBar position={'static'} className={classes.root}>
         <Toolbar disableGutters>
-          <IconButton>
-            {!on_landing_page && (
+          {!(current_page === 'Landing') && (
+            <IconButton>
               <Link to={landing_page_route}>
                 <Typography className={classes.text} variant={'h6'}>
                   Home
                 </Typography>
               </Link>
-            )}
-            {on_landing_page && (
+            </IconButton>
+          )}
+
+          {!(current_page === 'About') && (
+            <IconButton>
               <Link to={about_me_route}>
                 <Typography className={classes.text} variant={'h6'}>
                   About
                 </Typography>
               </Link>
-            )}
-          </IconButton>
+            </IconButton>
+          )}
+
+          {!(current_page === 'Resume') && (
+            <IconButton>
+              <Link to={resume_route}>
+                <Typography className={classes.text} variant={'h6'}>
+                  Resume
+                </Typography>
+              </Link>
+            </IconButton>
+          )}
 
           <IconButton>
-            <Link to={resume_route}>
-              <Typography className={classes.text} variant={'h6'}>
-                Resume
-              </Typography>
-            </Link>
-          </IconButton>
-
-          <IconButton>
-            <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>
+            <a href={github_url} target={'_blank'} rel={'noreferrer'}>
               <Typography className={classes.text} variant={'h6'}>
                 Github
               </Typography>
@@ -71,17 +77,15 @@ const Navbar = (values = false) => {
           </IconButton>
 
           <IconButton>
-            {!on_landing_page && (
-              <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>
-                <Typography className={classes.text} variant={'h6'}>
-                  LinkedIn
-                </Typography>
-              </a>
-            )}
+            <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>
+              <Typography className={classes.text} variant={'h6'}>
+                LinkedIn
+              </Typography>
+            </a>
           </IconButton>
         </Toolbar>
       </AppBar>
-    </Container>
+    </>
   );
 };
 
