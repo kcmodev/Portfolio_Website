@@ -203,11 +203,12 @@ const PasswordGenerator = () => {
 };
 
 function generate_character_array(selected_special_chars) {
-  let final_character_list = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-  final_character_list = final_character_list.split('')
+  let final_character_list =
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+  final_character_list = final_character_list.split('');
 
   // add all special characters to the list
-  selected_special_chars.forEach(x => final_character_list.push(x))
+  selected_special_chars.forEach((x) => final_character_list.push(x));
 
   // return the finalized list
   return final_character_list;

@@ -1,17 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-// import Card from '@material-ui/core/Card';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
-// import Button from '@material-ui/core/Button';
-// import Typography from '@material-ui/core/Typography';
-//
-// import javascript_logo from '../icons/javascript_logo.png';
-// import python_logo from '../icons/python_logo.png';
-import password_generator_image from '../images/cryptography_image.jpeg'
-import api_project_image from '../images/api_project_image.jpeg'
+import password_generator_image from '../images/cryptography_image.jpeg';
+import api_project_image from '../images/api_project_image.jpeg';
 import { Container, Typography } from '@material-ui/core';
 
 import {
@@ -24,13 +15,12 @@ export const pass_gen_source_location =
 export const hvac_app_source_location =
   'https://github.com/kcmodev/pi_hvac_controller';
 
-const password_gen_desc_text = 'Password Generator'
+const password_gen_desc_text = 'Password Generator';
 const password_gen_desc_text_2 = 'JavaScript, React, HTML, CSS';
 const password_generator_alt_text = 'Blue electronics cryptography image';
 const api_alt_text = 'Green electronics';
 const api_desc_text = 'Nest Thermostat API Integration';
-const api_desc_text_2 = 'Python, Flask, JavaScript, HTML, CSS'
-
+const api_desc_text_2 = 'Python, Flask, JavaScript, HTML, CSS';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,18 +56,34 @@ export default function SkillCards() {
     <Container maxWidth={'md'} className={classes.container}>
       <Container maxWidth={'sm'}>
         <Link to={password_generator_route}>
-          <img className={classes.large} src={password_generator_image} alt={password_generator_alt_text}/>
+          <img
+            className={classes.large}
+            src={password_generator_image}
+            alt={password_generator_alt_text}
+          />
         </Link>
-        <Typography className={classes.text} variant={'h5'}>{password_gen_desc_text}</Typography>
-        <Typography className={classes.text} variant={'body1'}>{password_gen_desc_text_2}</Typography>
+        <Typography className={classes.text} variant={'h5'}>
+          {password_gen_desc_text}
+        </Typography>
+        <Typography className={classes.text} variant={'body1'}>
+          {password_gen_desc_text_2}
+        </Typography>
       </Container>
 
       <Container maxWidth={'sm'}>
         <Link to={python_projects_route}>
-          <img className={classes.large} src={api_project_image} alt={api_alt_text} />
+          <img
+            className={classes.large}
+            src={api_project_image}
+            alt={api_alt_text}
+          />
         </Link>
-        <Typography className={classes.text} variant={'h5'}>{api_desc_text}</Typography>
-        <Typography className={classes.text} variant={'body1'}>{api_desc_text_2}</Typography>
+        <Typography className={classes.text} variant={'h5'}>
+          {api_desc_text}
+        </Typography>
+        <Typography className={classes.text} variant={'body1'}>
+          {api_desc_text_2}
+        </Typography>
       </Container>
 
       {/*<Card className={classes.root}>*/}

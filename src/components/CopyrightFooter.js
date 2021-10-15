@@ -22,7 +22,8 @@ const CopyrightFooter = () => {
   return (
     <Container maxWidth={'md'}>
       <Typography align={'center'} className={classes.root}>
-        <CopyrightIcon fontSize={'small'} className={classes.copySymbol}/> Steven Christensen 2021
+        <CopyrightIcon fontSize={'small'} className={classes.copySymbol} />{' '}
+        Steven Christensen 2021
       </Typography>
     </Container>
   );

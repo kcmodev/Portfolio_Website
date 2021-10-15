@@ -5,11 +5,11 @@ import {
   AppBar,
   Container,
   Toolbar,
-  IconButton, Typography
+  IconButton,
+  Typography
 } from '@material-ui/core';
 
-import InfoIcon from '@material-ui/icons/Info';
-import { AiOutlineHome } from 'react-icons/all';
+// import HomeIcon from '@mui/icons-material/Home';
 import { landing_page_route, about_me_route } from '../routes/route_names';
 
 const useStyles = makeStyles((theme) => ({
@@ -42,13 +42,18 @@ const Navbar = (values = false) => {
           <IconButton className={classes.menuButton}>
             {!on_landing_page && (
               <Link to={landing_page_route}>
-                <AiOutlineHome style={{ color: 'whitesmoke' }} />
+                {/*<HomeIcon style={{ color: 'whitesmoke' }} fontSize={'sm'} />*/}
+                <Typography className={classes.text} variant={'h6'}>
+                  Home
+                </Typography>
               </Link>
             )}
             {on_landing_page && (
               <Link to={about_me_route}>
                 {/*<InfoIcon style={{ color: 'whitesmoke' }} />*/}
-                <Typography className={classes.text} variant={'h6'}>About</Typography>
+                <Typography className={classes.text} variant={'h6'}>
+                  About
+                </Typography>
               </Link>
             )}
           </IconButton>

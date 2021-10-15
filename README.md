@@ -17,7 +17,6 @@ multiple selections for the user to select the special characters they would lik
 This is all handled locally in the users browser and nothing is stored in any way.
 </p>
 
-
 ### <li>Smart Thermostat API Integration</li>
 
 <p>
