@@ -15,6 +15,7 @@ const intro_paragraph_text_2 =
   'Thank you for visiting and please feel free to contact me with any inquiries on ';
 
 export const linkedin_url = 'https://www.linkedin.com/in/stevenc21/';
+export const github_url = 'https://github.com/kcmodev';
 
 const useStyles = makeStyles(() => ({
   root: {
