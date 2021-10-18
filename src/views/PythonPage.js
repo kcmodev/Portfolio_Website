@@ -16,10 +16,6 @@ const cont_wo_jumper_alt =
   'L298N motor controller board with jumper connection removed';
 const box_guts_alt = 'Project box containing microcontroller and various wires';
 
-// import Card from '@material-ui/core/Card';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
-
 const rpi_about_us_location = 'https://www.raspberrypi.org/about/';
 const rpi_os_image_location =
   'https://www.raspberrypi.org/software/operating-systems/';
@@ -38,8 +34,8 @@ const paragraph_2 =
   'should just be a DC motor actuating a movable part to spray the can. Additionally, I wanted to be able to actuate the motor manually with my phone if, for ' +
   'instance, we have guests over.';
 
-const paragraph_3 = 'First, I navigated to the';
-const paragraph_3_1 = 'and downloaded the latest version of';
+const paragraph_3 = 'First, I downloaded';
+const paragraph_3_1 = 'from';
 const paragraph_3_2 =
   'Then, for setting up the development environment, I decided to use the library';
 const paragraph_3_3 = 'to program the pins for their desired function.';
@@ -51,11 +47,11 @@ const paragraph_4_1 =
   'signed up for a developer account with google and authorized my account for API access following their instructions.';
 
 const paragraph_5 =
-  'This simply shows the jumper that will need to be removed if you are not using a stepper motor. Since I am using a ' +
+  'This image shows the jumper that will need to be removed if you are not using a stepper motor. Since I am using a ' +
   'DC motor, and only one at that, I removed this jumper to expose the pins below.';
 
 const paragraph_6 =
-  'Now then, for a breakdown of the L298N board. #1 and #2 are the DC motor + and - respectively. #3 is the power supply ' +
+  'Now, for a breakdown of the L298N board. #1 and #2 are the DC motor + and - respectively. #3 is the power supply ' +
   "for the board itself. This needs to be a minimum of 5v and separate from the pi to avoid overloading it's pinout and damaging the Pi. " +
   'I chose to use a 10v usb wall charger. #4 is the ground for the board. This needs to be connected to both the discrete power supply and ' +
   "the Pi's ground. #5 is a 5v output powered by the power supply if needed. #6 is the pin to enable the board controller for the motor. " +
@@ -87,11 +83,12 @@ const paragraph_9 =
 const useStyles = makeStyles((theme) => ({
   root: {
     color: 'whitesmoke',
-    paddingBottom: theme.spacing(2)
+    padding: theme.spacing(2),
+    alignSelf: 'center'
   },
   flex_center: {
     display: 'flex',
-    '@media (max-width: 40em)': {
+    '&@media (max-width: 40em)': {
       flexWrap: 'wrap'
     },
     justifyContent: 'center',
@@ -119,27 +116,32 @@ const PythonPage = () => {
       <Container maxWidth={'md'}>
         <ProfileAvatar />
 
-        <Typography variant={'h3'} align={'center'} className={classes.root}>
+        <Typography
+          variant={'h3'}
+          align={'center'}
+          className={classes.root}
+          gutterBottom={'True'}
+        >
           Smart Thermostat API Integration
         </Typography>
 
-        <Typography align={'center'} className={classes.root}>
+        <Typography align={'center'} className={classes.root} variant={'body1'}>
           {paragraph_1}
         </Typography>
-        <Typography align={'center'} className={classes.root}>
+        <Typography align={'center'} className={classes.root} variant={'body1'}>
           {paragraph_2}
         </Typography>
 
-        <Typography align={'center'} className={classes.root}>
+        <Typography align={'center'} className={classes.root} variant={'body1'}>
           {paragraph_3}
-          <a href={rpi_about_us_location} target={'_blank'} rel={'noreferrer'}>
-            {' '}
-            Raspberry Pi Project
-          </a>{' '}
-          {paragraph_3_1}
           <a href={rpi_os_image_location} target={'_blank'} rel={'noreferrer'}>
             {' '}
             Raspberry Pi OS
+          </a>{' '}
+          {paragraph_3_1}
+          <a href={rpi_about_us_location} target={'_blank'} rel={'noreferrer'}>
+            {' '}
+            Raspberry Pi Project
           </a>
           {'. '}
           {paragraph_3_2}
@@ -154,7 +156,7 @@ const PythonPage = () => {
           {paragraph_3_3}
         </Typography>
 
-        <Typography align={'center'} className={classes.root}>
+        <Typography align={'center'} className={classes.root} variant={'body1'}>
           {paragraph_4}
           <a href={l298n_doc_location} target={'_blank'} rel={'noreferrer'}>
             {' '}
@@ -166,7 +168,7 @@ const PythonPage = () => {
       </Container>
 
       <Container maxWidth={'md'} className={classes.flex_center}>
-        <Typography align={'center'} className={classes.root}>
+        <Typography align={'center'} className={classes.root} variant={'body1'}>
           {paragraph_5}
         </Typography>
         <img
@@ -177,33 +179,33 @@ const PythonPage = () => {
       </Container>
 
       <Container maxWidth={'md'} className={classes.flex_center}>
-        <Typography align={'center'} className={classes.root}>
+        <Typography align={'center'} className={classes.root} variant={'body1'}>
           {paragraph_6}
         </Typography>
         <img
           className={classes.padImage}
           src={controller_wo_jumper}
-          alt={controller_wo_jumper}
+          alt={cont_wo_jumper_alt}
         />
       </Container>
 
       <Container maxWidth={'md'} className={classes.centerImg}>
-        <Typography align={'center'} className={classes.root}>
+        <Typography align={'center'} className={classes.root} variant={'body1'}>
           {paragraph_7}
         </Typography>
         <img src={project_box_guts} alt={box_guts_alt} />
       </Container>
 
       <Container maxWidth={'md'}>
-        <Typography align={'center'} className={classes.root}>
+        <Typography align={'center'} className={classes.root} variant={'body1'}>
           {paragraph_8}
         </Typography>
 
-        <Typography align={'center'} className={classes.root}>
+        <Typography align={'center'} className={classes.root} variant={'body1'}>
           {paragraph_9}
         </Typography>
 
-        <Typography align={'center'} className={classes.root}>
+        <Typography align={'center'} className={classes.root} variant={'body1'}>
           The repository containing the source code for this project can be
           found{' '}
           <a

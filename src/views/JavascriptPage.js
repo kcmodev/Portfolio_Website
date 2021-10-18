@@ -40,10 +40,12 @@ const JavascriptPage = () => {
         >
           Secure Password Generator
         </Typography>
+
         <Typography
           align={'center'}
           gutterBottom={true}
           className={classes.root}
+          variant={'body1'}
         >
           {javascript_projects_description_text}
         </Typography>
@@ -52,6 +54,7 @@ const JavascriptPage = () => {
           align={'center'}
           gutterBottom={true}
           className={classes.root}
+          variant={'body1'}
         >
           The repository containing the source code for this project can be
           found

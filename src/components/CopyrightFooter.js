@@ -2,13 +2,11 @@ import React from 'react';
 import { makeStyles, Typography, Container } from '@material-ui/core';
 import CopyrightIcon from '@material-ui/icons/Copyright';
 
-const current_year = new Date().getFullYear();
-
 const useStyle = makeStyles((theme) => ({
   root: {
     color: 'whitesmoke',
     display: 'flex',
-    alignContent: 'center',
+    alignItems: 'center',
     justifyContent: 'center',
     paddingTop: theme.spacing(4)
   },
@@ -25,7 +23,7 @@ const CopyrightFooter = () => {
     <Container maxWidth={'md'}>
       <Typography align={'center'} className={classes.root}>
         <CopyrightIcon fontSize={'small'} className={classes.copySymbol} />{' '}
-        Steven Christensen {current_year}
+        Steven Christensen {new Date().getFullYear()}
       </Typography>
     </Container>
   );
