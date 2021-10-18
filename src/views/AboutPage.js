@@ -36,12 +36,12 @@ const AboutPage = () => {
   const classes = useStyle();
 
   return (
-    <Container maxWidth={'md'}>
+    <>
       <Navbar />
 
       <ProfileAvatar />
 
-      <Container>
+      <Container maxWidth={'md'}>
         <Typography
           align={'center'}
           className={classes.root}
@@ -52,7 +52,7 @@ const AboutPage = () => {
         </Typography>
       </Container>
 
-      <Container className={classes.padTop}>
+      <Container className={classes.padTop} maxWidth={'md'}>
         <Typography align={'center'} className={classes.root}>
           {about_me_text_2}
           <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>
@@ -62,13 +62,8 @@ const AboutPage = () => {
         </Typography>
       </Container>
 
-      {/*<SkillAvatars*/}
-      {/*  props={{ python: true, java: true, javascript: true, node: true }}*/}
-      {/*/>*/}
-      {/*<SkillAvatars props={{ react: true, html: true, css: true }} />*/}
-
       <CopyrightFooter />
-    </Container>
+    </>
   );
 };
 

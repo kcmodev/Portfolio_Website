@@ -21,13 +21,13 @@ const JavaPage = () => {
 
   return (
     <>
-      <Container maxWidth={'md'}>
+      <>
         <Navbar />
 
         <Typography variant={'h3'} align={'center'} className={classes.root}>
           Appointment Management Application
         </Typography>
-      </Container>
+      </>
 
       <SkillAvatars props={{ java: true, description: true }} />
     </>
