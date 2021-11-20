@@ -17,7 +17,6 @@ const useStyle = makeStyles((theme) => ({
 
 const CopyrightFooter = () => {
   const classes = useStyle();
-  // let copy = String.fromCharCode(169); // copyright char
 
   return (
     <Container maxWidth={'md'}>

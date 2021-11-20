@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import {
   makeStyles,
   withStyles,
@@ -9,8 +9,9 @@ import {
   FormControlLabel,
   Slider
 } from '@material-ui/core';
+import { useState } from 'react';
 
-let selected_symbol_list = [];
+let selected_symbol_list: string[];
 const max_pass_length = 24;
 const min_pass_length = 10;
 const slider_start_value = 21;
@@ -61,10 +62,11 @@ const PasswordGenerator = () => {
   const [pass_length, set_pass_length] = useState(slider_start_value);
   const [checked_state, setChecked] = useState({});
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setChecked({ ...checked_state, [e.target.name]: e.target.checked });
     let slider_value = parseInt(
-      document.querySelector('.MuiSlider-thumb').innerText
+      // @ts-ignore
+      document.querySelector('.MuiSlider-thumb').textContent as string
     );
     set_pass_length(slider_value);
 
@@ -81,7 +83,8 @@ const PasswordGenerator = () => {
   // dynamically generate password based on length selected refreshing on change
   const pass_length_updater = () => {
     let slider_value = parseInt(
-      document.querySelector('.MuiSlider-thumb').innerText
+      // @ts-ignore
+      document.querySelector('.MuiSlider-thumb').textContent as string
     );
     set_pass_length(slider_value);
 
@@ -91,11 +94,9 @@ const PasswordGenerator = () => {
     return `${pass_length}`;
   };
 
-  function generate_password(selected_length) {
-    let temp_password = '';
+  function generate_password(selected_length: number) {
+    let temp_password: string = '';
     let new_char_list = generate_character_array(selected_symbol_list);
-
-    // console.log(`new char list: ${new_char_list}`);
 
     // Pick chars from a random index of available choices in the array less than the specified length
     for (let i = 0; i < selected_length; i++) {
@@ -112,6 +113,7 @@ const PasswordGenerator = () => {
     set_password(temp_password);
   }
 
+  // @ts-ignore
   return (
     <>
       <Container maxWidth={'md'} className={classes.root}>
@@ -122,6 +124,7 @@ const PasswordGenerator = () => {
               <FormControlLabel
                 control={
                   <WhiteCheckbox
+                    // @ts-ignore
                     className={classes.checkbox}
                     onChange={handleChange}
                     name={`checked${i}`}
@@ -141,6 +144,7 @@ const PasswordGenerator = () => {
               <FormControlLabel
                 control={
                   <WhiteCheckbox
+                    // @ts-ignore
                     className={classes.checkbox}
                     onChange={handleChange}
                     name={`checked${i}`}
@@ -160,6 +164,7 @@ const PasswordGenerator = () => {
               <FormControlLabel
                 control={
                   <WhiteCheckbox
+                    // @ts-ignore
                     className={classes.checkbox}
                     onChange={handleChange}
                     name={`checked${i}`}
@@ -185,8 +190,8 @@ const PasswordGenerator = () => {
           step={1}
           min={min_pass_length}
           max={max_pass_length}
-          onChangeCommitted={(e, v) => {
-            pass_length_updater(v);
+          onChangeCommitted={() => {
+            pass_length_updater();
           }}
         />
       </Container>
@@ -202,10 +207,10 @@ const PasswordGenerator = () => {
   );
 };
 
-function generate_character_array(selected_special_chars) {
-  let final_character_list =
-    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-  final_character_list = final_character_list.split('');
+function generate_character_array(selected_special_chars: string[]) {
+  let final_character_list: string[] = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'.split(
+    ''
+  );
 
   // add all special characters to the list
   selected_special_chars.forEach((x) => final_character_list.push(x));
