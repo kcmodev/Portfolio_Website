@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Navbar = (props) => {
+const Navbar = (props: any) => {
   const classes = useStyles();
   const current_page = props.current_page;
 
