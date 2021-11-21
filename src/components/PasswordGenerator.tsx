@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import { useState } from 'react';
 
-let selected_symbol_list: string[];
+let selected_symbol_list: string[] = [];
 const max_pass_length = 24;
 const min_pass_length = 10;
 const slider_start_value = 21;

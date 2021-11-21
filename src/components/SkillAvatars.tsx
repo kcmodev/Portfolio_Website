@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const SkillAvatars = (values = false) => {
+const SkillAvatars = (values: any) => {
   // destructure values
   let {
     python,
@@ -57,7 +57,7 @@ const SkillAvatars = (values = false) => {
     node,
     flask,
     description
-  } = values.props;
+  } = values;
 
   const classes = useStyles();
 

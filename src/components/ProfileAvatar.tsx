@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { makeStyles, Avatar } from '@material-ui/core';
 
 import profile_picture from '../images/profile_picture.jpg';
