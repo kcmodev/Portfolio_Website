@@ -1,6 +1,6 @@
 html {
   /* Photo by Arnold Francisca - Unsplash */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(images/laptopBackgroundImage.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
