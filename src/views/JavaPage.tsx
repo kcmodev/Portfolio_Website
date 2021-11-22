@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
 
 import SkillAvatars from '../components/SkillAvatars';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import SkillAvatars from '../components/SkillAvatars';
@@ -120,7 +120,7 @@ const PythonPage = () => {
           variant={'h3'}
           align={'center'}
           className={classes.root}
-          gutterBottom={'True'}
+          gutterBottom={true}
         >
           Smart Thermostat API Integration
         </Typography>

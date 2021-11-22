@@ -11,7 +11,7 @@ import {
 } from '../routes/route_names';
 
 export const pass_gen_source_location =
-  'https://github.com/kcmodev/Portfolio_Website/blob/main/src/components/PasswordGenerator.js';
+  'https://github.com/kcmodev/Portfolio_Website/blob/main/src/components/PasswordGenerator.tsx';
 export const hvac_app_source_location =
   'https://github.com/kcmodev/pi_hvac_controller';
 

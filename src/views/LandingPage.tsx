@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import ProfileAvatar from '../components/ProfileAvatar';
