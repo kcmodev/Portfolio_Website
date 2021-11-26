@@ -2,6 +2,8 @@ import * as React from 'react';
 import { makeStyles, Avatar } from '@material-ui/core';
 
 import profile_picture from '../images/profile_picture.jpg';
+import profile_img from '../images/profile_img.jpeg';
+
 const profile_picture_alt_text = 'profile image of site author';
 
 const useStyles = makeStyles((theme) => ({
@@ -22,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(12)
   },
   large: {
-    width: theme.spacing(21),
-    height: theme.spacing(21)
+    width: theme.spacing(23),
+    height: theme.spacing(23)
   }
 }));
 
@@ -33,7 +35,7 @@ const ProfileAvatar = () => {
   return (
     <div className={classes.root}>
       <Avatar
-        src={profile_picture}
+        src={profile_img}
         alt={profile_picture_alt_text}
         className={classes.large}
       />
