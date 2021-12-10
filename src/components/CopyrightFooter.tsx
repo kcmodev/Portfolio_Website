@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { makeStyles, Typography, Container } from '@material-ui/core';
 import CopyrightIcon from '@material-ui/icons/Copyright';
 

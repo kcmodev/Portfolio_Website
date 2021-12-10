@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   makeStyles,
@@ -18,7 +17,7 @@ import { github_url, linkedin_url } from '../views/LandingPage';
 
 const navbar_text_typography_size = 'subtitle1';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
     alignItems: 'flex-end',

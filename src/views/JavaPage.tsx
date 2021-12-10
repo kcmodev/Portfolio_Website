@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
 
 import SkillAvatars from '../components/SkillAvatars';
@@ -9,7 +8,7 @@ import Navbar from '../components/Navbar';
 //   'time of upcoming appointments. The primary language used in development is Java with Scenebuilder used for ' +
 //   'designing the front end. It is a standalone desktop application that also uses MySQL in the backend for data persistence.';
 
-const useStyle = makeStyles((theme) => ({
+const useStyle = makeStyles(() => ({
   root: {
     color: 'whitesmoke'
   }

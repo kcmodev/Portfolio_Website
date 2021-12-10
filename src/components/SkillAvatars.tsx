@@ -1,4 +1,3 @@
-import React from 'react';
 import { makeStyles, Container, Typography, Avatar } from '@material-ui/core';
 
 import python_icon from '../icons/python_logo.png';

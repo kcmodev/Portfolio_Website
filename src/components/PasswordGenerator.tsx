@@ -1,4 +1,3 @@
-import * as React from 'react';
 import {
   makeStyles,
   withStyles,
@@ -7,7 +6,7 @@ import {
   Checkbox,
   FormGroup,
   FormControlLabel,
-  Slider
+  Slider,
 } from '@material-ui/core';
 import { useState } from 'react';
 
@@ -28,31 +27,31 @@ const symbol_list = [
   '!', // 8
   '-', // 9
   '_', // 10
-  '#' // 11
+  '#', // 11
 ];
 
 const WhiteCheckbox = withStyles({
   root: {
     color: 'whitesmoke',
     '&$checked': {
-      color: 'whitesmoke'
-    }
+      color: 'whitesmoke',
+    },
   },
-  checked: {}
-})((props) => <Checkbox color="default" {...props} />);
+  checked: {},
+})((props) => <Checkbox color={'default'} {...props} />);
 
 const useStyle = makeStyles((theme) => ({
   root: {
     display: 'flex',
     color: 'whitesmoke',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   checkbox: {
-    paddingLeft: theme.spacing(4)
+    paddingLeft: theme.spacing(4),
   },
   padTop: {
-    paddingTop: theme.spacing(4)
-  }
+    paddingTop: theme.spacing(4),
+  },
 }));
 
 const PasswordGenerator = () => {
@@ -66,7 +65,7 @@ const PasswordGenerator = () => {
     setChecked({ ...checked_state, [e.target.name]: e.target.checked });
     let slider_value = parseInt(
       // @ts-ignore
-      document.querySelector('.MuiSlider-thumb').textContent as string
+      document.querySelector('.MuiSlider-thumb').textContent as string,
     );
     set_pass_length(slider_value);
 
@@ -84,7 +83,7 @@ const PasswordGenerator = () => {
   const pass_length_updater = () => {
     let slider_value = parseInt(
       // @ts-ignore
-      document.querySelector('.MuiSlider-thumb').textContent as string
+      document.querySelector('.MuiSlider-thumb').textContent as string,
     );
     set_pass_length(slider_value);
 
@@ -133,7 +132,7 @@ const PasswordGenerator = () => {
                 }
                 label={x}
               />
-            ) : null
+            ) : null,
           )}
         </FormGroup>
 
@@ -153,7 +152,7 @@ const PasswordGenerator = () => {
                 }
                 label={x}
               />
-            ) : null
+            ) : null,
           )}
         </FormGroup>
 
@@ -173,7 +172,7 @@ const PasswordGenerator = () => {
                 }
                 label={x}
               />
-            ) : null
+            ) : null,
           )}
         </FormGroup>
       </Container>
@@ -209,7 +208,7 @@ const PasswordGenerator = () => {
 
 function generate_character_array(selected_special_chars: string[]) {
   let final_character_list: string[] = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'.split(
-    ''
+    '',
   );
 
   // add all special characters to the list

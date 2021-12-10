@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 import { linkedin_url } from './LandingPage';
 
@@ -19,7 +18,7 @@ const about_me_text_2 =
   'I have always enjoyed working on the stuff under the hood (network routing, automation etc) ' +
   'so I really enjoy working with things like Node.js and MongoDB as well. I am also passionate about cybersecurity spend a ' +
   'considerable amount of time ensuring my applications are secure. If ' +
-  "you have any questions, inquiries for a bid on development work, or a potential job opportunity please don't hesitate " +
+  'you have any questions, inquiries for a bid on development work, or a potential job opportunity please don\'t hesitate ' +
   'to reach out on ';
 
 const useStyle = makeStyles((theme) => ({
@@ -37,7 +36,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar current_page={'About'}/>
 
       <ProfileAvatar />
 

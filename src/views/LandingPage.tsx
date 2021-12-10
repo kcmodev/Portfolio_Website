@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import ProfileAvatar from '../components/ProfileAvatar';
@@ -32,7 +31,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <Navbar current_page="Landing" />
+      <Navbar current_page={'Landing'} />
 
       <ProfileAvatar />
 

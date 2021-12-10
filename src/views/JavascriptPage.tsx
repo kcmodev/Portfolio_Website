@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { makeStyles, Container, Typography } from '@material-ui/core';
 
 import PasswordGenerator from '../components/PasswordGenerator';

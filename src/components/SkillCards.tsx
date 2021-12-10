@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import password_generator_image from '../images/cryptography_image.jpeg';
@@ -7,7 +6,7 @@ import { Container, Typography } from '@material-ui/core';
 
 import {
   password_generator_route,
-  python_projects_route
+  python_projects_route,
 } from '../routes/route_names';
 
 export const pass_gen_source_location =
@@ -25,12 +24,12 @@ const api_desc_text_2 = 'Python, Flask, JavaScript, HTML, CSS';
 const useStyles = makeStyles((theme) => ({
   root: {
     color: 'whitesmoke',
-    justifySelf: 'center'
+    justifySelf: 'center',
   },
   text: {
     display: 'flex',
     color: 'whitesmoke',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   large: {
     width: theme.spacing(60),
@@ -38,15 +37,15 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(2),
     transition: '0.5s',
     '&:hover': {
-      opacity: 0.5
-    }
+      opacity: 0.5,
+    },
   },
   container: {
     display: 'flex',
     justifyContent: 'center',
     paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4)
-  }
+    paddingBottom: theme.spacing(4),
+  },
 }));
 
 export default function SkillCards() {
@@ -85,79 +84,6 @@ export default function SkillCards() {
           {api_desc_text_2}
         </Typography>
       </Container>
-
-      {/*<Card className={classes.root}>*/}
-      {/*  <CardMedia*/}
-      {/*    className={classes.medium}*/}
-      {/*    component="img"*/}
-      {/*    alt="secure password generator application"*/}
-      {/*    image={javascript_logo}*/}
-      {/*    title="JavaScript Program"*/}
-      {/*  />*/}
-      {/*  <CardContent>*/}
-      {/*    <Typography gutterBottom variant="h5" component="h2">*/}
-      {/*      Secure Password Generator*/}
-      {/*    </Typography>*/}
-      {/*    <Typography variant="body2" color="textSecondary" component="p">*/}
-      {/*      Locally generates a secure password with ample customization options*/}
-      {/*      such as selecting specific special characters and specifying password length*/}
-      {/*      to ensure password manager compatibility.*/}
-      {/*    </Typography>*/}
-      {/*  </CardContent>*/}
-      {/*  <CardActions>*/}
-      {/*    <Link to={password_generator_route}>*/}
-      {/*      <Button size="small" color="primary">*/}
-      {/*        Application*/}
-      {/*      </Button>*/}
-      {/*    </Link>*/}
-      {/*    <Button size="small" color="primary">*/}
-      {/*      <a*/}
-      {/*        href={pass_gen_source_location}*/}
-      {/*        target={'_blank'}*/}
-      {/*        rel={'noreferrer'}*/}
-      {/*      >*/}
-      {/*        Source*/}
-      {/*      </a>*/}
-      {/*    </Button>*/}
-      {/*  </CardActions>*/}
-      {/*</Card>*/}
-
-      {/*<Card className={classes.root}>*/}
-      {/*  <CardMedia*/}
-      {/*    className={classes.medium}*/}
-      {/*    component="img"*/}
-      {/*    alt="hvac air freshener application"*/}
-      {/*    height="140"*/}
-      {/*    image={python_logo}*/}
-      {/*    title="Python Program"*/}
-      {/*  />*/}
-      {/*  <CardContent>*/}
-      {/*    <Typography gutterBottom variant="h5" component="h2">*/}
-      {/*      Smart Thermostat API Integration*/}
-      {/*    </Typography>*/}
-      {/*    <Typography variant="body2" color="textSecondary" component="p">*/}
-      {/*      Uses a Raspberry Pi to control a DC motor that sprays air freshener into my home HVAC system. It uses*/}
-      {/*      Google's Nest API to determine if the HVAC system is currently operating and uses that information to determine*/}
-      {/*      when to actuate the motor to disperse air freshener throughout my entire house.*/}
-      {/*    </Typography>*/}
-      {/*  </CardContent>*/}
-      {/*  <CardActions>*/}
-      {/*    <Link to={python_projects_route}>*/}
-      {/*      <Button size="small" color="primary">*/}
-      {/*        Details*/}
-      {/*      </Button>*/}
-      {/*    </Link>*/}
-      {/*    <Button size="small" color="primary">*/}
-      {/*      <a*/}
-      {/*        href={hvac_app_source_location}*/}
-      {/*        target={'_blank'}*/}
-      {/*        rel={'noreferrer'}*/}
-      {/*      >*/}
-      {/*        Source*/}
-      {/*      </a>*/}
-      {/*    </Button>*/}
-      {/*  </CardActions>*/}
-      {/*</Card>*/}
     </Container>
   );
 }
