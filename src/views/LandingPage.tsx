@@ -5,6 +5,12 @@ import Navbar from '../components/Navbar';
 import CopyrightFooter from '../components/CopyrightFooter';
 import SkillCards from '../components/SkillCards';
 
+import {
+  subtitle_variant_type,
+  typography_center,
+  text_color_white,
+} from '../components/TextVariables';
+
 const intro_paragraph_text =
   'Hello! My name is Steve and I am a Full Stack Software Developer. ' +
   'I graduated from Western Governors University with a Bachelor of Science in Computer Science. ' +
@@ -18,13 +24,14 @@ export const github_url = 'https://github.com/kcmodev';
 
 const useStyles = makeStyles(() => ({
   root: {
-    flexBasis: 'auto'
+    flexBasis: 'auto',
   },
   section_text: {
-    textAlign: 'center',
-    color: 'whitesmoke'
-  }
+    color: `${text_color_white}`,
+  },
 }));
+
+const text_alignment = 'center';
 
 const LandingPage = () => {
   const classes = useStyles();
@@ -38,16 +45,18 @@ const LandingPage = () => {
       <Container maxWidth={'md'}>
         <Typography
           gutterBottom={true}
+          align={typography_center}
           className={classes.section_text}
-          variant={'h6'}
+          variant={subtitle_variant_type}
         >
           {intro_paragraph_text}
         </Typography>
 
         <Typography
           gutterBottom={true}
+          align={typography_center}
           className={classes.section_text}
-          variant={'h6'}
+          variant={subtitle_variant_type}
         >
           {intro_paragraph_text_2}
           <a href={linkedin_url} target={'_blank'} rel={'noreferrer'}>
