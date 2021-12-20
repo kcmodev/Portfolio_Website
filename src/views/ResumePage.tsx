@@ -22,8 +22,8 @@ const battle_within = {
   },
 };
 
-const header_font = 'h6';
-const text_font = 'body1';
+const header_variant_type = 'h6';
+const text_font_type = 'body1';
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -52,7 +52,7 @@ const ResumePage = () => {
         <Typography
           className={classes.root}
           gutterBottom={true}
-          variant={header_font}
+          variant={header_variant_type}
         >
           {oreilly.title}
         </Typography>
@@ -60,7 +60,7 @@ const ResumePage = () => {
         <Typography
           className={classes.root}
           gutterBottom={true}
-          variant={header_font}
+          variant={header_variant_type}
         >
           {oreilly.dates}
         </Typography>
@@ -68,7 +68,7 @@ const ResumePage = () => {
         <Typography
           className={classes.root}
           gutterBottom={true}
-          variant={text_font}
+          variant={text_font_type}
         >
           <ul>
             <li>{oreilly.description['1']}</li>
@@ -81,7 +81,7 @@ const ResumePage = () => {
         <Typography
           className={classes.root}
           gutterBottom={true}
-          variant={header_font}
+          variant={header_variant_type}
         >
           {battle_within.title}
         </Typography>
@@ -89,7 +89,7 @@ const ResumePage = () => {
         <Typography
           className={classes.root}
           gutterBottom={true}
-          variant={header_font}
+          variant={header_variant_type}
         >
           {battle_within.dates}
         </Typography>
@@ -97,7 +97,7 @@ const ResumePage = () => {
         <Typography
           className={classes.root}
           gutterBottom={true}
-          variant={text_font}
+          variant={text_font_type}
         >
           <ul>
             <li>{battle_within.description['1']}</li>
