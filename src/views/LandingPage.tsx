@@ -18,12 +18,14 @@ export const github_url = 'https://github.com/kcmodev';
 
 const useStyles = makeStyles(() => ({
   root: {
-    flexBasis: 'auto'
+    flexBasis: 'auto',
   },
   section_text: {
+    display: 'flex',
+    alignContent: 'center',
     textAlign: 'center',
-    color: 'whitesmoke'
-  }
+    color: 'whitesmoke',
+  },
 }));
 
 const LandingPage = () => {

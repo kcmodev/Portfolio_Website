@@ -31,10 +31,18 @@ const useStyles = makeStyles((theme) => ({
     color: 'whitesmoke',
     justifyContent: 'center',
   },
-  large: {
-    width: theme.spacing(60),
-    height: theme.spacing(45),
-    margin: theme.spacing(2),
+  picture: {
+    [theme.breakpoints.down('sm')]: {
+      width: theme.spacing(30),
+      height: theme.spacing(22),
+      margin: theme.spacing(2),
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing(60),
+      height: theme.spacing(45),
+      margin: theme.spacing(2),
+    },
+    alignSelf: 'center',
     transition: '0.5s',
     '&:hover': {
       opacity: 0.5,
@@ -42,6 +50,12 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      flexWrap: 'wrap',
+    },
+    [theme.breakpoints.up('sm')]: {
+      flexDirection: 'row',
+    },
     justifyContent: 'center',
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
@@ -56,7 +70,7 @@ export default function SkillCards() {
       <Container maxWidth={'sm'}>
         <Link to={password_generator_route}>
           <img
-            className={classes.large}
+            className={classes.picture}
             src={password_generator_image}
             alt={password_generator_alt_text}
           />
@@ -72,7 +86,7 @@ export default function SkillCards() {
       <Container maxWidth={'sm'}>
         <Link to={python_projects_route}>
           <img
-            className={classes.large}
+            className={classes.picture}
             src={api_project_image}
             alt={api_alt_text}
           />
